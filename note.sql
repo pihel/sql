@@ -197,3 +197,27 @@ http://www.sql.ru/forum/754211/itl-listevogo-bloka-indeksa-v-pol-bloka?mid=86910
 OMEM column -(estimated memory needed for an optimal execution)
 1MEM column (estimated memory needed for a one-pass operation)
 Used-Mem column (actual amount of memory used during the last execution)
+
+--- dbms_redefine
+* создаем таблицу с новыми настройками
+* стартуем перенос:
+ ** включаем для сессии параллельность 
+ ** копируем данные в новую таблицу
+ ** вешаем matview log на изменения на промежуток переноса зависимостей (индексы, триггеры, констрэйнты, гранты и т.д.)
+BEGIN
+ execute immediate 'ALTER SESSION ENABLE PARALLEL DML';
+ execute immediate 'ALTER SESSION FORCE PARALLEL DML PARALLEL 16';
+ execute immediate 'ALTER SESSION FORCE PARALLEL QUERY PARALLEL 16'; 
+ DBMS_REDEFINITION.START_REDEF_TABLE('SCHEM','OLD_T','NEW_T', options_flag=>2); --2 - rowid
+END;
+* завершаем перенос:
+ ** таблица блокируется
+ ** новые/измененные данные мержатся в промежуточную таблицу
+ ** ид объектов меняются местами 
+BEGIN
+  DBMS_REDEFINITION.FINISH_REDEF_TABLE ('SCHEM', 'OLD_T', 'NEW_T');
+END;
+
++ можно делать почти в online
+- нужно двойное место
+- медленней, чем alter + move
