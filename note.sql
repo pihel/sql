@@ -185,3 +185,15 @@ join (
   ) group by in_per_id
 ) s
 on s.in_per_id = p.ACCOUNT_PER_ID;
+
+--- последовательная вставка может раздуть ITL у индекса!!!, т.к. ITL листа наследуюется при расщеплении!
+http://www.sql.ru/forum/754211/itl-listevogo-bloka-indeksa-v-pol-bloka?mid=8691002#8691002
+
+-- системные вью --
+* V$OSSTAT - статистика о ос
+* V$BH - статистика данных в буферном кэше
+* V$SQL_SHARED_CURSOR - почему разные планы для одного sql_id
+-- план:
+OMEM column -(estimated memory needed for an optimal execution)
+1MEM column (estimated memory needed for a one-pass operation)
+Used-Mem column (actual amount of memory used during the last execution)
