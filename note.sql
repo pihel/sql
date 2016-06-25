@@ -221,3 +221,38 @@ END;
 + можно делать почти в online
 - нужно двойное место
 - медленней, чем alter + move
+
+-- создание profile
+-- отличие профилей, от baseline: profile дают доп.информацию существующим планам, тогда как baseline хранит набор планов и жестко их фиксирует
+DECLARE
+l_sql_id v$session.prev_sql_id%TYPE;
+l_tuning_task VARCHAR2(30);
+BEGIN
+l_tuning_task := dbms_sqltune.create_tuning_task(sql_id => l_sql_id);
+dbms_sqltune.execute_tuning_task(:tuning_task);
+dbms_output.put_line(l_tuning_task);
+end;
+
+SELECT dbms_sqltune.report_tuning_task('TASK_16467') FROM dual;
+
+dbms_sqltune.accept_sql_profile(
+task_name => 'TASK_16467',
+task_owner => 'OPS$CHA',
+name => 'first_rows',
+description => 'switch from ALL_ROWS to FIRST_ROWS_n',
+category => 'TEST',
+replace => TRUE,
+force_match => TRUE
+);
+
+-- ручное создание профиля:
+dbms_sqltune.import_sql_profile(
+name => 'import_sql_profile',
+description => 'SQL profile created manually',
+category => 'TEST',
+sql_text => 'SELECT * FROM t ORDER BY id',
+profile => sqlprof_attr('first_rows(42)',
+'optimizer_features_enable(default)'),
+replace => FALSE,
+force_match => FALSE
+);
