@@ -246,13 +246,12 @@ force_match => TRUE
 );
 
 -- ручное создание профиля:
+begin
 dbms_sqltune.import_sql_profile(
-name => 'import_sql_profile',
-description => 'SQL profile created manually',
-category => 'TEST',
-sql_text => 'SELECT * FROM t ORDER BY id',
-profile => sqlprof_attr('first_rows(42)',
-'optimizer_features_enable(default)'),
-replace => FALSE,
-force_match => FALSE
+  name => 'test prof',
+  sql_text => 'select * from t$t where skew = :a and mandt = :b and c1 = :c and c2 = :d',
+  profile => sqlprof_attr('NO_INDEX("T$T" "IDX_T$T2")', 'NO_INDEX(@"SEL$1" T$T@"SEL$1" "IDX_T$T2")'),
+  replace => TRUE,
+  force_match => TRUE
 );
+end;
