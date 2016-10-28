@@ -129,6 +129,7 @@ IGNORE_ROW_ON_DUPKEY_INDEX - хинтом вообще можно застави
  * генетический алгоритм - оцениваются стоимости соединения таблиц между собой, выбираются лучшие варианты - перемешиваются и повторяется выбор
  
  * влияние гистограмм, как если больше 2 таблиц?
+ * что первое: join или where? http://www.sql.ru/forum/1232979/gde-luchshe-ukazyvat-uslovie-v-join-ili-where#19730594
  
 --- id блока индекса ---
 SELECT object_id FROM user_objects WHERE object_name = 'IDX_TBL_SHIP_TMP';
@@ -255,3 +256,18 @@ dbms_sqltune.import_sql_profile(
   force_match => TRUE
 );
 end;
+
+---
+c append не генерируется Undo?, т.к. это direct вставка минуя буферный кэш
+
+* при наличии индекса на нескольких столбцах: distinct values будет браться с него и игнорироваться гистограмма..
+
+v$io_calibration_status
+
+--
+при наличии max функции , сканирование должно идти с конца секций, т.к. можно остановиться при первом найденом значении
+до 11 версии нужно писать хинт index_desc
+http://www.sql.ru/forum/actualutils.aspx?action=gotomsg&tid=1233742&msg=19754999
+
+--
+оптимизация текстовых индексов: http://www.oracle.com/technetwork/testcontent/index-maintenance-089308.html
