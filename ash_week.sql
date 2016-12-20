@@ -1,10 +1,10 @@
---системная статистика
+--СЃРёСЃС‚РµРјРЅР°СЏ СЃС‚Р°С‚РёСЃС‚РёРєР°
 select * from sys.aux_stats$ order by pname;
 
----информация о биндах
+---РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ Р±РёРЅРґР°С…
 select * from dba_hist_sqlbind where sql_id = 'drzsrsa1yg0w2' order by snap_id desc;
 
---изменился план
+--РёР·РјРµРЅРёР»СЃСЏ РїР»Р°РЅ
 select PLAN_HASH_VALUE, min(begin_interval_time), max(begin_interval_time) enddt, sum(EXECUTIONS_DELTA), round(avg(drid),2), round(avg(buf_red),2), round(avg(phys_gb),2), round(avg(rws),2), round(avg(ELAPSED_TIME_DELTA),2), round(max(ELAPSED_TIME_DELTA),2) from (
   select s.snap_id, s.module, t.begin_interval_time, sql_id, PLAN_HASH_VALUE, nvl(nullif(EXECUTIONS_DELTA,0),1) EXECUTIONS_DELTA, round(DISK_READS_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)) as drid, round(BUFFER_GETS_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)) as buf_red, round(PHYSICAL_READ_BYTES_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)/1024/1024/1024) as phys_gb, 
   round(case when END_OF_FETCH_COUNT_TOTAL = 1 then ROWS_PROCESSED_DELTA/nvl(nullif(EXECUTIONS_DELTA,0) ,1) end) as rws, round(s.ELAPSED_TIME_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)/1000/1000,2) as ELAPSED_TIME_DELTA, nvl(nullif(EXECUTIONS_DELTA,0),1),OPTIMIZER_COST,IOWAIT_DELTA,
@@ -24,7 +24,7 @@ left join dba_objects o on o.object_id = h.CURRENT_OBJ#
 where sql_id = '5ddfgx1m41wp7' and sample_time > sysdate-1 
 group by o.object_name;
 
---потребление undo
+--РїРѕС‚СЂРµР±Р»РµРЅРёРµ undo
 select s.MAXQUERYSQLID, MIN(s.begin_time), MAX(s.begin_time), COUNT(*) , SUM(UNDOBLKS) UNDOBLKS 
 from DBA_HIST_UNDOSTAT s
 where s.begin_time between to_date('06.12.2016', 'dd.mm.yyyy') and to_date('07.12.2016', 'dd.mm.yyyy')
@@ -37,7 +37,7 @@ GROUP BY s.MAXQUERYSQLID;
 select * from v$session_longops where sql_id = '7m20186kwff5g' order by start_time desc
 
 
---логические и физические чтения
+--Р»РѕРіРёС‡РµСЃРєРёРµ Рё С„РёР·РёС‡РµСЃРєРёРµ С‡С‚РµРЅРёСЏ
 select o.object_name, SUM(LOGICAL_READS_DELTA) as lg, SUM(PHYSICAL_READS_DELTA)  as ph
 from DBA_HIST_SEG_STAT s
 join SYS.dba_objects o on o.object_id = s.obj#
@@ -47,10 +47,10 @@ and n.BEGIN_INTERVAL_TIME BETWEEN to_date('19.09.2016 00:00:00', 'dd.mm.yyyy hh2
 group by o.object_name
 order by lg desc;
 
---статистика по использованию буфера:
+--СЃС‚Р°С‚РёСЃС‚РёРєР° РїРѕ РёСЃРїРѕР»СЊР·РѕРІР°РЅРёСЋ Р±СѓС„РµСЂР°:
 select * from DBA_HIST_BUFFER_POOL_STAT where instance_number = 2 order by snap_id desc;
 
---текущая статистика по таблицам в буфере
+--С‚РµРєСѓС‰Р°СЏ СЃС‚Р°С‚РёСЃС‚РёРєР° РїРѕ С‚Р°Р±Р»РёС†Р°Рј РІ Р±СѓС„РµСЂРµ
 --vg$bh
 SELECT "STAT$BH".SNAP_DATE, "STAT$BH".OBJ_NAME, avg("STAT$BH".PCT) as pct
 FROM DBSNMP."STAT$BH" "STAT$BH"
@@ -59,10 +59,10 @@ and "STAT$BH".OBJ_NAME like 'ZEINVOICE_DOC%'
 group by "STAT$BH".SNAP_DATE, "STAT$BH".OBJ_NAME
 ORDER BY "STAT$BH".SNAP_DATE, "STAT$BH".OBJ_NAME asc
 
---статистика по событиям
+--СЃС‚Р°С‚РёСЃС‚РёРєР° РїРѕ СЃРѕР±С‹С‚РёСЏРј
 DBA_HIST_SYSSTAT
 
---значения биндов:
+--Р·РЅР°С‡РµРЅРёСЏ Р±РёРЅРґРѕРІ:
 select * from dba_hist_sqlbind where sql_id = '25ck8vp6d7djd' and snap_id = '16389'
 
 ----
@@ -96,7 +96,7 @@ group by sql_id, SQL_PLAN_HASH_VALUE
 order by secs  desc nulls last;
 
 
----текущая статистика
+---С‚РµРєСѓС‰Р°СЏ СЃС‚Р°С‚РёСЃС‚РёРєР°
 select  h.client_id, h.SQL_PLAN_HASH_VALUE, h.module, sql_exec_start, h.sql_id, h.SQL_PLAN_HASH_VALUE, to_char(max(sample_time),'SSSSS') - to_char(sql_exec_start,'SSSSS')  as secs, count(distinct sql_exec_id), count(*) cnt, SUM (delta_read_io_bytes)/1024/1024/1024 as gb, sum(h.delta_read_io_requests)/1000 as kreg
 FROM   gv$active_session_history h
 --FROM dba_hist_active_sess_history h
@@ -178,7 +178,7 @@ group by  h.module, h.client_id, to_char(h.sample_time, 'dd hh24')
 order by cnt desc;
 
 
---строка по блоку и номеру строки в блоке
+--СЃС‚СЂРѕРєР° РїРѕ Р±Р»РѕРєСѓ Рё РЅРѕРјРµСЂСѓ СЃС‚СЂРѕРєРё РІ Р±Р»РѕРєРµ
 select * from REPOSRC
 where SYS.dbms_rowid.rowid_block_number(rowid) = 175712 and SYS.dbms_rowid.rowid_row_number(rowid) = 5
 
