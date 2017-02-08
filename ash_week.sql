@@ -54,10 +54,17 @@ select * from DBA_HIST_BUFFER_POOL_STAT where instance_number = 2 order by snap_
 --vg$bh
 SELECT "STAT$BH".SNAP_DATE, "STAT$BH".OBJ_NAME, avg("STAT$BH".PCT) as pct
 FROM DBSNMP."STAT$BH" "STAT$BH"
-WHERE ("STAT$BH".PCT>=1) and snap_date BETWEEN to_date('14.11.2016 00:00:00', 'dd.mm.yyyy hh24:mi:ss') and to_date('21.11.2016 00:00:00', 'dd.mm.yyyy hh24:mi:ss')
-and "STAT$BH".OBJ_NAME like 'ZEINVOICE_DOC%'
+WHERE ("STAT$BH".PCT>0) and snap_date BETWEEN to_date('16.12.2016 00:00:00', 'dd.mm.yyyy hh24:mi:ss') and to_date('24.12.2016 00:00:00', 'dd.mm.yyyy hh24:mi:ss')
+and "STAT$BH".OBJ_NAME = 'MBEW'
 group by "STAT$BH".SNAP_DATE, "STAT$BH".OBJ_NAME
-ORDER BY "STAT$BH".SNAP_DATE, "STAT$BH".OBJ_NAME asc
+ORDER BY "STAT$BH".SNAP_DATE desc, "STAT$BH".OBJ_NAME asc;
+
+SELECT "STAT$BH".OBJ_NAME,  SUM("STAT$BH".BLOCKS) blks, avg("STAT$BH".PCT) as av_pct, MIN(snap_date), MAX(snap_date), Stddev("STAT$BH".PCT) as dev
+FROM DBSNMP."STAT$BH" "STAT$BH"
+WHERE snap_date BETWEEN  to_date('16.01.2017 00:00:00', 'dd.mm.yyyy hh24:mi:ss') and to_date('24.01.2017 00:00:00', 'dd.mm.yyyy hh24:mi:ss')
+--and to_char(snap_date, 'hh24') between 9 and 18
+group by "STAT$BH".OBJ_NAME
+order by blks desc;
 
 --статистика по событиям
 DBA_HIST_SYSSTAT
@@ -245,3 +252,105 @@ alter session set statistics_level=all;
 select /*+ gather_plan_statistics */ * from user_tablespaces;
  
 select * from table(dbms_xplan.display_cursor(null,null,'allstats last cost'));
+
+--session rollback /undo usage
+select
+        tr.start_scn, tr.log_io, tr.phy_io, tr.used_ublk, tr.used_urec, recursive
+from
+        v$session       se,
+        V$transaction   tr
+where
+        se.sid = 1213
+and     tr.ses_addr = se.saddr
+;
+
+
+---cancel sess
+begin
+sys.dbms_system.set_ev(2454,24463, 10237, 1, '');
+end;
+
+
+---sid statistics
+select N.DISPLAY_NAME, SUM(s.value) as val from v$sesstat s
+join v$statname n on S.STATISTIC# = N.STATISTIC# 
+where s.sid = 1213
+group by N.DISPLAY_NAME
+order by val desc nulls last;
+
+----
+
+--not used index
+select /*+ parallel(8) */ i.index_name, i.TABLE_NAME, round( i.NUM_ROWS / 1000 / 1000, 2) as rows_m, 
+  ROUND( (NVL(m.INSERTS,0) + nvl(m.UPDATES,0) + nvl(m.DELETES,0)) / 1000 / 1000, 2) as dml_m --число dml
+  , t.LAST_ANALYZED
+FROM (
+  select index_name from dba_indexes where owner = 'SAPSR3'
+  minus
+  select DISTINCT p.OBJECT_NAME
+  from dba_hist_active_sess_history h
+  join SYS.DBA_HIST_SQL_PLAN p on h.sql_id = p.sql_id and P.PLAN_HASH_VALUE = h.SQL_PLAN_HASH_VALUE and h.SQL_PLAN_LINE_ID = p.id
+  where h.sample_time >= to_date('01.12.2016', 'dd.mm.yyyy')
+  and p.OBJECT_TYPE = 'INDEX'
+) o
+join dba_indexes i on i.index_name = o.index_name and i.owner = 'SAPSR3'
+left join dba_tables t on t.owner = 'SAPSR3' AND t.table_name = i.TABLE_NAME
+left join dba_tab_modifications m on m.table_owner = 'SAPSR3' AND m.table_name = i.TABLE_NAME
+order by i.NUM_ROWS desc nulls last;
+
+----
+
+--real top by sec?
+with s as ( 
+  SELECT /*+ MATERIALIZE */ sql_id, ELAPSED_TIME_DELTA, rn, sec_exec, CPU_TIME_DELTA, IOWAIT_DELTA, EXECUTIONS_DELTA FROM (
+    select s.sql_id,  round( SUM(s.ELAPSED_TIME_DELTA)/1000/1000) ELAPSED_TIME_DELTA, 
+        round(SUM(s.ELAPSED_TIME_DELTA) / nvl(nullif(sum(EXECUTIONS_DELTA),0) ,1) / 1000/1000,2) as sec_exec,
+        ROW_NUMBER() OVER(order by SUM(s.ELAPSED_TIME_DELTA) desc nulls last) as  rn,
+        SUM(s.CPU_TIME_DELTA) CPU_TIME_DELTA, SUM(s.IOWAIT_DELTA) IOWAIT_DELTA, sum(EXECUTIONS_DELTA) as EXECUTIONS_DELTA
+    from DBA_HIST_SQLSTAT s
+    join DBA_HIST_SNAPSHOT t on t.snap_id = s.snap_id and t.INSTANCE_NUMBER = s.INSTANCE_NUMBER
+    where t.BEGIN_INTERVAL_TIME between to_date('23.01.2017', 'dd.mm.yyyy hh24:mi:ss') and to_date('30.01.2017', 'dd.mm.yyyy hh24:mi:ss')
+    and to_char(t.BEGIN_INTERVAL_TIME, 'hh24') between 10 and 12
+    GROUP BY s.sql_id
+  ) WHERE rn <= 15
+)
+select s.sql_id, s.ELAPSED_TIME_DELTA as sec, s.sec_exec, s.EXECUTIONS_DELTA, s.CPU_TIME_DELTA, s.IOWAIT_DELTA, trim( DBMS_LOB.SUBSTR(t.sql_text,1000) ) as txt 
+from s
+left join dba_hist_sqltext t on t.sql_id = s.sql_id
+order by s.rn;
+
+--now
+select  max(h.client_id), max(h.program), max(h.module),  h.sql_id, h.SQL_PLAN_HASH_VALUE, 
+min(sql_exec_start), max(sample_time), count(*)/5 cnt, max(s.SQL_TEXT) as sql_text
+FROM   gv$active_session_history h
+left join v$sql s on s.sql_id = h.sql_id
+where h.sample_time > trunc(sysdate, 'hh')
+group by  h.sql_id, h.SQL_PLAN_HASH_VALUE
+order by cnt desc nulls last;
+
+-- table stat
+select * FROM TABLE(DBMS_SPACE.OBJECT_SPACE_USAGE_TBF('SAPSR3', 'WALE', 'TABLE', NULL))
+
+--- tablse size history
+select n.BEGIN_INTERVAL_TIME, S.Space_Allocated_Total, S.Space_Used_Total
+from DBA_HIST_SEG_STAT s
+join SYS.dba_objects o on o.object_id = s.obj#
+join DBA_HIST_SNAPSHOT n on n.snap_id = s.snap_id
+where n.INSTANCE_NUMBER = 2
+and n.BEGIN_INTERVAL_TIME BETWEEN to_date('20.01.2017 00:00:00', 'dd.mm.yyyy hh24:mi:ss') and to_date('27.01.2017 00:00:00', 'dd.mm.yyyy hh24:mi:ss')
+and o.object_name = '/SCDL/DB_PROCI_I'
+order by n.BEGIN_INTERVAL_TIME desc;
+
+--time line??? --не получается
+select SQL_PLAN_LINE_ID, avg(st_sec), max(avg(fl_sec)) OVER() from (
+  select sql_exec_start, sql_exec_id, nvl( SQL_PLAN_LINE_ID, 0) SQL_PLAN_LINE_ID, (to_char(MIN(sample_time),'SSSSS') - to_char(sql_exec_start,'SSSSS')) as st_sec,
+  (to_char( MAX(MAX(sample_time)) OVER(partition by sql_exec_start, sql_exec_id),'SSSSS') - to_char(sql_exec_start,'SSSSS')) as fl_sec
+  FROM   dba_hist_active_sess_history h
+  where 
+  h.sample_time between to_date('10.01.2017', 'dd.mm.yyyy') and to_date('04.02.2017', 'dd.mm.yyyy')
+  and h.sql_id = 'apkfgg9mhp7qu' AND h.SQL_PLAN_HASH_VALUE = '4180994369'
+  and trunc(sample_time) = trunc(sql_exec_start)
+  group by nvl( SQL_PLAN_LINE_ID, 0), sql_exec_start, sql_exec_id
+)
+group by SQL_PLAN_LINE_ID
+order by SQL_PLAN_LINE_ID;

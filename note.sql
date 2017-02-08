@@ -271,3 +271,105 @@ http://www.sql.ru/forum/actualutils.aspx?action=gotomsg&tid=1233742&msg=19754999
 
 --
 оптимизация текстовых индексов: http://www.oracle.com/technetwork/testcontent/index-maintenance-089308.html
+
+* ALL_TAB_MODIFICATIONS - кол-во insert/delete/update на таблице
+
+* разные части параллельного плана могут иметь разную степень параллелизма
+ ** это нужно смотреть на вкладке parallel
+ ** dfo = parallel group = один receiver/sender
+ 
+https://recurrentnull.wordpress.com/2013/06/30/direct-path-nologging-ctas-and-gtt-a-comparison-of-undo-and-redo-generated/
+ctas == insert + append
+append - уменьшает undo
+append+nologging - уменьшает и undo и redo
+просто nologging в insert ничего не меняет (в ctas также как с append)
+
+каждая итерация concatenation становится сложней, т.к. нужно доплонительно отфильтровать записи, которые уже попали в предыдущий этап конкатенации!! (чем больше уровней, тем сложней фильтровать)
+параллельность запросов: https://blogs.oracle.com/datawarehousing/entry/auto_dop_and_parallel_statemen
+рекурсивные запросы: https://oracle-base.com/articles/11g/recursive-subquery-factoring-11gr2
+автономная транзакция: https://plsqlchallenge.oracle.com/pls/apex/f?p=10000:659:::NO:659:P659_COMP_EVENT_ID,P659_QUESTION_ID,P659_QUIZ_ID:8841,5615,&cs=1810AF111FE0929B1390FF8D1E47238FF
+автономность начинает работать с begin, все select в declare работают в основной
+merge: https://jonathanlewis.wordpress.com/2016/06/06/merge-precision/
+в merge лучше писать только нужные колонки, если их не написать то будут селектится все (index+table asccess), если только нужные, то может быть только индексный доступ
+SGA:
+ * buffer Cahce
+ * redo buffer
+ * shared pool:
+	** library cache  - кэщ plsql
+	** sql cache - кэш sql запросов
+	** result cache - кэширование результатов sql или plsql
+	  *** хорошо подойдет для пагинации, для сохранения полного результата и хождения по нему
+	
+--- dnf: 16 + 103
+olap: https://docs.oracle.com/database/121/OLAUG/overview.htm#OLAUG100
++ precompute_subquery(@sel$2)  - в первую очередь предрасчитывает подзапрос, а потом использует его результат в основном запросе (не join и не фильтрация)
+перехват exception быстрей, чем min/max, если исключений немного?: http://orasql.org/2012/05/18/about-the-performance-of-exception-handling/
+??? попробовать вариации match_recognize
+??? преимущества кластерных таблиц http://www.sql.ru/forum/1217985/tablicu-v-klaster  ?
+* dbms_stat:
+skewed: The first is the 'skewonly' option which very time-intensive because it examines the distribution of values for every column within every index. 
+auto: skewed + columns on where
+* semi join - join ищет в правой таблице до первого совпадения (очень быстро по индексу, если в левой таблице немного строк)
+	** exists по правой таблице
+	** distinct по левой таблице
+* http://www.sql.ru/forum/1085431/kak-zapretit-vypolnenie-zaprosa?mid=15903763#15903763
+  https://blogs.oracle.com/imc/entry/sql_translation_framework
+  sys.dbms_advanced_rewrite.declare_rewrite_equivalence - можно задать эквивалент sql запроса
+* ALL_TAB_MODIFICATIONS - модификации таблицы (вставка/обновление)
+* приблизительный count distinct https://habrahabr.ru/post/119852/
+* dbms_shared_pool.markHot(hash, namespace) - Оракл делает несколько клонов "горячих" объектов в пуле и, так скажем, соревновательность между сессиями за эти объекты несколько снижается.
+* поиск одного пропуска математической формулой:
+  ** select (max(n)-min(n))*(max(n)-min(n)+1)/2+(count(*)+1)*min(n)-sum(n) from t;
+     ( max-min ) * ( max - min + 1 ) / 2 + (count + 1) * min - sum ~= квадрат разницы/2 + число элементов - сумма
+  ** через minus / not exists с генеренной полной последовательность тоже будет быстро (2 FTS + antijoin/sort)
+  ** если n возрастающее число, то можно так: (1 FTS, возможно сортировка для аналитики)
+  select n-rownum, to_char(max(n)+1) --последнее число группы (перед разрывом)
+		||'-'||(lead(min(n)) over (order by n-rownum)-1),n-rownum --первое число следующей группы (после разрыва)
+	from t
+	group by n-rownum --делаем группы (каждый разрыв даст новую группу)
+	order by n-rownum;
+* NL: -- добавить сюда: http://blog.skahin.ru/2015/04/oracle.html
+  ** classical (<9)
+  ----------------------------------------------
+| Operation                 |  Name    |  Rows |
+------------------------------------------------
+| SELECT STATEMENT          |          |   225 |
+|  NESTED LOOPS             |          |   225 |
+|   TABLE ACCESS BY INDEX RO|T2        |    15 |
+|    INDEX FULL SCAN        |T2_I1     |    15 |
+|   TABLE ACCESS BY INDEX RO|T1        |     3K| --рандомный доступ к таблицам
+|    INDEX RANGE SCAN       |T1_I1     |     3K|
+------------------------------------------------
+  ** prefetching - читает в буферный кэш смежные данные, в надежде, что они пригодятся
+    ** чем хуже фактор кластеризации (на основе статистики), тем больше блоков читается за раз (mbrc)
+-----------------------------------------------------------------
+| Id  | Operation                     | Name  | Starts | E-Rows |
+-----------------------------------------------------------------
+|   0 | SELECT STATEMENT              |       |      0 |        |
+|   1 |  TABLE ACCESS BY INDEX ROWID  | T1    |      1 |     15 |
+|   2 |   NESTED LOOPS                |       |      1 |    225 | --225 строк, но всего 15 запросов из T1_I1 (блоки читаются не по одному, а по mbrc за раз)
+|*  3 |    TABLE ACCESS BY INDEX ROWID| T2    |      1 |     15 |
+|   4 |     INDEX FULL SCAN           | T2_I1 |      1 |   3000 |
+|*  5 |    INDEX RANGE SCAN           | T1_I1 |     15 |     15 |
+-----------------------------------------------------------------
+  ** batching - накапливается rowid и читает их потом скопом и многопоточно
+    ** чем хуже фактор кластеризации (на основе реальных запросов из индекса-таблицы), тем больше блоков читается за раз (mbrc)
+-----------------------------------------------------------------
+| Id  | Operation                     | Name  | Starts | E-Rows |
+-----------------------------------------------------------------
+|   0 | SELECT STATEMENT              |       |      1 |        |
+|   1 |  NESTED LOOPS                 |       |      1 |    225 | --накапиливается несколько rowid ?
+|   2 |   NESTED LOOPS                |       |      1 |    225 |
+|*  3 |    TABLE ACCESS BY INDEX ROWID| T2    |      1 |     15 |  -- выполняется параллельный селект (не последовательный sequential / не рандом scatered) исходя из настроек mbrc
+|   4 |     INDEX FULL SCAN           | T2_I1 |      1 |   3000 |
+|*  5 |    INDEX RANGE SCAN           | T1_I1 |     15 |     15 |
+|   6 |   TABLE ACCESS BY INDEX ROWID | T1    |    225 |     15 |  -- выполняется параллельный селект (не последовательный sequential / не рандом scatered) исходя из настроек mbrc ???
+-----------------------------------------------------------------
+
+* dml с db link будет всегда выполняться на текущей стороне (если все таблицы на удаленной бд, то будет на удаленной) (т.е. таблицы будут целиком выкачиваться?)
+  http://www.sql.ru/forum/1227224-2/tormoza-pri-join-e-neskolkih-tablic-cheroz-dblink
+* length вернет 0 для empty_clob (в иных случаях null)
+* model: https://habrahabr.ru/post/101003/
+* установка clinet/module/action + запись в v$long_ops (можно встроить в цикл для информаирования): https://docs.oracle.com/cd/E11882_01/appdev.112/e40758/d_appinf.htm#ARPLS65241
+* http://www.sql.ru/forum/1249064-3/replace - при вставке в varchar данных больше 4000, то он обрезается до максимума (если вставляется в середину, то вставка не пройдет, строка просто обрежется)
+select replace('hello xulio', 'x',  rpad('x', 32767)) from dual -- вернет hello

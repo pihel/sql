@@ -13,7 +13,7 @@
 			<TYPE>horizontal</TYPE>
 		</CustomValues>
 		<query>
-			<sql><![CDATA[select :sql_id SQL_ID, PLAN_HASH_VALUE, min(begin_interval_time) as stdt, max(begin_interval_time) enddt, sum(EXECUTIONS_DELTA) as execs, 
+			<sql><![CDATA[select :SQL_ID SQL_ID, PLAN_HASH_VALUE, min(begin_interval_time) as stdt, max(begin_interval_time) enddt, sum(EXECUTIONS_DELTA) as execs, 
 round(avg(drid),2) drid, round(avg(buf_red),2) buf_red, round(avg(phys_gb),2) phys_gb, round(avg(rws),2) rws, 
 round(avg(ELAPSED_TIME_DELTA),2) avg_ela_tm, round(max(ELAPSED_TIME_DELTA),2) max_ela_tm from (
   select s.snap_id, s.module, t.begin_interval_time, sql_id, PLAN_HASH_VALUE, nvl(nullif(EXECUTIONS_DELTA,0),1) EXECUTIONS_DELTA, round(DISK_READS_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)) as drid, round(BUFFER_GETS_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)) as buf_red, round(PHYSICAL_READ_BYTES_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)/1024/1024/1024) as phys_gb, 
@@ -24,15 +24,15 @@ round(avg(ELAPSED_TIME_DELTA),2) avg_ela_tm, round(max(ELAPSED_TIME_DELTA),2) ma
   from DBA_HIST_SQLSTAT s
   join DBA_HIST_SNAPSHOT t on t.snap_id = s.snap_id and t.INSTANCE_NUMBER = s.INSTANCE_NUMBER
   where 1=1
-  and sql_id = :sql_id
+  and sql_id = :SQL_ID
 )
 group by PLAN_HASH_VALUE
 order by enddt desc]]></sql>
 			<binds>
-				<bind id="sql_id">
-					<prompt><![CDATA[sql_id]]></prompt>
-					<tooltip><![CDATA[sql_id]]></tooltip>
-					<value><![CDATA[9wwm7bd99bhq9]]></value>
+				<bind id="SQL_ID">
+					<prompt><![CDATA[SQL_ID]]></prompt>
+					<tooltip><![CDATA[SQL_ID]]></tooltip>
+					<value><![CDATA[84h66qs60pf9y]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 			</binds>
@@ -49,6 +49,21 @@ order by enddt desc]]></sql>
 				<header enable="false" generatedate="false">
 					<data>
 					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						
 						
 						
@@ -112,7 +127,7 @@ order by enddt desc]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																			</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -180,7 +195,22 @@ order by enddt desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																</data>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							null																																																																																																																																																																																																																																																																									</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -191,12 +221,12 @@ order by enddt desc]]></sql>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-<item  reload="false"  reloadparent="false" removeFromParent="false" className="oracle.dbtools.raptor.report.addin.DrillReportAction" classArgs="74e95624-0157-1000-8041-0a02322027a3" toolbar="false" ><title>ash</title><sql><![CDATA[]]></sql><script language="null"><![CDATA[]]></script><help></help></item>	</display>
+	</display>
 	<display id="74cae989-0157-1000-802d-0a02322027a3" type="" style="Table" enable="true">
 		<name><![CDATA[query ash now]]></name>
 		<description><![CDATA[]]></description>
 		<tooltip><![CDATA[]]></tooltip>
-		<drillclass><![CDATA[null]]></drillclass>
+		<drillclass><![CDATA[]]></drillclass>
 		<CustomValues>
 			<TYPE>horizontal</TYPE>
 		</CustomValues>
@@ -210,18 +240,25 @@ left join v$sql s on s.sql_id = h.sql_id
 where 1=1
 and h.sql_id = NVL(:sql_id, h.sql_id)
 and h.client_id = NVL(:client_id, h.client_id)
+and h.session_id = NVL(:session_id, h.session_id)
 group by h.sql_id, h.SQL_PLAN_HASH_VALUE, h.sql_exec_start, h.module, h.client_id, h.program, h.sql_exec_id, H.SESSION_ID, H.SESSION_SERIAL#
 order by sql_exec_start desc nulls last]]></sql>
 			<binds>
 				<bind id="sql_id">
 					<prompt><![CDATA[sql_id]]></prompt>
 					<tooltip><![CDATA[sql_id]]></tooltip>
-					<value><![CDATA[3wb6bxh5rtdgd]]></value>
+					<value><![CDATA[NULL_VALUE]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="client_id">
 					<prompt><![CDATA[client_id]]></prompt>
 					<tooltip><![CDATA[client_id]]></tooltip>
+					<value><![CDATA[SKAKHIN]]></value>
+					<bracket><![CDATA[null]]></bracket>
+				</bind>
+				<bind id="session_id">
+					<prompt><![CDATA[session_id]]></prompt>
+					<tooltip><![CDATA[session_id]]></tooltip>
 					<value><![CDATA[NULL_VALUE]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
@@ -239,6 +276,21 @@ order by sql_exec_start desc nulls last]]></sql>
 				<header enable="false" generatedate="false">
 					<data>
 					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						
 						
 						
@@ -302,7 +354,7 @@ order by sql_exec_start desc nulls last]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																			</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -312,11 +364,11 @@ order by sql_exec_start desc nulls last]]></sql>
 				</security>
 				<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 			</pdf>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[plans]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
 				<TYPE>horizontal</TYPE>
 			</CustomValues>
@@ -364,7 +416,22 @@ order by enddt desc]]></sql>
 							
 							
 							
-							null																																																																																																																																				</data>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							null																																																																																																																																																																																																																																													</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -375,11 +442,11 @@ order by enddt desc]]></sql>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[plan]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
 				<TYPE>horizontal</TYPE>
 			</CustomValues>
@@ -405,7 +472,22 @@ order by enddt desc]]></sql>
 							
 							
 							
-							null																																																														</data>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							null																																																																																																																																																																							</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -444,7 +526,7 @@ order by cnt desc]]></sql>
 				<bind id="tbl">
 					<prompt><![CDATA[tbl]]></prompt>
 					<tooltip><![CDATA[tbl]]></tooltip>
-					<value><![CDATA[EKUB]]></value>
+					<value><![CDATA[FROM%EDIDC]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="obj">
@@ -456,13 +538,13 @@ order by cnt desc]]></sql>
 				<bind id="f">
 					<prompt><![CDATA[f]]></prompt>
 					<tooltip><![CDATA[f]]></tooltip>
-					<value><![CDATA[28.11.2016]]></value>
+					<value><![CDATA[03.02.2017 17]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="t">
 					<prompt><![CDATA[t]]></prompt>
 					<tooltip><![CDATA[t]]></tooltip>
-					<value><![CDATA[10.12.2016]]></value>
+					<value><![CDATA[03.02.2017 19]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 			</binds>
@@ -479,6 +561,21 @@ order by cnt desc]]></sql>
 				<header enable="false" generatedate="false">
 					<data>
 					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						
 						
 						
@@ -542,7 +639,7 @@ order by cnt desc]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																			</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -610,7 +707,22 @@ order by cnt desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																</data>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							null																																																																																																																																																																																																																																																																									</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -705,6 +817,21 @@ order by abs( t.execs*t.av_sec - t.execs*nvl(t1.av_sec,0) )  desc nulls last]]><
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 				
 						
 						
@@ -746,7 +873,7 @@ order by abs( t.execs*t.av_sec - t.execs*nvl(t1.av_sec,0) )  desc nulls last]]><
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																			</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -814,7 +941,22 @@ order by abs( t.execs*t.av_sec - t.execs*nvl(t1.av_sec,0) )  desc nulls last]]><
 							
 							
 							
-							null																																																																																																																																																																</data>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							null																																																																																																																																																																																																																																																																									</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -869,7 +1011,22 @@ order by abs( t.execs*t.av_sec - t.execs*nvl(t1.av_sec,0) )  desc nulls last]]><
 							
 							
 							
-							null																																																																																																																																																																</data>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							null																																																																																																																																																																																																																																																																									</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -942,13 +1099,13 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 					<bind id="f">
 						<prompt><![CDATA[С]]></prompt>
 						<tooltip><![CDATA[f]]></tooltip>
-						<value><![CDATA[05.12.2016]]></value>
+						<value><![CDATA[30.01.2017]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 					<bind id="t">
 						<prompt><![CDATA[По]]></prompt>
 						<tooltip><![CDATA[t]]></tooltip>
-						<value><![CDATA[12.12.2016]]></value>
+						<value><![CDATA[06.02.2017]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 					<bind id="m">
@@ -992,7 +1149,22 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																</data>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							null																																																																																																																																																																																																																																																																									</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -1055,13 +1227,13 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 					<bind id="f">
 						<prompt><![CDATA[С]]></prompt>
 						<tooltip><![CDATA[f]]></tooltip>
-						<value><![CDATA[05.12.2016]]></value>
+						<value><![CDATA[30.01.2017]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 					<bind id="t">
 						<prompt><![CDATA[По]]></prompt>
 						<tooltip><![CDATA[t]]></tooltip>
-						<value><![CDATA[12.12.2016]]></value>
+						<value><![CDATA[10.02.2017]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 					<bind id="m">
@@ -1106,7 +1278,22 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 							
 							
 							
-				null																																																																																																																																																																				</data>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+				null																																																																																																																																																																																																																																																																													</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -1167,11 +1354,11 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 				<SUBTITLE_ALIGNMENT>LEFT</SUBTITLE_ALIGNMENT>
 			</CustomValues>
 			<query>
-				<sql><![CDATA[select /*+ parallel(8) */  to_char(sample_time, 'dd-mm hh24') as hh, null as col1, count(*) as cnt
+				<sql><![CDATA[select to_char(sample_time, 'dd-mm hh24') as hh, null as col1, count(*) as cnt
   from dba_hist_active_sess_history h
   where 
     h.sample_time >= trunc(sysdate-10)
-    /*and INSTANCE_NUMBER = NVl(:INST, INSTANCE_NUMBER)*/
+    and h.sample_time < trunc(sysdate, 'hh')
   group by trunc(sample_time), to_char(sample_time, 'hh24') , to_char(sample_time, 'dd-mm hh24')
   order by trunc(sample_time) asc, to_char(sample_time, 'hh24') asc]]></sql>
 			</query>
@@ -1209,7 +1396,22 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 							
 							
 							
-				null																																																																																																																																																																				</data>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+				null																																																																																																																																																																																																																																																																													</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -1319,7 +1521,22 @@ order by dt, ww]]></sql>
 							
 							
 							
-				null																																																																																																																																																																				</data>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+				null																																																																																																																																																																																																																																																																													</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -1397,7 +1614,7 @@ ORDER BY trunc("STAT$BH".SNAP_DATE), to_char("STAT$BH".SNAP_DATE, 'hh24') asc, "
 					<bind id="d">
 						<prompt><![CDATA[Дней]]></prompt>
 						<tooltip><![CDATA[d]]></tooltip>
-						<value><![CDATA[2]]></value>
+						<value><![CDATA[7]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 				</binds>
@@ -1436,7 +1653,22 @@ ORDER BY trunc("STAT$BH".SNAP_DATE), to_char("STAT$BH".SNAP_DATE, 'hh24') asc, "
 							
 							
 							
-				null																																																																																																																																																																				</data>
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+				null																																																																																																																																																																																																																																																																													</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -1507,19 +1739,19 @@ where rownum <= :tp]]></sql>
 					<bind id="lg">
 						<prompt><![CDATA[logical=1,phys=2 reads]]></prompt>
 						<tooltip><![CDATA[lg]]></tooltip>
-						<value><![CDATA[1]]></value>
+						<value><![CDATA[2]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 					<bind id="s">
 						<prompt><![CDATA[старт]]></prompt>
 						<tooltip><![CDATA[s]]></tooltip>
-						<value><![CDATA[05.12.2016]]></value>
+						<value><![CDATA[03.02.2017 18]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 					<bind id="e">
 						<prompt><![CDATA[конец]]></prompt>
 						<tooltip><![CDATA[e]]></tooltip>
-						<value><![CDATA[12.12.2016]]></value>
+						<value><![CDATA[03.02.2017 19]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 					<bind id="tp">
@@ -1564,8 +1796,23 @@ where rownum <= :tp]]></sql>
 							
 							
 							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 				
-				null																																																																																																																																																																								</data>
+				null																																																																																																																																																																																																																																																																																	</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -1580,7 +1827,7 @@ where rownum <= :tp]]></sql>
 			<name><![CDATA[Graph Top]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
 				<PLOT_HGRID_WIDTH>THINNER</PLOT_HGRID_WIDTH>
 				<PLOT_DATATIPS_CUMULATIVE_VALUE>false</PLOT_DATATIPS_CUMULATIVE_VALUE>
@@ -1649,13 +1896,13 @@ order by d.dt]]></sql>
 					<bind id="f">
 						<prompt><![CDATA[f]]></prompt>
 						<tooltip><![CDATA[f]]></tooltip>
-						<value><![CDATA[12.12.2016]]></value>
+						<value><![CDATA[23.01.2017]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 					<bind id="t">
 						<prompt><![CDATA[t]]></prompt>
 						<tooltip><![CDATA[t]]></tooltip>
-						<value><![CDATA[20.12.2016]]></value>
+						<value><![CDATA[25.01.2017]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 					<bind id="TOP">
@@ -1677,7 +1924,22 @@ order by d.dt]]></sql>
 					<table font="Times New Roman" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
 					<header enable="false" generatedate="false">
 						<data>
-						null						</data>
+						
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							null																																																																																																															</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -1722,13 +1984,13 @@ order by drid desc]]></sql>
 				<bind id="f">
 					<prompt><![CDATA[С]]></prompt>
 					<tooltip><![CDATA[f]]></tooltip>
-					<value><![CDATA[26.11.2016 17]]></value>
+					<value><![CDATA[04.02.2017 19]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="t">
 					<prompt><![CDATA[По]]></prompt>
 					<tooltip><![CDATA[t]]></tooltip>
-					<value><![CDATA[26.11.2016 18]]></value>
+					<value><![CDATA[04.02.2017 20]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 			</binds>
@@ -1754,6 +2016,21 @@ order by drid desc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 				
 						
 						
@@ -1809,7 +2086,7 @@ order by drid desc]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																							</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -1865,6 +2142,21 @@ order by drid desc]]></sql>
 							
 							
 							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 					
 							
 							
@@ -1878,7 +2170,7 @@ order by drid desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																					</data>
+							null																																																																																																																																																																																																																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -1889,17 +2181,17 @@ order by drid desc]]></sql>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-<item  reload="false"  reloadparent="false" removeFromParent="false" className="oracle.dbtools.raptor.report.addin.DrillReportAction" classArgs="74e95624-0157-1000-8041-0a02322027a3" toolbar="false" ><title>ash</title><sql><![CDATA[]]></sql><script language="null"><![CDATA[]]></script><help></help></item>	</display>
+<item  reload="false"  reloadparent="false" removeFromParent="false" className="oracle.dbtools.raptor.report.addin.DrillReportAction" classArgs="74e95624-0157-1000-8041-0a02322027a3" toolbar="false" ><title>ash</title></item>	</display>
 	<display id="02f9310d-0159-1000-8009-0a023220a012" type="" style="Table" enable="true">
 		<name><![CDATA[ash]]></name>
 		<description><![CDATA[]]></description>
 		<tooltip><![CDATA[]]></tooltip>
-		<drillclass><![CDATA[null]]></drillclass>
+		<drillclass><![CDATA[]]></drillclass>
 		<CustomValues>
 			<TYPE>horizontal</TYPE>
 		</CustomValues>
 		<query>
-			<sql><![CDATA[select distinct v.module, v.client_id, v.sql_id, v.SQL_PLAN_HASH_VALUE, st_dt,ed_dt, execs, round(gb,2) as gb, round(av_sec,2) as av_sec, secs, 
+			<sql><![CDATA[select /*+ NO_PARALLEL */ distinct v.module, v.client_id, v.sql_id, v.SQL_PLAN_HASH_VALUE, st_dt,ed_dt, execs, round(gb,2) as gb, round(av_sec,2) as av_sec, secs, 
 smpl, round(av_smpl,2) as av_smpl, nvl( round(px), 0) as dop,
 trim( NVL( trim(DBMS_LOB.SUBSTR (t.sql_text,1000)), t1.SQL_TEXT) ) as txt 
 from 
@@ -1913,8 +2205,8 @@ from
             max(client_id) as client_id
       from
       (
-        select /*+ parallel(8) */ h.sql_exec_start, h.module, h.sql_id, h.SQL_PLAN_HASH_VALUE, count(distinct sql_exec_id) as execs,  SUM (delta_read_io_bytes)/1024/1024/1024 as gb, 
-        to_char(max(sample_time),'SSSSS') - to_char(sql_exec_start,'SSSSS')  as secs, count(*) as smpl, max(h.sample_time) as msmpl_tm, 
+        select h.sql_exec_start, h.module, h.sql_id, h.SQL_PLAN_HASH_VALUE, count(distinct sql_exec_id) as execs,  SUM (delta_read_io_bytes)/1024/1024/1024 as gb, 
+        GREATEST( to_char(max(sample_time),'SSSSS') - to_char(sql_exec_start,'SSSSS'), 0)  as secs, count(*) as smpl, max(h.sample_time) as msmpl_tm, 
         avg( trunc(px_flags/2097152) ) as px, max(client_id) as client_id
          FROM   dba_hist_active_sess_history h
         where 
@@ -1942,13 +2234,13 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 				<bind id="f">
 					<prompt><![CDATA[f]]></prompt>
 					<tooltip><![CDATA[f]]></tooltip>
-					<value><![CDATA[12.12.2016]]></value>
+					<value><![CDATA[15.01.2017]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="t">
 					<prompt><![CDATA[t]]></prompt>
 					<tooltip><![CDATA[t]]></tooltip>
-					<value><![CDATA[20.12.2016]]></value>
+					<value><![CDATA[13.02.2017]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="m">
@@ -1966,7 +2258,7 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 				<bind id="sql_id">
 					<prompt><![CDATA[sql_id]]></prompt>
 					<tooltip><![CDATA[sql_id]]></tooltip>
-					<value><![CDATA[6z4yhsqnwfwvb]]></value>
+					<value><![CDATA[6wcyq8d2xz127]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="hsh">
@@ -2007,6 +2299,21 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 				<header enable="false" generatedate="false">
 					<data>
 					
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 				
 				
 						
@@ -2032,7 +2339,7 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 						
 						
 				
-				null																																																																																																																																																									</data>
+				null																																																																																																																																																																																																																																																			</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -2042,18 +2349,19 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 				</security>
 				<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 			</pdf>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[sql_id plans]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
 				<TYPE>horizontal</TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select PLAN_HASH_VALUE, min(begin_interval_time) as stdt, max(begin_interval_time) enddt, sum(EXECUTIONS_DELTA) as execs, 
 round(avg(drid),2) drid, round(avg(buf_red),2) buf_red, round(avg(phys_gb),2) phys_gb, round(avg(rws),2) rws, 
-round(avg(ELAPSED_TIME_DELTA),2) avg_ela_tm, round(max(ELAPSED_TIME_DELTA),2) max_ela_tm from (
+round(avg(ELAPSED_TIME_DELTA),2) avg_ela_tm, round(max(ELAPSED_TIME_DELTA),2) max_ela_tm, round(stddev(ELAPSED_TIME_DELTA),2) deviation
+from (
   select s.snap_id, s.module, t.begin_interval_time, sql_id, PLAN_HASH_VALUE, nvl(nullif(EXECUTIONS_DELTA,0),1) EXECUTIONS_DELTA, round(DISK_READS_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)) as drid, round(BUFFER_GETS_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)) as buf_red, round(PHYSICAL_READ_BYTES_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)/1024/1024/1024) as phys_gb, 
   --round(case when END_OF_FETCH_COUNT_TOTAL = 1 then ROWS_PROCESSED_DELTA/nvl(nullif(EXECUTIONS_DELTA,0) ,1) end) as rws, 
   round(nullif(ROWS_PROCESSED_DELTA,0)/nvl(nullif(EXECUTIONS_DELTA,0) ,1)) as rws,
@@ -2087,6 +2395,21 @@ order by enddt desc]]></sql>
 					<header enable="false" generatedate="false">
 						<data>
 						
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 					
 					
 							
@@ -2110,7 +2433,7 @@ order by enddt desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																										</data>
+							null																																																																																																																																																																																																																																																																																			</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2121,11 +2444,11 @@ order by enddt desc]]></sql>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[ash now]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
 				<TYPE>horizontal</TYPE>
 			</CustomValues>
@@ -2159,6 +2482,21 @@ order by sql_exec_start desc nulls last]]></sql>
 					<header enable="false" generatedate="false">
 						<data>
 						
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 					
 					
 							
@@ -2182,7 +2520,7 @@ order by sql_exec_start desc nulls last]]></sql>
 							
 							
 							
-							null																																																																																																																																																																										</data>
+							null																																																																																																																																																																																																																																																																																			</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2193,16 +2531,30 @@ order by sql_exec_start desc nulls last]]></sql>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[plan]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
 				<TYPE>horizontal</TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select * from table(DBMS_XPLAN.DISPLAY_AWR(:SQL_ID, :SQL_PLAN_HASH_VALUE, null, 'basic +outline +peeked_binds +note') )]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="SQL_PLAN_HASH_VALUE">
+						<prompt><![CDATA[SQL_PLAN_HASH_VALUE]]></prompt>
+						<tooltip><![CDATA[SQL_PLAN_HASH_VALUE]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -2216,6 +2568,21 @@ order by sql_exec_start desc nulls last]]></sql>
 					<header enable="false" generatedate="false">
 						<data>
 						
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 					
 					
 							
@@ -2239,7 +2606,7 @@ order by sql_exec_start desc nulls last]]></sql>
 							
 							
 							
-							null																																																																																																																																																																										</data>
+							null																																																																																																																																																																																																																																																																																			</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2250,11 +2617,11 @@ order by sql_exec_start desc nulls last]]></sql>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[binds]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
 				<TYPE>horizontal</TYPE>
 			</CustomValues>
@@ -2262,6 +2629,20 @@ order by sql_exec_start desc nulls last]]></sql>
 				<sql><![CDATA[select last_captured, DATATYPE_STRING, NAME, VALUE_STRING from dba_hist_sqlbind where sql_id = :SQL_ID 
 and last_captured+1 > :ED_DT
 order by snap_id desc, position asc]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="ED_DT">
+						<prompt><![CDATA[ED_DT]]></prompt>
+						<tooltip><![CDATA[ED_DT]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -2275,6 +2656,21 @@ order by snap_id desc, position asc]]></sql>
 					<header enable="false" generatedate="false">
 						<data>
 						
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 					
 					
 							
@@ -2298,7 +2694,7 @@ order by snap_id desc, position asc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																										</data>
+							null																																																																																																																																																																																																																																																																																			</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2309,16 +2705,24 @@ order by snap_id desc, position asc]]></sql>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[v$sql]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
 				<TYPE>horizontal</TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select PLAN_HASH_VALUE, SQL_PROFILE, executions, round( ELAPSED_TIME/NVL(NULLIF(executions,0),1) / 1000 /1000 ,4) as sec_per_exec, LAST_LOAD_TIME from v$sql where sql_id = :SQL_ID]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -2332,6 +2736,21 @@ order by snap_id desc, position asc]]></sql>
 					<header enable="false" generatedate="false">
 						<data>
 						
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 					
 					
 							
@@ -2343,7 +2762,7 @@ order by snap_id desc, position asc]]></sql>
 							
 							
 							
-							null																																																																																						</data>
+							null																																																																																																																																																																																															</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2354,27 +2773,35 @@ order by snap_id desc, position asc]]></sql>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[awr]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
 				<TYPE>horizontal</TYPE>
 			</CustomValues>
 			<query>
-				<sql><![CDATA[select s.snap_id, s.module, t.begin_interval_time, sql_id, PLAN_HASH_VALUE, nvl(nullif(EXECUTIONS_DELTA,0),1) EXECUTIONS_DELTA, 
+				<sql><![CDATA[select s.INSTANCE_NUMBER, s.snap_id, s.module, t.begin_interval_time, sql_id, PLAN_HASH_VALUE, nvl(nullif(EXECUTIONS_DELTA,0),1) EXECUTIONS_DELTA, 
   round(DISK_READS_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)) as drid, round(BUFFER_GETS_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)) as buf_red, 
   round(PHYSICAL_READ_BYTES_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)/1024/1024/1024) as phys_gb, 
   round(nullif(ROWS_PROCESSED_DELTA,0)/nvl(nullif(EXECUTIONS_DELTA,0) ,1)) as rws,
-  round(s.ELAPSED_TIME_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)/1000/1000,2) as ELAPSED_TIME_DELTA, nvl(nullif(EXECUTIONS_DELTA,0),1),
+  round(s.ELAPSED_TIME_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)/1000/1000,2) as ELAPSED_TIME_DELTA, 
   OPTIMIZER_COST,IOWAIT_DELTA,
   round(IO_OFFLOAD_RETURN_BYTES_DELTA/1024/1024/1024,2) as off_gb  , round(IO_OFFLOAD_ELIG_BYTES_DELTA/1024/1024/1024,2) as eligb_gb
   from DBA_HIST_SQLSTAT s
   join DBA_HIST_SNAPSHOT t on t.snap_id = s.snap_id and t.INSTANCE_NUMBER = s.INSTANCE_NUMBER
   where 1=1
   and sql_id = :SQL_ID
-order by s.snap_id desc]]></sql>
+order by t.begin_interval_time desc, s.snap_id desc, s.INSTANCE_NUMBER]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -2388,6 +2815,21 @@ order by s.snap_id desc]]></sql>
 					<header enable="false" generatedate="false">
 						<data>
 						
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 					
 					
 							
@@ -2396,7 +2838,7 @@ order by s.snap_id desc]]></sql>
 							
 							
 							
-							null																																																																	</data>
+							null																																																																																																																																																																										</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2407,11 +2849,11 @@ order by s.snap_id desc]]></sql>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[text]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
 				<TYPE>horizontal</TYPE>
 			</CustomValues>
@@ -2431,13 +2873,28 @@ where sql_id = :SQL_ID]]></sql>
 					<header enable="false" generatedate="false">
 						<data>
 						
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 					
 					
 							
 							
 							
 							
-							null																																																			</data>
+							null																																																																																																																																																												</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2448,33 +2905,65 @@ where sql_id = :SQL_ID]]></sql>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[plan real]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
 				<TYPE>horizontal</TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[with t as (
-  select /*+ materialize */ nvl( SQL_PLAN_LINE_ID, 0) SQL_PLAN_LINE_ID, round( (RATIO_TO_REPORT(count(*)) OVER () *100 ), 2) as prc
-   FROM   dba_hist_active_sess_history h
-  where 
-  h.sample_time between :ST_DT and :ED_DT
-  and h.sql_id = :SQL_ID AND h.SQL_PLAN_HASH_VALUE = :SQL_PLAN_HASH_VALUE
-  group by nvl( SQL_PLAN_LINE_ID, 0)
+  select /*+ materialize */ SQL_PLAN_LINE_ID, LISTAGG(event || ' ('||prc||'%)', '; ') WITHIN GROUP (ORDER BY prc desc) event, SUM(prc) as prc
+  from (
+    select nvl( SQL_PLAN_LINE_ID, 0) SQL_PLAN_LINE_ID, NVL(h.event, h.SESSION_STATE) event, round( (RATIO_TO_REPORT(count(*)) OVER () *100 ), 2) as prc,
+      round( (RATIO_TO_REPORT(count(*)) OVER (partition by nvl( SQL_PLAN_LINE_ID, 0)) *100 ), 2) as prc_per_line
+    FROM   dba_hist_active_sess_history h
+    where 
+    h.sample_time between :ST_DT and :ED_DT
+    and h.sql_id = :SQL_ID AND h.SQL_PLAN_HASH_VALUE = :SQL_PLAN_HASH_VALUE
+    group by nvl( SQL_PLAN_LINE_ID, 0), NVL(h.event, h.SESSION_STATE)
+  )
+  where prc_per_line > 1
+  GROUP BY SQL_PLAN_LINE_ID
 )
 select DISTINCT p.id, RPAD(' ', p."DEPTH", ' ') || P.OPERATION || ' ' || p.OPTIONS  as OPERATION, p.object_name, p.search_columns,
  v.access_predicates, v.filter_predicates,
  case when p.search_columns > 0 THEN ( select LISTAGG(i.COLUMN_NAME, ', ') WITHIN GROUP (ORDER BY i.COLUMN_POSITION) cols
   from SYS.DBA_IND_COLUMNS i WHERE i.INDEX_NAME = p.object_name AND i.INDEX_OWNER = p.OBJECT_OWNER AND p.search_columns >0 ) END as index_columns,
-  t.prc
+  t.event, t.prc
 from SYS.DBA_HIST_SQL_PLAN p
 left join v$sql_plan v on v.sql_id = p.sql_id and v.PLAN_HASH_VALUE = p.PLAN_HASH_VALUE and v.id = p.id
 left join t on T.SQL_PLAN_LINE_ID = p.id 
 where p.sql_id = :SQL_ID AND p.PLAN_HASH_VALUE = :SQL_PLAN_HASH_VALUE
 order by p.id]]></sql>
+				<binds>
+					<bind id="ST_DT">
+						<prompt><![CDATA[ST_DT]]></prompt>
+						<tooltip><![CDATA[ST_DT]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="ED_DT">
+						<prompt><![CDATA[ED_DT]]></prompt>
+						<tooltip><![CDATA[ED_DT]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="SQL_PLAN_HASH_VALUE">
+						<prompt><![CDATA[SQL_PLAN_HASH_VALUE]]></prompt>
+						<tooltip><![CDATA[SQL_PLAN_HASH_VALUE]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -2488,13 +2977,28 @@ order by p.id]]></sql>
 					<header enable="false" generatedate="false">
 						<data>
 						
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
 					
 					
 							
 							
 							
 							
-							null																																																			</data>
+							null																																																																																																																																																												</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2505,11 +3009,11 @@ order by p.id]]></sql>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Chart" enable="true">
+		<display id="" type="" style="Chart" enable="true">
 			<name><![CDATA[graph]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
 				<PLOT_HGRID_WIDTH>THINNER</PLOT_HGRID_WIDTH>
 				<Y1AXIS_SCALE_INCREMENT>10.0</Y1AXIS_SCALE_INCREMENT>
@@ -2590,7 +3094,22 @@ order by d.dt]]></sql>
 					<table font="Times New Roman" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
 					<header enable="false" generatedate="false">
 						<data>
-						null						</data>
+						
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							
+							null																																																																																																															</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2601,6 +3120,221 @@ order by d.dt]]></sql>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-	</display>
+		<display id="" type="" style="Table" enable="true">
+			<name><![CDATA[awr_wk]]></name>
+			<description><![CDATA[]]></description>
+			<tooltip><![CDATA[]]></tooltip>
+			<drillclass><![CDATA[]]></drillclass>
+			<CustomValues>
+				<TYPE>horizontal</TYPE>
+			</CustomValues>
+			<query>
+				<sql><![CDATA[select trunc(t.begin_interval_time, 'IW') as dt,  sum( EXECUTIONS_DELTA ) EXECUTIONS_DELTA, 
+round( SUM( s.ELAPSED_TIME_DELTA)/nvl(nullif(SUM( EXECUTIONS_DELTA),0),1) /1000/1000,2) as ELAPSED_TIME_DELTA,
+round(nullif(sum(ROWS_PROCESSED_DELTA),0)/nvl(nullif(sum(EXECUTIONS_DELTA),0) ,1)) as rws,
+round( SUM( BUFFER_GETS_DELTA) /nvl(nullif(SUM( EXECUTIONS_DELTA),0),1)) as buf_red
+  from DBA_HIST_SQLSTAT s
+  join DBA_HIST_SNAPSHOT t on t.snap_id = s.snap_id and t.INSTANCE_NUMBER = s.INSTANCE_NUMBER
+  where 1=1
+  and sql_id = :SQL_ID
+group by trunc(t.begin_interval_time, 'IW')
+order by dt desc]]></sql>
+			</query>
+				<pdf version="VERSION_1_7" compression="CONTENT">
+					<docproperty title="null" author="null" subject="null" keywords="null" />
+					<cell toppadding="2" bottompadding="2" leftpadding="2" rightpadding="2" horizontalalign="LEFT" verticalalign="TOP" wrap="true" />
+					<column>
+						<heading font="null" size="10" style="NORMAL" color="-16777216" rowshading="-1" labeling="FIRST_PAGE" />
+						<footing font="null" size="10" style="NORMAL" color="-16777216" rowshading="-1" labeling="NONE" />
+						<blob blob="NONE" zip="false" />
+					</column>
+					<table font="null" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
+					<header enable="false" generatedate="false">
+						<data>
+						
+							
+							
+							
+							
+							null																																									</data>
+					</header>
+					<footer enable="false" generatedate="false">
+						<data value="null" />
+					</footer>
+					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
+						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
+					</security>
+					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
+				</pdf>
+		</display>
+		<display id="" type="" style="Table" enable="true">
+			<name><![CDATA[objects]]></name>
+			<description><![CDATA[]]></description>
+			<tooltip><![CDATA[]]></tooltip>
+			<drillclass><![CDATA[]]></drillclass>
+			<CustomValues>
+				<TYPE>horizontal</TYPE>
+			</CustomValues>
+			<query>
+				<sql><![CDATA[select object_name, prc from (
+select o.object_name, round( (RATIO_TO_REPORT(count(*)) OVER () *100 ), 2) as prc
+    FROM   dba_hist_active_sess_history h
+    left join dba_objects o on o.object_id = h.CURRENT_OBJ#
+    where 
+    h.sample_time between :ST_DT and :ED_DT
+    and h.sql_id = :SQL_ID AND h.SQL_PLAN_HASH_VALUE = :SQL_PLAN_HASH_VALUE
+    group by o.object_name
+)
+where prc >= 0.5
+order by prc desc nulls last]]></sql>
+				<binds>
+					<bind id="ST_DT">
+						<prompt><![CDATA[ST_DT]]></prompt>
+						<tooltip><![CDATA[ST_DT]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="ED_DT">
+						<prompt><![CDATA[ED_DT]]></prompt>
+						<tooltip><![CDATA[ED_DT]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="SQL_PLAN_HASH_VALUE">
+						<prompt><![CDATA[SQL_PLAN_HASH_VALUE]]></prompt>
+						<tooltip><![CDATA[SQL_PLAN_HASH_VALUE]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
+			</query>
+				<pdf version="VERSION_1_7" compression="CONTENT">
+					<docproperty title="null" author="null" subject="null" keywords="null" />
+					<cell toppadding="2" bottompadding="2" leftpadding="2" rightpadding="2" horizontalalign="LEFT" verticalalign="TOP" wrap="true" />
+					<column>
+						<heading font="null" size="10" style="NORMAL" color="-16777216" rowshading="-1" labeling="FIRST_PAGE" />
+						<footing font="null" size="10" style="NORMAL" color="-16777216" rowshading="-1" labeling="NONE" />
+						<blob blob="NONE" zip="false" />
+					</column>
+					<table font="null" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
+					<header enable="false" generatedate="false">
+						<data>
+						
+							
+							null																				</data>
+					</header>
+					<footer enable="false" generatedate="false">
+						<data value="null" />
+					</footer>
+					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
+						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
+					</security>
+					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
+				</pdf>
+		</display>
+		<display id="" type="" style="Chart" enable="true">
+			<name><![CDATA[v$bh]]></name>
+			<description><![CDATA[]]></description>
+			<tooltip><![CDATA[]]></tooltip>
+			<drillclass><![CDATA[]]></drillclass>
+			<CustomValues>
+				<PLOT_HGRID_WIDTH>THINNER</PLOT_HGRID_WIDTH>
+				<Y1AXIS_SCALE_INCREMENT>10.0</Y1AXIS_SCALE_INCREMENT>
+				<Y2AXIS_SCALE_MAXIMUM>80.0</Y2AXIS_SCALE_MAXIMUM>
+				<Y1AXIS_LINE_WIDTH>THINNEST</Y1AXIS_LINE_WIDTH>
+				<Y1AXIS_TITLE_ALIGNMENT>CENTER</Y1AXIS_TITLE_ALIGNMENT>
+				<LEGEND_LOCATION>AUTOMATIC</LEGEND_LOCATION>
+				<LEGEND_ALIGNMENT>LEFT</LEGEND_ALIGNMENT>
+				<XAXIS_LINE_WIDTH>THINNEST</XAXIS_LINE_WIDTH>
+				<Y1AXIS_SCALE_MAXIMUM>80.0</Y1AXIS_SCALE_MAXIMUM>
+				<XAXIS_TITLE_ALIGNMENT>CENTER</XAXIS_TITLE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_ROTATE>HORIZONTAL</XAXIS_TICK_LABEL_ROTATE>
+				<Y1AXIS_LOGARITHMIC_BASE>BASE_10</Y1AXIS_LOGARITHMIC_BASE>
+				<TYPE>LINE_VERT_ABS</TYPE>
+				<GRID_WIDTH>THINNER</GRID_WIDTH>
+				<FOOTNOTE_ALIGNMENT>LEFT</FOOTNOTE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_SKIP_MODE>AUTOMATIC</XAXIS_TICK_LABEL_SKIP_MODE>
+				<Y2AXIS_LOGARITHMIC_BASE>BASE_10</Y2AXIS_LOGARITHMIC_BASE>
+				<STYLE>Default</STYLE>
+				<TITLE_ALIGNMENT>LEFT</TITLE_ALIGNMENT>
+				<Y2AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y2AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_MINIMUM>10.0</Y2AXIS_SCALE_MINIMUM>
+				<Y2AXIS_LINE_WIDTH>THINNEST</Y2AXIS_LINE_WIDTH>
+				<Y1AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y1AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_INCREMENT>20.0</Y2AXIS_SCALE_INCREMENT>
+				<PLOT_VGRID_WIDTH>THINNER</PLOT_VGRID_WIDTH>
+				<Y2AXIS_TITLE_ALIGNMENT>CENTER</Y2AXIS_TITLE_ALIGNMENT>
+				<SUBTITLE_ALIGNMENT>LEFT</SUBTITLE_ALIGNMENT>
+			</CustomValues>
+			<query>
+				<sql><![CDATA[SELECT "STAT$BH".SNAP_DATE, "STAT$BH".OBJ_NAME, avg("STAT$BH".PCT) as pct
+FROM DBSNMP."STAT$BH" "STAT$BH"
+WHERE ("STAT$BH".PCT>0) and snap_date BETWEEN :ST_DT and :ED_DT
+and "STAT$BH".OBJ_NAME IN(
+  select /*+ precompute_subquery */ p.object_name
+  from SYS.DBA_HIST_SQL_PLAN p
+  left join v$sql_plan v on v.sql_id = p.sql_id and v.PLAN_HASH_VALUE = p.PLAN_HASH_VALUE and v.id = p.id
+  where p.sql_id = :SQL_ID AND p.PLAN_HASH_VALUE = :SQL_PLAN_HASH_VALUE
+)
+group by "STAT$BH".SNAP_DATE, "STAT$BH".OBJ_NAME
+ORDER BY "STAT$BH".SNAP_DATE asc, "STAT$BH".OBJ_NAME asc]]></sql>
+				<binds>
+					<bind id="ST_DT">
+						<prompt><![CDATA[ST_DT]]></prompt>
+						<tooltip><![CDATA[ST_DT]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="ED_DT">
+						<prompt><![CDATA[ED_DT]]></prompt>
+						<tooltip><![CDATA[ED_DT]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="SQL_PLAN_HASH_VALUE">
+						<prompt><![CDATA[SQL_PLAN_HASH_VALUE]]></prompt>
+						<tooltip><![CDATA[SQL_PLAN_HASH_VALUE]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
+			</query>
+				<pdf version="VERSION_1_7" compression="CONTENT">
+					<docproperty title="null" author="null" subject="null" keywords="null" />
+					<cell toppadding="2" bottompadding="2" leftpadding="2" rightpadding="2" horizontalalign="LEFT" verticalalign="TOP" wrap="true" />
+					<column>
+						<heading font="null" size="10" style="NORMAL" color="-16777216" rowshading="-1" labeling="FIRST_PAGE" />
+						<footing font="null" size="10" style="NORMAL" color="-16777216" rowshading="-1" labeling="NONE" />
+						<blob blob="NONE" zip="false" />
+					</column>
+					<table font="null" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
+					<header enable="false" generatedate="false">
+						<data>
+						
+							
+							null																				</data>
+					</header>
+					<footer enable="false" generatedate="false">
+						<data value="null" />
+					</footer>
+					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
+						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
+					</security>
+					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
+				</pdf>
+		</display>
+<item  reload="false"  reloadparent="false" removeFromParent="false" className="oracle.dbtools.raptor.report.addin.DrillReportAction" classArgs="74c746aa-0157-1000-8029-0a02322027a3" toolbar="false" ><title>plans</title><sql><![CDATA[]]></sql><script language="null"><![CDATA[]]></script><help></help></item>	</display>
 </folder>
 </displays>
