@@ -371,5 +371,6 @@ auto: skewed + columns on where
 * length вернет 0 для empty_clob (в иных случаях null)
 * model: https://habrahabr.ru/post/101003/
 * установка clinet/module/action + запись в v$long_ops (можно встроить в цикл для информаирования): https://docs.oracle.com/cd/E11882_01/appdev.112/e40758/d_appinf.htm#ARPLS65241
+ И еще так: http://www.igormelnikov.com/2016/04/real-time-database-operation-monitoring.html
 * http://www.sql.ru/forum/1249064-3/replace - при вставке в varchar данных больше 4000, то он обрезается до максимума (если вставляется в середину, то вставка не пройдет, строка просто обрежется)
 select replace('hello xulio', 'x',  rpad('x', 32767)) from dual -- вернет hello
