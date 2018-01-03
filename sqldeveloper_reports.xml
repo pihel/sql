@@ -10,7 +10,7 @@
 		<tooltip><![CDATA[]]></tooltip>
 		<drillclass><![CDATA[]]></drillclass>
 		<CustomValues>
-			<TYPE>horizontal</TYPE>
+			<TYPE><![CDATA[horizontal]]></TYPE>
 		</CustomValues>
 		<query>
 			<sql><![CDATA[select :SQL_ID SQL_ID, PLAN_HASH_VALUE, min(begin_interval_time) as stdt, max(begin_interval_time) enddt, sum(EXECUTIONS_DELTA) as execs, 
@@ -32,7 +32,7 @@ order by enddt desc]]></sql>
 				<bind id="SQL_ID">
 					<prompt><![CDATA[SQL_ID]]></prompt>
 					<tooltip><![CDATA[SQL_ID]]></tooltip>
-					<value><![CDATA[30twn0xawm8tp]]></value>
+					<value><![CDATA[48ks1udxwh3kh]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 			</binds>
@@ -48,6 +48,26 @@ order by enddt desc]]></sql>
 				<table font="Times New Roman" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
 				<header enable="false" generatedate="false">
 					<data>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 					
 					
 					
@@ -160,14 +180,11 @@ order by enddt desc]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
 				</footer>
-				<security enable="false" useopenpassword="false" openpassword="" encryption="EXCLUDE_METADATA">
-					<permission enable="false" permissionpassword="" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="true" />
-				</security>
 				<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 			</pdf>
 		<display id="" type="" style="Table" enable="true">
@@ -176,7 +193,7 @@ order by enddt desc]]></sql>
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select * from table(DBMS_XPLAN.DISPLAY_AWR(:SQL_ID, :PLAN_HASH_VALUE, null, 'basic +outline +peeked_binds') )]]></sql>
@@ -233,6 +250,26 @@ order by enddt desc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -276,14 +313,11 @@ order by enddt desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -294,7 +328,7 @@ order by enddt desc]]></sql>
 		<tooltip><![CDATA[]]></tooltip>
 		<drillclass><![CDATA[]]></drillclass>
 		<CustomValues>
-			<TYPE>horizontal</TYPE>
+			<TYPE><![CDATA[horizontal]]></TYPE>
 		</CustomValues>
 		<query>
 			<sql><![CDATA[select * from (
@@ -323,7 +357,7 @@ order by sql_exec_start desc nulls last]]></sql>
 				<bind id="client_id">
 					<prompt><![CDATA[client_id]]></prompt>
 					<tooltip><![CDATA[client_id]]></tooltip>
-					<value><![CDATA[NULL_VALUE]]></value>
+					<value><![CDATA[SKAKHIN]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="session_id">
@@ -335,7 +369,7 @@ order by sql_exec_start desc nulls last]]></sql>
 				<bind id="module">
 					<prompt><![CDATA[module]]></prompt>
 					<tooltip><![CDATA[module]]></tooltip>
-					<value><![CDATA[ZMP_UTZ_INV_TASK]]></value>
+					<value><![CDATA[NULL_VALUE]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="txt">
@@ -357,6 +391,26 @@ order by sql_exec_start desc nulls last]]></sql>
 				<table font="Times New Roman" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
 				<header enable="false" generatedate="false">
 					<data>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 					
 					
 					
@@ -469,14 +523,11 @@ order by sql_exec_start desc nulls last]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
 				</footer>
-				<security enable="false" useopenpassword="false" openpassword="" encryption="EXCLUDE_METADATA">
-					<permission enable="false" permissionpassword="" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="true" />
-				</security>
 				<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 			</pdf>
 		<display id="" type="" style="Table" enable="true">
@@ -485,7 +536,7 @@ order by sql_exec_start desc nulls last]]></sql>
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select PLAN_HASH_VALUE, min(begin_interval_time) as stdt, max(begin_interval_time) enddt, sum(EXECUTIONS_DELTA) as execs, 
@@ -548,6 +599,26 @@ order by enddt desc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -587,14 +658,11 @@ order by enddt desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																										</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -604,10 +672,18 @@ order by enddt desc]]></sql>
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[SELECT * FROM TABLE(dbms_xplan.display_cursor(:SQL_ID,format => 'ADVANCED'))]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -647,6 +723,26 @@ order by enddt desc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -676,14 +772,11 @@ order by enddt desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																				</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -692,9 +785,9 @@ order by enddt desc]]></sql>
 		<name><![CDATA[Query on obj]]></name>
 		<description><![CDATA[]]></description>
 		<tooltip><![CDATA[]]></tooltip>
-		<drillclass><![CDATA[null]]></drillclass>
+		<drillclass><![CDATA[]]></drillclass>
 		<CustomValues>
-			<TYPE>horizontal</TYPE>
+			<TYPE><![CDATA[horizontal]]></TYPE>
 		</CustomValues>
 		<query>
 			<sql><![CDATA[with tx as (
@@ -727,7 +820,7 @@ order by EXECUTIONS_DELTA desc]]></sql>
 				<bind id="tbl">
 					<prompt><![CDATA[tbl]]></prompt>
 					<tooltip><![CDATA[tbl]]></tooltip>
-					<value><![CDATA[MERGE /*+PARALLEL*/ INTO STAGING.BOGOFF_PROMO_ARCH]]></value>
+					<value><![CDATA[POS_REC_ITM]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="obj">
@@ -739,13 +832,13 @@ order by EXECUTIONS_DELTA desc]]></sql>
 				<bind id="f">
 					<prompt><![CDATA[f]]></prompt>
 					<tooltip><![CDATA[f]]></tooltip>
-					<value><![CDATA[04.09.2017]]></value>
+					<value><![CDATA[01.12.2017]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="t">
 					<prompt><![CDATA[t]]></prompt>
 					<tooltip><![CDATA[t]]></tooltip>
-					<value><![CDATA[30.09.2017]]></value>
+					<value><![CDATA[31.12.2017]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 			</binds>
@@ -761,6 +854,26 @@ order by EXECUTIONS_DELTA desc]]></sql>
 				<table font="Times New Roman" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
 				<header enable="false" generatedate="false">
 					<data>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 					
 					
 					
@@ -873,23 +986,20 @@ order by EXECUTIONS_DELTA desc]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
 				</footer>
-				<security enable="false" useopenpassword="false" openpassword="" encryption="EXCLUDE_METADATA">
-					<permission enable="false" permissionpassword="" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="true" />
-				</security>
 				<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 			</pdf>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[plan]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select * from table(DBMS_XPLAN.DISPLAY_AWR(:SQL_ID, :SQL_PLAN_HASH_VALUE, null, 'basic +outline +peeked_binds') )]]></sql>
@@ -946,6 +1056,26 @@ order by EXECUTIONS_DELTA desc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -989,14 +1119,11 @@ order by EXECUTIONS_DELTA desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -1007,7 +1134,7 @@ order by EXECUTIONS_DELTA desc]]></sql>
 		<tooltip><![CDATA[]]></tooltip>
 		<drillclass><![CDATA[]]></drillclass>
 		<CustomValues>
-			<TYPE>horizontal</TYPE>
+			<TYPE><![CDATA[horizontal]]></TYPE>
 		</CustomValues>
 		<query>
 			<sql><![CDATA[with t as (
@@ -1022,7 +1149,7 @@ order by EXECUTIONS_DELTA desc]]></sql>
 )
 select t.sql_id, t.PLAN_HASH_VALUE, t.execs, t.av_sec, t1.PLAN_HASH_VALUE as SQL_PLAN_HASH_VALUE_OLD, t1.execs, 
 t1.av_sec  av_sec_old, t.execs*t.av_sec - t.execs*nvl(t1.av_sec,0)  as diff, 
- round( (t.execs*t.av_sec - t.execs*nvl(t1.av_sec,0)) / SUM(t.execs*t.av_sec - t.execs*nvl(t1.av_sec,0))  OVER() * 100,2) as prc, trim(DBMS_LOB.SUBSTR (tx.sql_text,4000)) as sql_text 
+ round( (t.execs*t.av_sec - t.execs*nvl(t1.av_sec,0)) / SUM(t.execs*t.av_sec - t.execs*nvl(t1.av_sec,0))  OVER() * 100,2) as prc, trim(DBMS_LOB.SUBSTR (tx.sql_text,2000)) as sql_text 
 from t
 join dba_hist_sqltext tx on tx.sql_id = t.sql_id 
 left join t t1 on t1.dt = to_date(:f, 'dd.mm.yyyy hh24') and t.sql_id = t1.sql_id
@@ -1089,6 +1216,26 @@ order by prc  desc nulls last]]></sql>
 					
 					
 					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 						
 						
 						
@@ -1174,14 +1321,11 @@ order by prc  desc nulls last]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
 				</footer>
-				<security enable="false" useopenpassword="false" openpassword="" encryption="EXCLUDE_METADATA">
-					<permission enable="false" permissionpassword="" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="true" />
-				</security>
 				<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 			</pdf>
 		<display id="" type="" style="Table" enable="true">
@@ -1190,24 +1334,10 @@ order by prc  desc nulls last]]></sql>
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select * from table(DBMS_XPLAN.DISPLAY_AWR(:SQL_ID, :SQL_PLAN_HASH_VALUE, null, 'basic +outline +peeked_binds') )]]></sql>
-				<binds>
-					<bind id="SQL_ID">
-						<prompt><![CDATA[SQL_ID]]></prompt>
-						<tooltip><![CDATA[SQL_ID]]></tooltip>
-						<value><![CDATA[NULL_VALUE]]></value>
-						<bracket><![CDATA[null]]></bracket>
-					</bind>
-					<bind id="SQL_PLAN_HASH_VALUE">
-						<prompt><![CDATA[SQL_PLAN_HASH_VALUE]]></prompt>
-						<tooltip><![CDATA[SQL_PLAN_HASH_VALUE]]></tooltip>
-						<value><![CDATA[NULL_VALUE]]></value>
-						<bracket><![CDATA[null]]></bracket>
-					</bind>
-				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -1247,6 +1377,26 @@ order by prc  desc nulls last]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -1290,14 +1440,11 @@ order by prc  desc nulls last]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -1307,24 +1454,10 @@ order by prc  desc nulls last]]></sql>
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select * from table(DBMS_XPLAN.DISPLAY_AWR(:SQL_ID, :SQL_PLAN_HASH_VALUE_OLD, null, 'basic +outline +peeked_binds') )]]></sql>
-				<binds>
-					<bind id="SQL_ID">
-						<prompt><![CDATA[SQL_ID]]></prompt>
-						<tooltip><![CDATA[SQL_ID]]></tooltip>
-						<value><![CDATA[NULL_VALUE]]></value>
-						<bracket><![CDATA[null]]></bracket>
-					</bind>
-					<bind id="SQL_PLAN_HASH_VALUE_OLD">
-						<prompt><![CDATA[SQL_PLAN_HASH_VALUE_OLD]]></prompt>
-						<tooltip><![CDATA[SQL_PLAN_HASH_VALUE_OLD]]></tooltip>
-						<value><![CDATA[NULL_VALUE]]></value>
-						<bracket><![CDATA[null]]></bracket>
-					</bind>
-				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -1364,6 +1497,26 @@ order by prc  desc nulls last]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -1407,14 +1560,11 @@ order by prc  desc nulls last]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -1429,44 +1579,44 @@ order by prc  desc nulls last]]></sql>
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<PLOT_HGRID_WIDTH>THINNER</PLOT_HGRID_WIDTH>
-				<Y1AXIS_SCALE_MINIMUM>60.0</Y1AXIS_SCALE_MINIMUM>
-				<XAXIS_TICK_LABEL_AUTO_ROTATE>true</XAXIS_TICK_LABEL_AUTO_ROTATE>
-				<Y1AXIS_SCALE_INCREMENT>10.0</Y1AXIS_SCALE_INCREMENT>
-				<Y2AXIS_SCALE_MAXIMUM>80.0</Y2AXIS_SCALE_MAXIMUM>
-				<Y1AXIS_LINE_WIDTH>THINNEST</Y1AXIS_LINE_WIDTH>
-				<Y1AXIS_SCALE_MAXIMUM_AUTOMATIC>false</Y1AXIS_SCALE_MAXIMUM_AUTOMATIC>
-				<Y1AXIS_TITLE_ALIGNMENT>CENTER</Y1AXIS_TITLE_ALIGNMENT>
-				<LEGEND_LOCATION>AUTOMATIC</LEGEND_LOCATION>
-				<LEGEND_ALIGNMENT>LEFT</LEGEND_ALIGNMENT>
-				<GRADIENT>false</GRADIENT>
-				<XAXIS_LINE_WIDTH>THINNEST</XAXIS_LINE_WIDTH>
-				<LEGEND>false</LEGEND>
-				<Y1AXIS_SCALE_MAXIMUM>100.0</Y1AXIS_SCALE_MAXIMUM>
-				<XAXIS_TITLE_ALIGNMENT>CENTER</XAXIS_TITLE_ALIGNMENT>
-				<PLOT_DATALABELS>false</PLOT_DATALABELS>
-				<XAXIS_TICK_LABEL_ROTATE>HORIZONTAL</XAXIS_TICK_LABEL_ROTATE>
-				<Y1AXIS_LOGARITHMIC_BASE>BASE_10</Y1AXIS_LOGARITHMIC_BASE>
-				<TYPE>LINE_VERT_ABS</TYPE>
-				<GRID_WIDTH>THINNER</GRID_WIDTH>
-				<PLOT_DATALABELS_BAR_POSITION>ABOVE</PLOT_DATALABELS_BAR_POSITION>
-				<FOOTNOTE_ALIGNMENT>LEFT</FOOTNOTE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_SKIP_MODE>AUTOMATIC</XAXIS_TICK_LABEL_SKIP_MODE>
-				<Y2AXIS_LOGARITHMIC_BASE>BASE_10</Y2AXIS_LOGARITHMIC_BASE>
-				<GRID>true</GRID>
-				<STYLE>Default</STYLE>
-				<TITLE_ALIGNMENT>LEFT</TITLE_ALIGNMENT>
-				<Y1AXIS_SCALE_MINIMUM_AUTOMATIC>false</Y1AXIS_SCALE_MINIMUM_AUTOMATIC>
-				<Y2AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y2AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_MINIMUM>10.0</Y2AXIS_SCALE_MINIMUM>
-				<THREED>false</THREED>
-				<Y2AXIS_LINE_WIDTH>THINNEST</Y2AXIS_LINE_WIDTH>
-				<Y1AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y1AXIS_TICK_LABEL_ROTATE>
-				<Y1AXIS_TITLE>false</Y1AXIS_TITLE>
-				<Y2AXIS_SCALE_INCREMENT>20.0</Y2AXIS_SCALE_INCREMENT>
-				<PLOT_VGRID_WIDTH>THINNER</PLOT_VGRID_WIDTH>
-				<Y2AXIS_TITLE_ALIGNMENT>CENTER</Y2AXIS_TITLE_ALIGNMENT>
-				<SUBTITLE_ALIGNMENT>LEFT</SUBTITLE_ALIGNMENT>
+				<PLOT_HGRID_WIDTH><![CDATA[THINNER]]></PLOT_HGRID_WIDTH>
+				<Y1AXIS_SCALE_MINIMUM><![CDATA[60.0]]></Y1AXIS_SCALE_MINIMUM>
+				<XAXIS_TICK_LABEL_AUTO_ROTATE><![CDATA[true]]></XAXIS_TICK_LABEL_AUTO_ROTATE>
+				<Y1AXIS_SCALE_INCREMENT><![CDATA[10.0]]></Y1AXIS_SCALE_INCREMENT>
+				<Y2AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y2AXIS_SCALE_MAXIMUM>
+				<Y1AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y1AXIS_LINE_WIDTH>
+				<Y1AXIS_SCALE_MAXIMUM_AUTOMATIC><![CDATA[false]]></Y1AXIS_SCALE_MAXIMUM_AUTOMATIC>
+				<Y1AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y1AXIS_TITLE_ALIGNMENT>
+				<LEGEND_LOCATION><![CDATA[AUTOMATIC]]></LEGEND_LOCATION>
+				<LEGEND_ALIGNMENT><![CDATA[LEFT]]></LEGEND_ALIGNMENT>
+				<GRADIENT><![CDATA[false]]></GRADIENT>
+				<XAXIS_LINE_WIDTH><![CDATA[THINNEST]]></XAXIS_LINE_WIDTH>
+				<LEGEND><![CDATA[false]]></LEGEND>
+				<Y1AXIS_SCALE_MAXIMUM><![CDATA[100.0]]></Y1AXIS_SCALE_MAXIMUM>
+				<XAXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></XAXIS_TITLE_ALIGNMENT>
+				<PLOT_DATALABELS><![CDATA[false]]></PLOT_DATALABELS>
+				<XAXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></XAXIS_TICK_LABEL_ROTATE>
+				<Y1AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y1AXIS_LOGARITHMIC_BASE>
+				<TYPE><![CDATA[LINE_VERT_ABS]]></TYPE>
+				<GRID_WIDTH><![CDATA[THINNER]]></GRID_WIDTH>
+				<PLOT_DATALABELS_BAR_POSITION><![CDATA[ABOVE]]></PLOT_DATALABELS_BAR_POSITION>
+				<FOOTNOTE_ALIGNMENT><![CDATA[LEFT]]></FOOTNOTE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_SKIP_MODE><![CDATA[AUTOMATIC]]></XAXIS_TICK_LABEL_SKIP_MODE>
+				<Y2AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y2AXIS_LOGARITHMIC_BASE>
+				<GRID><![CDATA[true]]></GRID>
+				<STYLE><![CDATA[Default]]></STYLE>
+				<TITLE_ALIGNMENT><![CDATA[LEFT]]></TITLE_ALIGNMENT>
+				<Y1AXIS_SCALE_MINIMUM_AUTOMATIC><![CDATA[false]]></Y1AXIS_SCALE_MINIMUM_AUTOMATIC>
+				<Y2AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y2AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_MINIMUM><![CDATA[10.0]]></Y2AXIS_SCALE_MINIMUM>
+				<THREED><![CDATA[false]]></THREED>
+				<Y2AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y2AXIS_LINE_WIDTH>
+				<Y1AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y1AXIS_TICK_LABEL_ROTATE>
+				<Y1AXIS_TITLE><![CDATA[false]]></Y1AXIS_TITLE>
+				<Y2AXIS_SCALE_INCREMENT><![CDATA[20.0]]></Y2AXIS_SCALE_INCREMENT>
+				<PLOT_VGRID_WIDTH><![CDATA[THINNER]]></PLOT_VGRID_WIDTH>
+				<Y2AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y2AXIS_TITLE_ALIGNMENT>
+				<SUBTITLE_ALIGNMENT><![CDATA[LEFT]]></SUBTITLE_ALIGNMENT>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select to_char(s.begin_time, 'dd-mm hh24') as hh, null as col1 , avg(s.average) as y 
@@ -1479,13 +1629,13 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 					<bind id="f">
 						<prompt><![CDATA[С]]></prompt>
 						<tooltip><![CDATA[f]]></tooltip>
-						<value><![CDATA[05.06.2017]]></value>
+						<value><![CDATA[20.12.2017]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 					<bind id="t">
 						<prompt><![CDATA[По]]></prompt>
 						<tooltip><![CDATA[t]]></tooltip>
-						<value><![CDATA[11.06.2017]]></value>
+						<value><![CDATA[31.12.2017]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 					<bind id="m">
@@ -1534,6 +1684,26 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -1577,14 +1747,11 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -1594,39 +1761,39 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<PLOT_HGRID_WIDTH>THINNER</PLOT_HGRID_WIDTH>
-				<XAXIS_TICK_LABEL_AUTO_ROTATE>true</XAXIS_TICK_LABEL_AUTO_ROTATE>
-				<Y1AXIS_SCALE_INCREMENT>10.0</Y1AXIS_SCALE_INCREMENT>
-				<Y2AXIS_SCALE_MAXIMUM>80.0</Y2AXIS_SCALE_MAXIMUM>
-				<Y1AXIS_LINE_WIDTH>THINNEST</Y1AXIS_LINE_WIDTH>
-				<Y1AXIS_TITLE_ALIGNMENT>CENTER</Y1AXIS_TITLE_ALIGNMENT>
-				<LEGEND_LOCATION>AUTOMATIC</LEGEND_LOCATION>
-				<LEGEND_ALIGNMENT>LEFT</LEGEND_ALIGNMENT>
-				<GRADIENT>false</GRADIENT>
-				<XAXIS_LINE_WIDTH>THINNEST</XAXIS_LINE_WIDTH>
-				<LEGEND>false</LEGEND>
-				<Y1AXIS_SCALE_MAXIMUM>80.0</Y1AXIS_SCALE_MAXIMUM>
-				<XAXIS_TITLE_ALIGNMENT>CENTER</XAXIS_TITLE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_ROTATE>HORIZONTAL</XAXIS_TICK_LABEL_ROTATE>
-				<Y1AXIS_LOGARITHMIC_BASE>BASE_10</Y1AXIS_LOGARITHMIC_BASE>
-				<TYPE>LINE_VERT_ABS</TYPE>
-				<GRID_WIDTH>THINNER</GRID_WIDTH>
-				<PLOT_DATALABELS_BAR_POSITION>ABOVE</PLOT_DATALABELS_BAR_POSITION>
-				<FOOTNOTE_ALIGNMENT>LEFT</FOOTNOTE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_SKIP_MODE>AUTOMATIC</XAXIS_TICK_LABEL_SKIP_MODE>
-				<Y2AXIS_LOGARITHMIC_BASE>BASE_10</Y2AXIS_LOGARITHMIC_BASE>
-				<GRID>true</GRID>
-				<STYLE>Default</STYLE>
-				<TITLE_ALIGNMENT>LEFT</TITLE_ALIGNMENT>
-				<Y2AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y2AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_MINIMUM>10.0</Y2AXIS_SCALE_MINIMUM>
-				<THREED>false</THREED>
-				<Y2AXIS_LINE_WIDTH>THINNEST</Y2AXIS_LINE_WIDTH>
-				<Y1AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y1AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_INCREMENT>20.0</Y2AXIS_SCALE_INCREMENT>
-				<PLOT_VGRID_WIDTH>THINNER</PLOT_VGRID_WIDTH>
-				<Y2AXIS_TITLE_ALIGNMENT>CENTER</Y2AXIS_TITLE_ALIGNMENT>
-				<SUBTITLE_ALIGNMENT>LEFT</SUBTITLE_ALIGNMENT>
+				<PLOT_HGRID_WIDTH><![CDATA[THINNER]]></PLOT_HGRID_WIDTH>
+				<XAXIS_TICK_LABEL_AUTO_ROTATE><![CDATA[true]]></XAXIS_TICK_LABEL_AUTO_ROTATE>
+				<Y1AXIS_SCALE_INCREMENT><![CDATA[10.0]]></Y1AXIS_SCALE_INCREMENT>
+				<Y2AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y2AXIS_SCALE_MAXIMUM>
+				<Y1AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y1AXIS_LINE_WIDTH>
+				<Y1AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y1AXIS_TITLE_ALIGNMENT>
+				<LEGEND_LOCATION><![CDATA[AUTOMATIC]]></LEGEND_LOCATION>
+				<LEGEND_ALIGNMENT><![CDATA[LEFT]]></LEGEND_ALIGNMENT>
+				<GRADIENT><![CDATA[false]]></GRADIENT>
+				<XAXIS_LINE_WIDTH><![CDATA[THINNEST]]></XAXIS_LINE_WIDTH>
+				<LEGEND><![CDATA[false]]></LEGEND>
+				<Y1AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y1AXIS_SCALE_MAXIMUM>
+				<XAXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></XAXIS_TITLE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></XAXIS_TICK_LABEL_ROTATE>
+				<Y1AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y1AXIS_LOGARITHMIC_BASE>
+				<TYPE><![CDATA[LINE_VERT_ABS]]></TYPE>
+				<GRID_WIDTH><![CDATA[THINNER]]></GRID_WIDTH>
+				<PLOT_DATALABELS_BAR_POSITION><![CDATA[ABOVE]]></PLOT_DATALABELS_BAR_POSITION>
+				<FOOTNOTE_ALIGNMENT><![CDATA[LEFT]]></FOOTNOTE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_SKIP_MODE><![CDATA[AUTOMATIC]]></XAXIS_TICK_LABEL_SKIP_MODE>
+				<Y2AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y2AXIS_LOGARITHMIC_BASE>
+				<GRID><![CDATA[true]]></GRID>
+				<STYLE><![CDATA[Default]]></STYLE>
+				<TITLE_ALIGNMENT><![CDATA[LEFT]]></TITLE_ALIGNMENT>
+				<Y2AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y2AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_MINIMUM><![CDATA[10.0]]></Y2AXIS_SCALE_MINIMUM>
+				<THREED><![CDATA[false]]></THREED>
+				<Y2AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y2AXIS_LINE_WIDTH>
+				<Y1AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y1AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_INCREMENT><![CDATA[20.0]]></Y2AXIS_SCALE_INCREMENT>
+				<PLOT_VGRID_WIDTH><![CDATA[THINNER]]></PLOT_VGRID_WIDTH>
+				<Y2AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y2AXIS_TITLE_ALIGNMENT>
+				<SUBTITLE_ALIGNMENT><![CDATA[LEFT]]></SUBTITLE_ALIGNMENT>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select to_char(s.begin_time, 'dd-mm hh24') as hh, null as col1 , avg(s.average) as y 
@@ -1694,6 +1861,26 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -1738,14 +1925,11 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 							
 							
 							
-				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										</data>
+				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -1755,48 +1939,48 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<PLOT_HGRID_WIDTH>THINNER</PLOT_HGRID_WIDTH>
-				<PLOT_DATATIPS_TEXT>true</PLOT_DATATIPS_TEXT>
-				<XAXIS_TICK_LABEL_AUTO_ROTATE>true</XAXIS_TICK_LABEL_AUTO_ROTATE>
-				<Y1AXIS_SCALE_INCREMENT>10.0</Y1AXIS_SCALE_INCREMENT>
-				<Y2AXIS_SCALE_MAXIMUM>80.0</Y2AXIS_SCALE_MAXIMUM>
-				<Y1AXIS_LINE_WIDTH>THINNEST</Y1AXIS_LINE_WIDTH>
-				<Y1AXIS_TITLE_ALIGNMENT>CENTER</Y1AXIS_TITLE_ALIGNMENT>
-				<LEGEND_LOCATION>AUTOMATIC</LEGEND_LOCATION>
-				<PLOT_DATALABELS_NUMBER_FORMATS.CURRENCY_SYMBOL>DOLLARS</PLOT_DATALABELS_NUMBER_FORMATS.CURRENCY_SYMBOL>
-				<LEGEND_ALIGNMENT>LEFT</LEGEND_ALIGNMENT>
-				<GRADIENT>false</GRADIENT>
-				<XAXIS_LINE_WIDTH>THINNEST</XAXIS_LINE_WIDTH>
-				<LEGEND>false</LEGEND>
-				<PLOT_DATALABELS_NUMBER_FORMATS.SCALE_FACTOR>NONE</PLOT_DATALABELS_NUMBER_FORMATS.SCALE_FACTOR>
-				<Y1AXIS_SCALE_MAXIMUM>80.0</Y1AXIS_SCALE_MAXIMUM>
-				<XAXIS_TITLE_ALIGNMENT>CENTER</XAXIS_TITLE_ALIGNMENT>
-				<PLOT_DATALABELS>true</PLOT_DATALABELS>
-				<XAXIS_TICK_LABEL_ROTATE>HORIZONTAL</XAXIS_TICK_LABEL_ROTATE>
-				<Y1AXIS_LOGARITHMIC_BASE>BASE_10</Y1AXIS_LOGARITHMIC_BASE>
-				<TYPE>LINE_VERT_ABS</TYPE>
-				<GRID_WIDTH>THINNER</GRID_WIDTH>
-				<PLOT_DATALABELS_BAR_POSITION>ABOVE</PLOT_DATALABELS_BAR_POSITION>
-				<FOOTNOTE_ALIGNMENT>LEFT</FOOTNOTE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_SKIP_MODE>AUTOMATIC</XAXIS_TICK_LABEL_SKIP_MODE>
-				<PLOT_DATALABELS_NUMBER_FORMATS.NEGATIVE_NUMBER_FORMAT>BRACKETED</PLOT_DATALABELS_NUMBER_FORMATS.NEGATIVE_NUMBER_FORMAT>
-				<Y2AXIS_LOGARITHMIC_BASE>BASE_10</Y2AXIS_LOGARITHMIC_BASE>
-				<GRID>true</GRID>
-				<STYLE>Default</STYLE>
-				<TITLE_ALIGNMENT>LEFT</TITLE_ALIGNMENT>
-				<PLOT_DATALABELS_NUMBER_FORMATS.DECIMAL_PLACES>0</PLOT_DATALABELS_NUMBER_FORMATS.DECIMAL_PLACES>
-				<Y2AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y2AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_MINIMUM>10.0</Y2AXIS_SCALE_MINIMUM>
-				<PLOT_HGRID>true</PLOT_HGRID>
-				<THREED>false</THREED>
-				<Y2AXIS_LINE_WIDTH>THINNEST</Y2AXIS_LINE_WIDTH>
-				<Y1AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y1AXIS_TICK_LABEL_ROTATE>
-				<PLOT_DATALABELS_NUMBER_FORMATS.TYPE>NUMBER</PLOT_DATALABELS_NUMBER_FORMATS.TYPE>
-				<Y2AXIS_SCALE_INCREMENT>20.0</Y2AXIS_SCALE_INCREMENT>
-				<PLOT_VGRID_WIDTH>THINNER</PLOT_VGRID_WIDTH>
-				<PLOT_SERIES_OPTIONS_MARKER_SHAPE>\,SQUARE,SQUARE,SQUARE,AUTOMATIC,AUTOMATIC</PLOT_SERIES_OPTIONS_MARKER_SHAPE>
-				<Y2AXIS_TITLE_ALIGNMENT>CENTER</Y2AXIS_TITLE_ALIGNMENT>
-				<SUBTITLE_ALIGNMENT>LEFT</SUBTITLE_ALIGNMENT>
+				<PLOT_HGRID_WIDTH><![CDATA[THINNER]]></PLOT_HGRID_WIDTH>
+				<PLOT_DATATIPS_TEXT><![CDATA[true]]></PLOT_DATATIPS_TEXT>
+				<XAXIS_TICK_LABEL_AUTO_ROTATE><![CDATA[true]]></XAXIS_TICK_LABEL_AUTO_ROTATE>
+				<Y1AXIS_SCALE_INCREMENT><![CDATA[10.0]]></Y1AXIS_SCALE_INCREMENT>
+				<Y2AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y2AXIS_SCALE_MAXIMUM>
+				<Y1AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y1AXIS_LINE_WIDTH>
+				<Y1AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y1AXIS_TITLE_ALIGNMENT>
+				<LEGEND_LOCATION><![CDATA[AUTOMATIC]]></LEGEND_LOCATION>
+				<PLOT_DATALABELS_NUMBER_FORMATS.CURRENCY_SYMBOL><![CDATA[DOLLARS]]></PLOT_DATALABELS_NUMBER_FORMATS.CURRENCY_SYMBOL>
+				<LEGEND_ALIGNMENT><![CDATA[LEFT]]></LEGEND_ALIGNMENT>
+				<GRADIENT><![CDATA[false]]></GRADIENT>
+				<XAXIS_LINE_WIDTH><![CDATA[THINNEST]]></XAXIS_LINE_WIDTH>
+				<LEGEND><![CDATA[false]]></LEGEND>
+				<PLOT_DATALABELS_NUMBER_FORMATS.SCALE_FACTOR><![CDATA[NONE]]></PLOT_DATALABELS_NUMBER_FORMATS.SCALE_FACTOR>
+				<Y1AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y1AXIS_SCALE_MAXIMUM>
+				<XAXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></XAXIS_TITLE_ALIGNMENT>
+				<PLOT_DATALABELS><![CDATA[true]]></PLOT_DATALABELS>
+				<XAXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></XAXIS_TICK_LABEL_ROTATE>
+				<Y1AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y1AXIS_LOGARITHMIC_BASE>
+				<TYPE><![CDATA[LINE_VERT_ABS]]></TYPE>
+				<GRID_WIDTH><![CDATA[THINNER]]></GRID_WIDTH>
+				<PLOT_DATALABELS_BAR_POSITION><![CDATA[ABOVE]]></PLOT_DATALABELS_BAR_POSITION>
+				<FOOTNOTE_ALIGNMENT><![CDATA[LEFT]]></FOOTNOTE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_SKIP_MODE><![CDATA[AUTOMATIC]]></XAXIS_TICK_LABEL_SKIP_MODE>
+				<PLOT_DATALABELS_NUMBER_FORMATS.NEGATIVE_NUMBER_FORMAT><![CDATA[BRACKETED]]></PLOT_DATALABELS_NUMBER_FORMATS.NEGATIVE_NUMBER_FORMAT>
+				<Y2AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y2AXIS_LOGARITHMIC_BASE>
+				<GRID><![CDATA[true]]></GRID>
+				<STYLE><![CDATA[Default]]></STYLE>
+				<TITLE_ALIGNMENT><![CDATA[LEFT]]></TITLE_ALIGNMENT>
+				<PLOT_DATALABELS_NUMBER_FORMATS.DECIMAL_PLACES><![CDATA[0]]></PLOT_DATALABELS_NUMBER_FORMATS.DECIMAL_PLACES>
+				<Y2AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y2AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_MINIMUM><![CDATA[10.0]]></Y2AXIS_SCALE_MINIMUM>
+				<PLOT_HGRID><![CDATA[true]]></PLOT_HGRID>
+				<THREED><![CDATA[false]]></THREED>
+				<Y2AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y2AXIS_LINE_WIDTH>
+				<Y1AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y1AXIS_TICK_LABEL_ROTATE>
+				<PLOT_DATALABELS_NUMBER_FORMATS.TYPE><![CDATA[NUMBER]]></PLOT_DATALABELS_NUMBER_FORMATS.TYPE>
+				<Y2AXIS_SCALE_INCREMENT><![CDATA[20.0]]></Y2AXIS_SCALE_INCREMENT>
+				<PLOT_VGRID_WIDTH><![CDATA[THINNER]]></PLOT_VGRID_WIDTH>
+				<PLOT_SERIES_OPTIONS_MARKER_SHAPE><![CDATA[\,SQUARE,SQUARE,SQUARE,AUTOMATIC,AUTOMATIC]]></PLOT_SERIES_OPTIONS_MARKER_SHAPE>
+				<Y2AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y2AXIS_TITLE_ALIGNMENT>
+				<SUBTITLE_ALIGNMENT><![CDATA[LEFT]]></SUBTITLE_ALIGNMENT>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select to_char(sample_time, 'dd-mm hh24') as hh, null as col1, count(*) as cnt
@@ -1845,6 +2029,26 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -1889,14 +2093,11 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 							
 							
 							
-				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										</data>
+				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -1906,45 +2107,45 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<PLOT_HGRID_WIDTH>THINNER</PLOT_HGRID_WIDTH>
-				<XAXIS_TICK_LABEL_AUTO_ROTATE>true</XAXIS_TICK_LABEL_AUTO_ROTATE>
-				<Y1AXIS_SCALE_INCREMENT>10.0</Y1AXIS_SCALE_INCREMENT>
-				<Y2AXIS_SCALE_MAXIMUM>80.0</Y2AXIS_SCALE_MAXIMUM>
-				<Y1AXIS_LINE_WIDTH>THINNEST</Y1AXIS_LINE_WIDTH>
-				<Y1AXIS_TITLE_ALIGNMENT>CENTER</Y1AXIS_TITLE_ALIGNMENT>
-				<LEGEND_LOCATION>AUTOMATIC</LEGEND_LOCATION>
-				<LEGEND_ALIGNMENT>LEFT</LEGEND_ALIGNMENT>
-				<GRADIENT>false</GRADIENT>
-				<XAXIS_LINE_WIDTH>THINNEST</XAXIS_LINE_WIDTH>
-				<LEGEND>true</LEGEND>
-				<DATA_MAP_COLUMNS>\,"DT"</DATA_MAP_COLUMNS>
-				<Y1AXIS_SCALE_MAXIMUM>80.0</Y1AXIS_SCALE_MAXIMUM>
-				<XAXIS_TITLE_ALIGNMENT>CENTER</XAXIS_TITLE_ALIGNMENT>
-				<PLOT_DATALABELS>false</PLOT_DATALABELS>
-				<XAXIS_TICK_LABEL_ROTATE>HORIZONTAL</XAXIS_TICK_LABEL_ROTATE>
-				<Y1AXIS_LOGARITHMIC_BASE>BASE_10</Y1AXIS_LOGARITHMIC_BASE>
-				<TYPE>BAR_VERT_CLUST</TYPE>
-				<GRID_WIDTH>THINNER</GRID_WIDTH>
-				<PLOT_DATALABELS_BAR_POSITION>CENTERED</PLOT_DATALABELS_BAR_POSITION>
-				<FOOTNOTE_ALIGNMENT>LEFT</FOOTNOTE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_SKIP_MODE>AUTOMATIC</XAXIS_TICK_LABEL_SKIP_MODE>
-				<DATA_MAP_COLNAMES>\,"DT","SMPL","WW"</DATA_MAP_COLNAMES>
-				<DATA_MAP_SERIES>\,"WW"</DATA_MAP_SERIES>
-				<Y2AXIS_LOGARITHMIC_BASE>BASE_10</Y2AXIS_LOGARITHMIC_BASE>
-				<GRID>true</GRID>
-				<DATA_MAP_COUNT>1</DATA_MAP_COUNT>
-				<STYLE>Default</STYLE>
-				<TITLE_ALIGNMENT>LEFT</TITLE_ALIGNMENT>
-				<Y2AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y2AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_MINIMUM>10.0</Y2AXIS_SCALE_MINIMUM>
-				<THREED>false</THREED>
-				<Y2AXIS_LINE_WIDTH>THINNEST</Y2AXIS_LINE_WIDTH>
-				<DATA_MAP_VALUES>\,"SMPL"</DATA_MAP_VALUES>
-				<Y1AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y1AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_INCREMENT>20.0</Y2AXIS_SCALE_INCREMENT>
-				<PLOT_VGRID_WIDTH>THINNER</PLOT_VGRID_WIDTH>
-				<Y2AXIS_TITLE_ALIGNMENT>CENTER</Y2AXIS_TITLE_ALIGNMENT>
-				<SUBTITLE_ALIGNMENT>LEFT</SUBTITLE_ALIGNMENT>
+				<PLOT_HGRID_WIDTH><![CDATA[THINNER]]></PLOT_HGRID_WIDTH>
+				<XAXIS_TICK_LABEL_AUTO_ROTATE><![CDATA[true]]></XAXIS_TICK_LABEL_AUTO_ROTATE>
+				<Y1AXIS_SCALE_INCREMENT><![CDATA[10.0]]></Y1AXIS_SCALE_INCREMENT>
+				<Y2AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y2AXIS_SCALE_MAXIMUM>
+				<Y1AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y1AXIS_LINE_WIDTH>
+				<Y1AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y1AXIS_TITLE_ALIGNMENT>
+				<LEGEND_LOCATION><![CDATA[AUTOMATIC]]></LEGEND_LOCATION>
+				<LEGEND_ALIGNMENT><![CDATA[LEFT]]></LEGEND_ALIGNMENT>
+				<GRADIENT><![CDATA[false]]></GRADIENT>
+				<XAXIS_LINE_WIDTH><![CDATA[THINNEST]]></XAXIS_LINE_WIDTH>
+				<LEGEND><![CDATA[true]]></LEGEND>
+				<DATA_MAP_COLUMNS><![CDATA[\,"DT"]]></DATA_MAP_COLUMNS>
+				<Y1AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y1AXIS_SCALE_MAXIMUM>
+				<XAXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></XAXIS_TITLE_ALIGNMENT>
+				<PLOT_DATALABELS><![CDATA[false]]></PLOT_DATALABELS>
+				<XAXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></XAXIS_TICK_LABEL_ROTATE>
+				<Y1AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y1AXIS_LOGARITHMIC_BASE>
+				<TYPE><![CDATA[BAR_VERT_CLUST]]></TYPE>
+				<GRID_WIDTH><![CDATA[THINNER]]></GRID_WIDTH>
+				<PLOT_DATALABELS_BAR_POSITION><![CDATA[CENTERED]]></PLOT_DATALABELS_BAR_POSITION>
+				<FOOTNOTE_ALIGNMENT><![CDATA[LEFT]]></FOOTNOTE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_SKIP_MODE><![CDATA[AUTOMATIC]]></XAXIS_TICK_LABEL_SKIP_MODE>
+				<DATA_MAP_COLNAMES><![CDATA[\,"DT","SMPL","WW"]]></DATA_MAP_COLNAMES>
+				<DATA_MAP_SERIES><![CDATA[\,"WW"]]></DATA_MAP_SERIES>
+				<Y2AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y2AXIS_LOGARITHMIC_BASE>
+				<GRID><![CDATA[true]]></GRID>
+				<DATA_MAP_COUNT><![CDATA[1]]></DATA_MAP_COUNT>
+				<STYLE><![CDATA[Default]]></STYLE>
+				<TITLE_ALIGNMENT><![CDATA[LEFT]]></TITLE_ALIGNMENT>
+				<Y2AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y2AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_MINIMUM><![CDATA[10.0]]></Y2AXIS_SCALE_MINIMUM>
+				<THREED><![CDATA[false]]></THREED>
+				<Y2AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y2AXIS_LINE_WIDTH>
+				<DATA_MAP_VALUES><![CDATA[\,"SMPL"]]></DATA_MAP_VALUES>
+				<Y1AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y1AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_INCREMENT><![CDATA[20.0]]></Y2AXIS_SCALE_INCREMENT>
+				<PLOT_VGRID_WIDTH><![CDATA[THINNER]]></PLOT_VGRID_WIDTH>
+				<Y2AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y2AXIS_TITLE_ALIGNMENT>
+				<SUBTITLE_ALIGNMENT><![CDATA[LEFT]]></SUBTITLE_ALIGNMENT>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select /*+ parallel(8) */ dt, ww, case when nvl(:avg,0) = 1 then avg(smpl) else sum(smpl) end smpl from (
@@ -2017,6 +2218,26 @@ order by dt, ww]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -2061,14 +2282,11 @@ order by dt, ww]]></sql>
 							
 							
 							
-				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										</data>
+				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -2078,50 +2296,50 @@ order by dt, ww]]></sql>
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<PLOT_HGRID_WIDTH>THINNER</PLOT_HGRID_WIDTH>
-				<XAXIS_TICK_LABEL_AUTO_ROTATE>true</XAXIS_TICK_LABEL_AUTO_ROTATE>
-				<Y1AXIS_SCALE_INCREMENT>10.0</Y1AXIS_SCALE_INCREMENT>
-				<Y2AXIS_SCALE_MAXIMUM>80.0</Y2AXIS_SCALE_MAXIMUM>
-				<Y1AXIS_LINE_WIDTH>THINNEST</Y1AXIS_LINE_WIDTH>
-				<Y1AXIS_TITLE_ALIGNMENT>CENTER</Y1AXIS_TITLE_ALIGNMENT>
-				<LEGEND_LOCATION>AUTOMATIC</LEGEND_LOCATION>
-				<Y1AXIS_REFOBJ_COUNT>0</Y1AXIS_REFOBJ_COUNT>
-				<LEGEND_ALIGNMENT>LEFT</LEGEND_ALIGNMENT>
-				<GRADIENT>false</GRADIENT>
-				<XAXIS_LINE_WIDTH>THINNEST</XAXIS_LINE_WIDTH>
-				<Y1AXIS_REFOBJ_LINE_VALUE>\</Y1AXIS_REFOBJ_LINE_VALUE>
-				<LEGEND>true</LEGEND>
-				<Y1AXIS_SCALE_MAXIMUM>80.0</Y1AXIS_SCALE_MAXIMUM>
-				<XAXIS_TITLE_ALIGNMENT>CENTER</XAXIS_TITLE_ALIGNMENT>
-				<PLOT_DATALABELS>false</PLOT_DATALABELS>
-				<XAXIS_LOGARITHMIC_BASE>BASE_10</XAXIS_LOGARITHMIC_BASE>
-				<XAXIS_TICK_LABEL_ROTATE>HORIZONTAL</XAXIS_TICK_LABEL_ROTATE>
-				<Y1AXIS_LOGARITHMIC_BASE>BASE_10</Y1AXIS_LOGARITHMIC_BASE>
-				<TYPE>LINE_VERT_ABS</TYPE>
-				<GRID_WIDTH>THINNER</GRID_WIDTH>
-				<PLOT_DATALABELS_BAR_POSITION>ABOVE</PLOT_DATALABELS_BAR_POSITION>
-				<FOOTNOTE_ALIGNMENT>LEFT</FOOTNOTE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_SKIP_MODE>AUTOMATIC</XAXIS_TICK_LABEL_SKIP_MODE>
-				<Y1AXIS_REFOBJ_VISIBLE>\</Y1AXIS_REFOBJ_VISIBLE>
-				<Y2AXIS_LOGARITHMIC_BASE>BASE_10</Y2AXIS_LOGARITHMIC_BASE>
-				<GRID>true</GRID>
-				<STYLE>Default</STYLE>
-				<TITLE_ALIGNMENT>LEFT</TITLE_ALIGNMENT>
-				<XAXIS_SCALE_INCREMENT>10.0</XAXIS_SCALE_INCREMENT>
-				<XAXIS_SCALE_MAXIMUM>70.0</XAXIS_SCALE_MAXIMUM>
-				<Y2AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y2AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_MINIMUM>10.0</Y2AXIS_SCALE_MINIMUM>
-				<THREED>false</THREED>
-				<Y2AXIS_LINE_WIDTH>THINNEST</Y2AXIS_LINE_WIDTH>
-				<Y1AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y1AXIS_TICK_LABEL_ROTATE>
-				<Y1AXIS_REFOBJ_TEXT>\</Y1AXIS_REFOBJ_TEXT>
-				<Y1AXIS_REFOBJ_WIDTH>\</Y1AXIS_REFOBJ_WIDTH>
-				<Y1AXIS_TITLE>false</Y1AXIS_TITLE>
-				<Y2AXIS_SCALE_INCREMENT>20.0</Y2AXIS_SCALE_INCREMENT>
-				<PLOT_VGRID_WIDTH>THINNER</PLOT_VGRID_WIDTH>
-				<Y2AXIS_TITLE_ALIGNMENT>CENTER</Y2AXIS_TITLE_ALIGNMENT>
-				<SUBTITLE_ALIGNMENT>LEFT</SUBTITLE_ALIGNMENT>
-				<Y1AXIS_REFOBJ_COLOR>\</Y1AXIS_REFOBJ_COLOR>
+				<PLOT_HGRID_WIDTH><![CDATA[THINNER]]></PLOT_HGRID_WIDTH>
+				<XAXIS_TICK_LABEL_AUTO_ROTATE><![CDATA[true]]></XAXIS_TICK_LABEL_AUTO_ROTATE>
+				<Y1AXIS_SCALE_INCREMENT><![CDATA[10.0]]></Y1AXIS_SCALE_INCREMENT>
+				<Y2AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y2AXIS_SCALE_MAXIMUM>
+				<Y1AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y1AXIS_LINE_WIDTH>
+				<Y1AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y1AXIS_TITLE_ALIGNMENT>
+				<LEGEND_LOCATION><![CDATA[AUTOMATIC]]></LEGEND_LOCATION>
+				<Y1AXIS_REFOBJ_COUNT><![CDATA[0]]></Y1AXIS_REFOBJ_COUNT>
+				<LEGEND_ALIGNMENT><![CDATA[LEFT]]></LEGEND_ALIGNMENT>
+				<GRADIENT><![CDATA[false]]></GRADIENT>
+				<XAXIS_LINE_WIDTH><![CDATA[THINNEST]]></XAXIS_LINE_WIDTH>
+				<Y1AXIS_REFOBJ_LINE_VALUE><![CDATA[\]]></Y1AXIS_REFOBJ_LINE_VALUE>
+				<LEGEND><![CDATA[true]]></LEGEND>
+				<Y1AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y1AXIS_SCALE_MAXIMUM>
+				<XAXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></XAXIS_TITLE_ALIGNMENT>
+				<PLOT_DATALABELS><![CDATA[false]]></PLOT_DATALABELS>
+				<XAXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></XAXIS_LOGARITHMIC_BASE>
+				<XAXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></XAXIS_TICK_LABEL_ROTATE>
+				<Y1AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y1AXIS_LOGARITHMIC_BASE>
+				<TYPE><![CDATA[LINE_VERT_ABS]]></TYPE>
+				<GRID_WIDTH><![CDATA[THINNER]]></GRID_WIDTH>
+				<PLOT_DATALABELS_BAR_POSITION><![CDATA[ABOVE]]></PLOT_DATALABELS_BAR_POSITION>
+				<FOOTNOTE_ALIGNMENT><![CDATA[LEFT]]></FOOTNOTE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_SKIP_MODE><![CDATA[AUTOMATIC]]></XAXIS_TICK_LABEL_SKIP_MODE>
+				<Y1AXIS_REFOBJ_VISIBLE><![CDATA[\]]></Y1AXIS_REFOBJ_VISIBLE>
+				<Y2AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y2AXIS_LOGARITHMIC_BASE>
+				<GRID><![CDATA[true]]></GRID>
+				<STYLE><![CDATA[Default]]></STYLE>
+				<TITLE_ALIGNMENT><![CDATA[LEFT]]></TITLE_ALIGNMENT>
+				<XAXIS_SCALE_INCREMENT><![CDATA[10.0]]></XAXIS_SCALE_INCREMENT>
+				<XAXIS_SCALE_MAXIMUM><![CDATA[70.0]]></XAXIS_SCALE_MAXIMUM>
+				<Y2AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y2AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_MINIMUM><![CDATA[10.0]]></Y2AXIS_SCALE_MINIMUM>
+				<THREED><![CDATA[false]]></THREED>
+				<Y2AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y2AXIS_LINE_WIDTH>
+				<Y1AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y1AXIS_TICK_LABEL_ROTATE>
+				<Y1AXIS_REFOBJ_TEXT><![CDATA[\]]></Y1AXIS_REFOBJ_TEXT>
+				<Y1AXIS_REFOBJ_WIDTH><![CDATA[\]]></Y1AXIS_REFOBJ_WIDTH>
+				<Y1AXIS_TITLE><![CDATA[false]]></Y1AXIS_TITLE>
+				<Y2AXIS_SCALE_INCREMENT><![CDATA[20.0]]></Y2AXIS_SCALE_INCREMENT>
+				<PLOT_VGRID_WIDTH><![CDATA[THINNER]]></PLOT_VGRID_WIDTH>
+				<Y2AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y2AXIS_TITLE_ALIGNMENT>
+				<SUBTITLE_ALIGNMENT><![CDATA[LEFT]]></SUBTITLE_ALIGNMENT>
+				<Y1AXIS_REFOBJ_COLOR><![CDATA[\]]></Y1AXIS_REFOBJ_COLOR>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[SELECT to_char("STAT$BH".SNAP_DATE, 'dd-mm hh24') as hh, "STAT$BH".OBJ_NAME, avg("STAT$BH".PCT) as pct
@@ -2182,6 +2400,26 @@ ORDER BY trunc("STAT$BH".SNAP_DATE), to_char("STAT$BH".SNAP_DATE, 'hh24') asc, "
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -2226,14 +2464,11 @@ ORDER BY trunc("STAT$BH".SNAP_DATE), to_char("STAT$BH".SNAP_DATE, 'hh24') asc, "
 							
 							
 							
-				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																										</data>
+				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -2243,39 +2478,39 @@ ORDER BY trunc("STAT$BH".SNAP_DATE), to_char("STAT$BH".SNAP_DATE, 'hh24') asc, "
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<PLOT_HGRID_WIDTH>THINNER</PLOT_HGRID_WIDTH>
-				<XAXIS_TICK_LABEL_AUTO_ROTATE>true</XAXIS_TICK_LABEL_AUTO_ROTATE>
-				<Y1AXIS_SCALE_INCREMENT>10.0</Y1AXIS_SCALE_INCREMENT>
-				<Y2AXIS_SCALE_MAXIMUM>80.0</Y2AXIS_SCALE_MAXIMUM>
-				<Y1AXIS_LINE_WIDTH>THINNEST</Y1AXIS_LINE_WIDTH>
-				<Y1AXIS_TITLE_ALIGNMENT>CENTER</Y1AXIS_TITLE_ALIGNMENT>
-				<LEGEND_LOCATION>AUTOMATIC</LEGEND_LOCATION>
-				<LEGEND_ALIGNMENT>LEFT</LEGEND_ALIGNMENT>
-				<GRADIENT>false</GRADIENT>
-				<XAXIS_LINE_WIDTH>THINNEST</XAXIS_LINE_WIDTH>
-				<LEGEND>false</LEGEND>
-				<Y1AXIS_SCALE_MAXIMUM>80.0</Y1AXIS_SCALE_MAXIMUM>
-				<XAXIS_TITLE_ALIGNMENT>CENTER</XAXIS_TITLE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_ROTATE>HORIZONTAL</XAXIS_TICK_LABEL_ROTATE>
-				<Y1AXIS_LOGARITHMIC_BASE>BASE_10</Y1AXIS_LOGARITHMIC_BASE>
-				<TYPE>BAR_HORIZ_CLUST</TYPE>
-				<GRID_WIDTH>THINNER</GRID_WIDTH>
-				<PLOT_DATALABELS_BAR_POSITION>ABOVE</PLOT_DATALABELS_BAR_POSITION>
-				<FOOTNOTE_ALIGNMENT>LEFT</FOOTNOTE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_SKIP_MODE>AUTOMATIC</XAXIS_TICK_LABEL_SKIP_MODE>
-				<Y2AXIS_LOGARITHMIC_BASE>BASE_10</Y2AXIS_LOGARITHMIC_BASE>
-				<GRID>true</GRID>
-				<STYLE>Default</STYLE>
-				<TITLE_ALIGNMENT>LEFT</TITLE_ALIGNMENT>
-				<Y2AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y2AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_MINIMUM>10.0</Y2AXIS_SCALE_MINIMUM>
-				<THREED>false</THREED>
-				<Y2AXIS_LINE_WIDTH>THINNEST</Y2AXIS_LINE_WIDTH>
-				<Y1AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y1AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_INCREMENT>20.0</Y2AXIS_SCALE_INCREMENT>
-				<PLOT_VGRID_WIDTH>THINNER</PLOT_VGRID_WIDTH>
-				<Y2AXIS_TITLE_ALIGNMENT>CENTER</Y2AXIS_TITLE_ALIGNMENT>
-				<SUBTITLE_ALIGNMENT>LEFT</SUBTITLE_ALIGNMENT>
+				<PLOT_HGRID_WIDTH><![CDATA[THINNER]]></PLOT_HGRID_WIDTH>
+				<XAXIS_TICK_LABEL_AUTO_ROTATE><![CDATA[true]]></XAXIS_TICK_LABEL_AUTO_ROTATE>
+				<Y1AXIS_SCALE_INCREMENT><![CDATA[10.0]]></Y1AXIS_SCALE_INCREMENT>
+				<Y2AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y2AXIS_SCALE_MAXIMUM>
+				<Y1AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y1AXIS_LINE_WIDTH>
+				<Y1AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y1AXIS_TITLE_ALIGNMENT>
+				<LEGEND_LOCATION><![CDATA[AUTOMATIC]]></LEGEND_LOCATION>
+				<LEGEND_ALIGNMENT><![CDATA[LEFT]]></LEGEND_ALIGNMENT>
+				<GRADIENT><![CDATA[false]]></GRADIENT>
+				<XAXIS_LINE_WIDTH><![CDATA[THINNEST]]></XAXIS_LINE_WIDTH>
+				<LEGEND><![CDATA[false]]></LEGEND>
+				<Y1AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y1AXIS_SCALE_MAXIMUM>
+				<XAXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></XAXIS_TITLE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></XAXIS_TICK_LABEL_ROTATE>
+				<Y1AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y1AXIS_LOGARITHMIC_BASE>
+				<TYPE><![CDATA[BAR_HORIZ_CLUST]]></TYPE>
+				<GRID_WIDTH><![CDATA[THINNER]]></GRID_WIDTH>
+				<PLOT_DATALABELS_BAR_POSITION><![CDATA[ABOVE]]></PLOT_DATALABELS_BAR_POSITION>
+				<FOOTNOTE_ALIGNMENT><![CDATA[LEFT]]></FOOTNOTE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_SKIP_MODE><![CDATA[AUTOMATIC]]></XAXIS_TICK_LABEL_SKIP_MODE>
+				<Y2AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y2AXIS_LOGARITHMIC_BASE>
+				<GRID><![CDATA[true]]></GRID>
+				<STYLE><![CDATA[Default]]></STYLE>
+				<TITLE_ALIGNMENT><![CDATA[LEFT]]></TITLE_ALIGNMENT>
+				<Y2AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y2AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_MINIMUM><![CDATA[10.0]]></Y2AXIS_SCALE_MINIMUM>
+				<THREED><![CDATA[false]]></THREED>
+				<Y2AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y2AXIS_LINE_WIDTH>
+				<Y1AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y1AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_INCREMENT><![CDATA[20.0]]></Y2AXIS_SCALE_INCREMENT>
+				<PLOT_VGRID_WIDTH><![CDATA[THINNER]]></PLOT_VGRID_WIDTH>
+				<Y2AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y2AXIS_TITLE_ALIGNMENT>
+				<SUBTITLE_ALIGNMENT><![CDATA[LEFT]]></SUBTITLE_ALIGNMENT>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select object_name, null col1, rds
@@ -2302,13 +2537,13 @@ where rownum <= :tp]]></sql>
 					<bind id="s">
 						<prompt><![CDATA[старт]]></prompt>
 						<tooltip><![CDATA[s]]></tooltip>
-						<value><![CDATA[10.07.2017]]></value>
+						<value><![CDATA[09.10.2017]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 					<bind id="e">
 						<prompt><![CDATA[конец]]></prompt>
 						<tooltip><![CDATA[e]]></tooltip>
-						<value><![CDATA[15.07.2017]]></value>
+						<value><![CDATA[30.10.2017]]></value>
 						<bracket><![CDATA[null]]></bracket>
 					</bind>
 					<bind id="tp">
@@ -2330,6 +2565,26 @@ where rownum <= :tp]]></sql>
 					<table font="null" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
 					<header enable="false" generatedate="false">
 						<data>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						
 						
 						
@@ -2402,14 +2657,11 @@ where rownum <= :tp]]></sql>
 							
 							
 				
-				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
+				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -2419,44 +2671,44 @@ where rownum <= :tp]]></sql>
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<PLOT_HGRID_WIDTH>THINNER</PLOT_HGRID_WIDTH>
-				<PLOT_DATATIPS_CUMULATIVE_VALUE>false</PLOT_DATATIPS_CUMULATIVE_VALUE>
-				<Y1AXIS_SCALE_INCREMENT>10.0</Y1AXIS_SCALE_INCREMENT>
-				<Y2AXIS_SCALE_MAXIMUM>80.0</Y2AXIS_SCALE_MAXIMUM>
-				<Y1AXIS_LINE_WIDTH>THINNEST</Y1AXIS_LINE_WIDTH>
-				<Y1AXIS_TITLE_ALIGNMENT>CENTER</Y1AXIS_TITLE_ALIGNMENT>
-				<LEGEND_LOCATION>AUTOMATIC</LEGEND_LOCATION>
-				<LEGEND_ALIGNMENT>LEFT</LEGEND_ALIGNMENT>
-				<GRADIENT>false</GRADIENT>
-				<XAXIS_LINE_WIDTH>THINNEST</XAXIS_LINE_WIDTH>
-				<LEGEND>true</LEGEND>
-				<DATA_MAP_COLUMNS>\,"DT"</DATA_MAP_COLUMNS>
-				<Y1AXIS_SCALE_MAXIMUM>60.0</Y1AXIS_SCALE_MAXIMUM>
-				<XAXIS_TITLE_ALIGNMENT>CENTER</XAXIS_TITLE_ALIGNMENT>
-				<PLOT_DATALABELS>false</PLOT_DATALABELS>
-				<XAXIS_TICK_LABEL_ROTATE>HORIZONTAL</XAXIS_TICK_LABEL_ROTATE>
-				<Y1AXIS_LOGARITHMIC_BASE>BASE_10</Y1AXIS_LOGARITHMIC_BASE>
-				<TYPE>LINE_VERT_ABS</TYPE>
-				<GRID_WIDTH>THINNER</GRID_WIDTH>
-				<PLOT_DATALABELS_BAR_POSITION>ABOVE</PLOT_DATALABELS_BAR_POSITION>
-				<FOOTNOTE_ALIGNMENT>LEFT</FOOTNOTE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_SKIP_MODE>AUTOMATIC</XAXIS_TICK_LABEL_SKIP_MODE>
-				<DATA_MAP_COLNAMES>\,"DT","ELAPSED_TIME_DELTA","SQL_ID"</DATA_MAP_COLNAMES>
-				<DATA_MAP_SERIES>\,"SQL_ID"</DATA_MAP_SERIES>
-				<Y2AXIS_LOGARITHMIC_BASE>BASE_10</Y2AXIS_LOGARITHMIC_BASE>
-				<DATA_MAP_COUNT>1</DATA_MAP_COUNT>
-				<STYLE>Default</STYLE>
-				<TITLE_ALIGNMENT>LEFT</TITLE_ALIGNMENT>
-				<Y2AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y2AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_MINIMUM>10.0</Y2AXIS_SCALE_MINIMUM>
-				<PLOT_DATATIPS_VALUE>true</PLOT_DATATIPS_VALUE>
-				<Y2AXIS_LINE_WIDTH>THINNEST</Y2AXIS_LINE_WIDTH>
-				<DATA_MAP_VALUES>\,"ELAPSED_TIME_DELTA"</DATA_MAP_VALUES>
-				<Y1AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y1AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_INCREMENT>20.0</Y2AXIS_SCALE_INCREMENT>
-				<PLOT_VGRID_WIDTH>THINNER</PLOT_VGRID_WIDTH>
-				<Y2AXIS_TITLE_ALIGNMENT>CENTER</Y2AXIS_TITLE_ALIGNMENT>
-				<SUBTITLE_ALIGNMENT>LEFT</SUBTITLE_ALIGNMENT>
+				<PLOT_HGRID_WIDTH><![CDATA[THINNER]]></PLOT_HGRID_WIDTH>
+				<PLOT_DATATIPS_CUMULATIVE_VALUE><![CDATA[false]]></PLOT_DATATIPS_CUMULATIVE_VALUE>
+				<Y1AXIS_SCALE_INCREMENT><![CDATA[10.0]]></Y1AXIS_SCALE_INCREMENT>
+				<Y2AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y2AXIS_SCALE_MAXIMUM>
+				<Y1AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y1AXIS_LINE_WIDTH>
+				<Y1AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y1AXIS_TITLE_ALIGNMENT>
+				<LEGEND_LOCATION><![CDATA[AUTOMATIC]]></LEGEND_LOCATION>
+				<LEGEND_ALIGNMENT><![CDATA[LEFT]]></LEGEND_ALIGNMENT>
+				<GRADIENT><![CDATA[false]]></GRADIENT>
+				<XAXIS_LINE_WIDTH><![CDATA[THINNEST]]></XAXIS_LINE_WIDTH>
+				<LEGEND><![CDATA[true]]></LEGEND>
+				<DATA_MAP_COLUMNS><![CDATA[\,"DT"]]></DATA_MAP_COLUMNS>
+				<Y1AXIS_SCALE_MAXIMUM><![CDATA[60.0]]></Y1AXIS_SCALE_MAXIMUM>
+				<XAXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></XAXIS_TITLE_ALIGNMENT>
+				<PLOT_DATALABELS><![CDATA[false]]></PLOT_DATALABELS>
+				<XAXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></XAXIS_TICK_LABEL_ROTATE>
+				<Y1AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y1AXIS_LOGARITHMIC_BASE>
+				<TYPE><![CDATA[LINE_VERT_ABS]]></TYPE>
+				<GRID_WIDTH><![CDATA[THINNER]]></GRID_WIDTH>
+				<PLOT_DATALABELS_BAR_POSITION><![CDATA[ABOVE]]></PLOT_DATALABELS_BAR_POSITION>
+				<FOOTNOTE_ALIGNMENT><![CDATA[LEFT]]></FOOTNOTE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_SKIP_MODE><![CDATA[AUTOMATIC]]></XAXIS_TICK_LABEL_SKIP_MODE>
+				<DATA_MAP_COLNAMES><![CDATA[\,"DT","ELAPSED_TIME_DELTA","SQL_ID"]]></DATA_MAP_COLNAMES>
+				<DATA_MAP_SERIES><![CDATA[\,"SQL_ID"]]></DATA_MAP_SERIES>
+				<Y2AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y2AXIS_LOGARITHMIC_BASE>
+				<DATA_MAP_COUNT><![CDATA[1]]></DATA_MAP_COUNT>
+				<STYLE><![CDATA[Default]]></STYLE>
+				<TITLE_ALIGNMENT><![CDATA[LEFT]]></TITLE_ALIGNMENT>
+				<Y2AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y2AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_MINIMUM><![CDATA[10.0]]></Y2AXIS_SCALE_MINIMUM>
+				<PLOT_DATATIPS_VALUE><![CDATA[true]]></PLOT_DATATIPS_VALUE>
+				<Y2AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y2AXIS_LINE_WIDTH>
+				<DATA_MAP_VALUES><![CDATA[\,"ELAPSED_TIME_DELTA"]]></DATA_MAP_VALUES>
+				<Y1AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y1AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_INCREMENT><![CDATA[20.0]]></Y2AXIS_SCALE_INCREMENT>
+				<PLOT_VGRID_WIDTH><![CDATA[THINNER]]></PLOT_VGRID_WIDTH>
+				<Y2AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y2AXIS_TITLE_ALIGNMENT>
+				<SUBTITLE_ALIGNMENT><![CDATA[LEFT]]></SUBTITLE_ALIGNMENT>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[with top as (
@@ -2541,6 +2793,26 @@ order by d.dt]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -2562,14 +2834,11 @@ order by d.dt]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																												</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																				</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -2580,7 +2849,7 @@ order by d.dt]]></sql>
 		<tooltip><![CDATA[]]></tooltip>
 		<drillclass><![CDATA[]]></drillclass>
 		<CustomValues>
-			<TYPE>horizontal</TYPE>
+			<TYPE><![CDATA[horizontal]]></TYPE>
 		</CustomValues>
 		<query>
 			<sql><![CDATA[select v.SQL_ID, v.PLAN_HASH_VALUE, MAX( v.module ) module,  min(begin_interval_time) as stdt, max(begin_interval_time) enddt, sum(EXECUTIONS_DELTA) as execs, 
@@ -2659,6 +2928,26 @@ order by drid desc]]></sql>
 					
 					
 					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 						
 						
 						
@@ -2745,14 +3034,11 @@ order by drid desc]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
 				</footer>
-				<security enable="false" useopenpassword="false" openpassword="" encryption="EXCLUDE_METADATA">
-					<permission enable="false" permissionpassword="" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="true" />
-				</security>
 				<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 			</pdf>
 		<display id="" type="" style="Table" enable="true">
@@ -2761,7 +3047,7 @@ order by drid desc]]></sql>
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select * from table(DBMS_XPLAN.DISPLAY_AWR(:SQL_ID, :PLAN_HASH_VALUE, null, 'basic +outline +peeked_binds') )]]></sql>
@@ -2791,6 +3077,26 @@ order by drid desc]]></sql>
 					<table font="null" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
 					<header enable="false" generatedate="false">
 						<data>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 						
 						
 						
@@ -2862,14 +3168,11 @@ order by drid desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																											</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -2878,27 +3181,34 @@ order by drid desc]]></sql>
 		<name><![CDATA[ash]]></name>
 		<description><![CDATA[]]></description>
 		<tooltip><![CDATA[]]></tooltip>
-		<drillclass><![CDATA[null]]></drillclass>
+		<drillclass><![CDATA[]]></drillclass>
 		<CustomValues>
-			<TYPE>horizontal</TYPE>
+			<TYPE><![CDATA[horizontal]]></TYPE>
 		</CustomValues>
 		<query>
-			<sql><![CDATA[with ash as (
+			<sql><![CDATA[with snp as (
+    select /*+ materialize cardinality(1000) */ dbid , snap_id, instance_number, BEGIN_INTERVAL_TIME, END_INTERVAL_TIME
+    from DBA_HIST_SNAPSHOT
+    where END_INTERVAL_TIME >= to_date(:f, 'dd.mm.yyyy hh24:mi:ss') and BEGIN_INTERVAL_TIME <= to_date(:t, 'dd.mm.yyyy hh24:mi:ss')
+)
+, ash as (
   --число сэмплов, px и client_id берем из ash
-  select /*+ materialize */ * from 
+  select /*+ materialize */ module, sql_id, st_dt, ed_dt, PLAN_HASH_VALUE, execs, gb, av_sec, secs, rws, smpl, px, client_id, smpl_full
+  from 
   (
     select  max(module) as module, sql_id, min(msmpl_tm) as st_dt, max(msmpl_tm) ed_dt, 
           SQL_PLAN_HASH_VALUE as PLAN_HASH_VALUE, sum(execs) execs, sum(gb) as gb, avg(secs) as av_sec, sum(secs) secs, null rws,
-          sum(smpl) smpl, avg(px) as px, max(client_id) as client_id
+          sum(smpl) smpl, avg(px) as px, max(client_id) as client_id, sum(sum(smpl)) OVER() smpl_full
     from
     (
-      select h.sql_exec_start, h.module, h.sql_id, h.SQL_PLAN_HASH_VALUE, count(distinct sql_exec_id) as execs,  SUM (delta_read_io_bytes)/1024/1024/1024 as gb, 
+      select /*+ cardinality(@"SEL$A33D5808" "ASH"@"SEL$20" 100000) */ h.sql_exec_start, h.module, h.sql_id, h.SQL_PLAN_HASH_VALUE, count(distinct sql_exec_id) as execs,  SUM (delta_read_io_bytes)/1024/1024/1024 as gb, 
       GREATEST( to_char(max(sample_time),'SSSSS') - to_char(sql_exec_start,'SSSSS'), 0)  as secs, count(*) as smpl, max(h.sample_time) as msmpl_tm, 
       avg( trunc(px_flags/2097152) ) as px, client_id
-       FROM   dba_hist_active_sess_history h
+      FROM snp
+      join dba_hist_active_sess_history h on h.dbid = snp.dbid and h.snap_id = snp.snap_id and h.instance_number = snp.instance_number
       where 
       h.sample_time between to_date(:f, 'dd.mm.yyyy hh24:mi:ss') and to_date(:t, 'dd.mm.yyyy hh24:mi:ss')
-      and h.sql_id is not null
+      --and h.sql_id is not null
       and ( h.module = :m or :m is null )
       and ( h.client_id = :c or :c is null )
       and ( h.sql_id = :sql_id or :sql_id is null )
@@ -2915,17 +3225,16 @@ order by drid desc]]></sql>
 awr as (
   --все остальное по возможности из awr
   SELECT /*+ MATERIALIZE */ * FROM (
-    select  max(max(s.module)) OVER(PARTITION BY sql_id, PLAN_HASH_VALUE order by count(*) desc) module, sql_id, min(t.begin_interval_time) st_dt, max(t.END_INTERVAL_TIME) ed_dt,
+    select max(max(s.module)) OVER(PARTITION BY sql_id, PLAN_HASH_VALUE order by count(*) desc) module, sql_id, min(t.begin_interval_time) st_dt, max(t.END_INTERVAL_TIME) ed_dt,
         PLAN_HASH_VALUE, SUM(EXECUTIONS_DELTA) execs, 
       round(SUM(BUFFER_GETS_DELTA)/nvl(nullif(SUM(EXECUTIONS_DELTA),0),1)) as gb, 
       round(SUM(s.ELAPSED_TIME_DELTA)/nvl(nullif(SUM(EXECUTIONS_DELTA),0),1)/1000/1000,4) as av_sec, 
       round(SUM(s.ELAPSED_TIME_DELTA)/1000/1000,4) as secs, 
       round(nullif(SUM(ROWS_PROCESSED_DELTA),0)/nvl(nullif(SUM(EXECUTIONS_DELTA),0) ,1)) as rws ,
-      null as smpl, null px, null client_id
-      from DBA_HIST_SQLSTAT s
-      join DBA_HIST_SNAPSHOT t on t.snap_id = s.snap_id and t.INSTANCE_NUMBER = s.INSTANCE_NUMBER
-      where t.begin_interval_time between to_date(:f, 'dd.mm.yyyy hh24:mi:ss') and to_date(:t, 'dd.mm.yyyy hh24:mi:ss')
-      and ( s.sql_id = :sql_id or :sql_id is null )
+      null as smpl, null px, null client_id, null smpl_full
+      from snp t
+      join DBA_HIST_SQLSTAT s on t.dbid = s.dbid and t.snap_id = s.snap_id and t.INSTANCE_NUMBER = s.INSTANCE_NUMBER
+      where ( s.sql_id = :sql_id or :sql_id is null )
       and ( s.module = :m or :m is null )
       and ( NULL IS NOT NULL or :c is null ) --нет клиента, если задан, то тащим все из ash
       and ( s.PLAN_HASH_VALUE = :hsh or :hsh is null )
@@ -2936,12 +3245,12 @@ awr as (
   )
   WHERE rownum <= 50
 )
-select distinct v.module, v.client_id, v.sql_id, v.PLAN_HASH_VALUE, st_dt,ed_dt, execs, round(gb,2) as gb, round(av_sec,2) as av_sec, secs, 
-smpl, nvl( round(px), 0) as dop, rws,
+select /*+ no_parallel monitor */ distinct v.module, v.client_id, v.sql_id, v.PLAN_HASH_VALUE, st_dt,ed_dt, execs, round(gb,2) as gb, round(av_sec,2) as av_sec, secs, 
+smpl, nvl( round(px), 0) as dop, rws, round(smpl / nullif(smpl_full,0) *100, 2) as prc,
 trim( NVL( trim(DBMS_LOB.SUBSTR (t.sql_text,1000)), t1.SQL_TEXT) ) as txt 
 from 
 (
-  select module, sql_id, PLAN_HASH_VALUE, st_dt,ed_dt, execs, gb, av_sec, secs, smpl, px, client_id, rws
+  select module, sql_id, PLAN_HASH_VALUE, st_dt,ed_dt, execs, gb, av_sec, secs, smpl, px, client_id, rws, smpl_full
   from (
   SELECT
     NVL(awr.module , ash.module) as module, 
@@ -2955,11 +3264,11 @@ from
     case when NVL(ash.px,0) > 1 then ash.secs else NVL(awr.secs,ash.secs) end as secs,
     NVL(awr.rws , ash.rws) as rws,
     NVL(awr.smpl , ash.smpl) as smpl,
+    NVL(awr.smpl_full , ash.smpl_full) smpl_full,
     NVL(awr.px , ash.px) as px,
     NVL(awr.client_id , ash.client_id) as client_id
   FROM  ash FULL OUTER JOIN awr ON (ash.sql_id = awr.sql_id AND ash.PLAN_HASH_VALUE = awr.PLAN_HASH_VALUE)
   order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last
-
   )
   where rownum <= 30
 ) v
@@ -2970,13 +3279,13 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 				<bind id="f">
 					<prompt><![CDATA[f]]></prompt>
 					<tooltip><![CDATA[f]]></tooltip>
-					<value><![CDATA[11.09.2017]]></value>
+					<value><![CDATA[20.12.2017]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="t">
 					<prompt><![CDATA[t]]></prompt>
 					<tooltip><![CDATA[t]]></tooltip>
-					<value><![CDATA[18.09.2017]]></value>
+					<value><![CDATA[31.12.2017]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="m">
@@ -2988,13 +3297,13 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 				<bind id="c">
 					<prompt><![CDATA[client]]></prompt>
 					<tooltip><![CDATA[c]]></tooltip>
-					<value><![CDATA[NULL_VALUE]]></value>
+					<value><![CDATA[gujzqrk9x594y]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="sql_id">
 					<prompt><![CDATA[sql_id]]></prompt>
 					<tooltip><![CDATA[sql_id]]></tooltip>
-					<value><![CDATA[NULL_VALUE]]></value>
+					<value><![CDATA[f1m8jfbc4pd0w]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="hsh">
@@ -3067,6 +3376,26 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 					
 					
 					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
 						
 						
 						
@@ -3114,23 +3443,20 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 						
 						
 				
-				null																																																																																																																																																																																																																																																																																																																																																																																																																															</data>
+				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
 				</footer>
-				<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-					<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-				</security>
 				<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 			</pdf>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[sql_id plans]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select PLAN_HASH_VALUE, min(begin_interval_time) as stdt, max(begin_interval_time) enddt, sum(EXECUTIONS_DELTA) as execs, 
@@ -3143,7 +3469,7 @@ from (
   round(s.ELAPSED_TIME_DELTA/nvl(nullif(EXECUTIONS_DELTA,0),1)/1000/1000,2) as ELAPSED_TIME_DELTA, nvl(nullif(EXECUTIONS_DELTA,0),1),OPTIMIZER_COST,IOWAIT_DELTA,
   round(IO_OFFLOAD_RETURN_BYTES_DELTA/1024/1024/1024,2) as off_gb  , round(IO_OFFLOAD_ELIG_BYTES_DELTA/1024/1024/1024,2) as eligb_gb
   from DBA_HIST_SQLSTAT s
-  join DBA_HIST_SNAPSHOT t on t.snap_id = s.snap_id and t.INSTANCE_NUMBER = s.INSTANCE_NUMBER
+  join DBA_HIST_SNAPSHOT t on t.dbid = s.dbid and t.snap_id = s.snap_id and t.INSTANCE_NUMBER = s.INSTANCE_NUMBER
   where 1=1
   and sql_id = :SQL_ID
 )
@@ -3196,6 +3522,26 @@ order by enddt desc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -3241,24 +3587,21 @@ order by enddt desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[ash now]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select  H.SESSION_ID, H.SESSION_SERIAL#,h.client_id, h.module, sql_exec_start, h.sql_id, h.SQL_PLAN_HASH_VALUE, 
@@ -3269,6 +3612,14 @@ where 1=1
 and h.sql_id = :SQL_ID /*AND ( h.SQL_PLAN_HASH_VALUE = :SQL_PLAN_HASH_VALUE OR NVL(:SQL_PLAN_HASH_VALUE,0) = 0 )*/
 group by h.sql_id, h.SQL_PLAN_HASH_VALUE, sql_exec_start, module, h.client_id, H.SESSION_ID, H.SESSION_SERIAL#
 order by sql_exec_start desc nulls last]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -3308,6 +3659,26 @@ order by sql_exec_start desc nulls last]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -3353,27 +3724,38 @@ order by sql_exec_start desc nulls last]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[plan]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select * from table(DBMS_XPLAN.DISPLAY_AWR(:SQL_ID, :PLAN_HASH_VALUE, null, 'basic +outline +peeked_binds +note') )]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="PLAN_HASH_VALUE">
+						<prompt><![CDATA[PLAN_HASH_VALUE]]></prompt>
+						<tooltip><![CDATA[PLAN_HASH_VALUE]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -3413,6 +3795,26 @@ order by sql_exec_start desc nulls last]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -3458,29 +3860,34 @@ order by sql_exec_start desc nulls last]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[binds]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select last_captured, DATATYPE_STRING, NAME, VALUE_STRING from dba_hist_sqlbind where sql_id = :SQL_ID 
-and last_captured+1 > :ED_DT and last_captured <= :ED_DT
+and last_captured <= sysdate
 order by snap_id desc, position asc]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -3520,6 +3927,26 @@ order by snap_id desc, position asc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -3565,24 +3992,21 @@ order by snap_id desc, position asc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[v$sql]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select PLAN_HASH_VALUE, CHILD_NUMBER, SQL_PROFILE, SQL_PLAN_BASELINE, executions, round( ELAPSED_TIME/NVL(NULLIF(executions,0),1) / 1000 /1000 ,4) as sec_per_exec,
@@ -3591,6 +4015,14 @@ round( DISK_READS/NVL(NULLIF(executions,0),1) ,4) as DISK_READS, round( BUFFER_G
 round( CPU_TIME/NVL(NULLIF(executions,0),1) / 1000 / 1000 ,4) CPU_TIME, round( ROWS_PROCESSED/NVL(NULLIF(executions,0),1)  ,4) ROWS_PROCESSED, 
 FIRST_LOAD_TIME, LAST_LOAD_TIME 
 from gv$sql where sql_id = :SQL_ID]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -3630,6 +4062,26 @@ from gv$sql where sql_id = :SQL_ID]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -3663,24 +4115,21 @@ from gv$sql where sql_id = :SQL_ID]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																												</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[awr]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select s.INSTANCE_NUMBER, s.snap_id, s.module, t.begin_interval_time, sql_id, PLAN_HASH_VALUE, nvl(nullif(EXECUTIONS_DELTA,0),1) EXECUTIONS, 
@@ -3700,6 +4149,14 @@ from gv$sql where sql_id = :SQL_ID]]></sql>
   where 1=1
   and sql_id = :SQL_ID
 order by t.begin_interval_time desc, s.snap_id desc, s.INSTANCE_NUMBER]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -3739,6 +4196,26 @@ order by t.begin_interval_time desc, s.snap_id desc, s.INSTANCE_NUMBER]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -3769,28 +4246,32 @@ order by t.begin_interval_time desc, s.snap_id desc, s.INSTANCE_NUMBER]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																							</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Code" enable="true">
 			<name><![CDATA[text]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select sql_text from dba_hist_sqltext t
-where sql_id = :SQL_ID]]></sql>
+where sql_id = :SQL_ID and rownum < 2]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -3830,6 +4311,26 @@ where sql_id = :SQL_ID]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -3858,24 +4359,21 @@ where sql_id = :SQL_ID]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																									</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[plan real]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[with t as (
@@ -3902,6 +4400,32 @@ left join v$sql_plan v on v.sql_id = p.sql_id and v.PLAN_HASH_VALUE = p.PLAN_HAS
 left join t on T.SQL_PLAN_LINE_ID = p.id 
 where p.sql_id = :SQL_ID AND p.PLAN_HASH_VALUE = :PLAN_HASH_VALUE
 order by p.id]]></sql>
+				<binds>
+					<bind id="ST_DT">
+						<prompt><![CDATA[ST_DT]]></prompt>
+						<tooltip><![CDATA[ST_DT]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="ED_DT">
+						<prompt><![CDATA[ED_DT]]></prompt>
+						<tooltip><![CDATA[ED_DT]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="PLAN_HASH_VALUE">
+						<prompt><![CDATA[PLAN_HASH_VALUE]]></prompt>
+						<tooltip><![CDATA[PLAN_HASH_VALUE]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -3941,6 +4465,26 @@ order by p.id]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -3969,54 +4513,51 @@ order by p.id]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																									</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Chart" enable="true">
+		<display id="" type="" style="Chart" enable="true">
 			<name><![CDATA[graph]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<PLOT_HGRID_WIDTH>THINNER</PLOT_HGRID_WIDTH>
-				<Y1AXIS_SCALE_INCREMENT>10.0</Y1AXIS_SCALE_INCREMENT>
-				<Y2AXIS_SCALE_MAXIMUM>80.0</Y2AXIS_SCALE_MAXIMUM>
-				<Y1AXIS_LINE_WIDTH>THINNEST</Y1AXIS_LINE_WIDTH>
-				<Y1AXIS_TITLE_ALIGNMENT>CENTER</Y1AXIS_TITLE_ALIGNMENT>
-				<LEGEND_LOCATION>AUTOMATIC</LEGEND_LOCATION>
-				<LEGEND_ALIGNMENT>LEFT</LEGEND_ALIGNMENT>
-				<XAXIS_LINE_WIDTH>THINNEST</XAXIS_LINE_WIDTH>
-				<DATA_MAP_COLUMNS>\,"DT"</DATA_MAP_COLUMNS>
-				<Y1AXIS_SCALE_MAXIMUM>80.0</Y1AXIS_SCALE_MAXIMUM>
-				<XAXIS_TITLE_ALIGNMENT>CENTER</XAXIS_TITLE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_ROTATE>HORIZONTAL</XAXIS_TICK_LABEL_ROTATE>
-				<Y1AXIS_LOGARITHMIC_BASE>BASE_10</Y1AXIS_LOGARITHMIC_BASE>
-				<TYPE>LINE_VERT_ABS</TYPE>
-				<GRID_WIDTH>THINNER</GRID_WIDTH>
-				<FOOTNOTE_ALIGNMENT>LEFT</FOOTNOTE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_SKIP_MODE>AUTOMATIC</XAXIS_TICK_LABEL_SKIP_MODE>
-				<DATA_MAP_COLNAMES>\,"DT","ELAPSED_TIME_DELTA","SQL_ID"</DATA_MAP_COLNAMES>
-				<DATA_MAP_SERIES>\,"SQL_ID"</DATA_MAP_SERIES>
-				<Y2AXIS_LOGARITHMIC_BASE>BASE_10</Y2AXIS_LOGARITHMIC_BASE>
-				<STYLE>Default</STYLE>
-				<TITLE_ALIGNMENT>LEFT</TITLE_ALIGNMENT>
-				<Y2AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y2AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_MINIMUM>10.0</Y2AXIS_SCALE_MINIMUM>
-				<Y2AXIS_LINE_WIDTH>THINNEST</Y2AXIS_LINE_WIDTH>
-				<DATA_MAP_VALUES>\,"ELAPSED_TIME_DELTA"</DATA_MAP_VALUES>
-				<Y1AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y1AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_INCREMENT>20.0</Y2AXIS_SCALE_INCREMENT>
-				<PLOT_VGRID_WIDTH>THINNER</PLOT_VGRID_WIDTH>
-				<Y2AXIS_TITLE_ALIGNMENT>CENTER</Y2AXIS_TITLE_ALIGNMENT>
-				<SUBTITLE_ALIGNMENT>LEFT</SUBTITLE_ALIGNMENT>
+				<PLOT_HGRID_WIDTH><![CDATA[THINNER]]></PLOT_HGRID_WIDTH>
+				<Y1AXIS_SCALE_INCREMENT><![CDATA[10.0]]></Y1AXIS_SCALE_INCREMENT>
+				<Y2AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y2AXIS_SCALE_MAXIMUM>
+				<Y1AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y1AXIS_LINE_WIDTH>
+				<Y1AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y1AXIS_TITLE_ALIGNMENT>
+				<LEGEND_LOCATION><![CDATA[AUTOMATIC]]></LEGEND_LOCATION>
+				<LEGEND_ALIGNMENT><![CDATA[LEFT]]></LEGEND_ALIGNMENT>
+				<XAXIS_LINE_WIDTH><![CDATA[THINNEST]]></XAXIS_LINE_WIDTH>
+				<DATA_MAP_COLUMNS><![CDATA[\,"DT"]]></DATA_MAP_COLUMNS>
+				<Y1AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y1AXIS_SCALE_MAXIMUM>
+				<XAXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></XAXIS_TITLE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></XAXIS_TICK_LABEL_ROTATE>
+				<Y1AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y1AXIS_LOGARITHMIC_BASE>
+				<TYPE><![CDATA[LINE_VERT_ABS]]></TYPE>
+				<GRID_WIDTH><![CDATA[THINNER]]></GRID_WIDTH>
+				<FOOTNOTE_ALIGNMENT><![CDATA[LEFT]]></FOOTNOTE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_SKIP_MODE><![CDATA[AUTOMATIC]]></XAXIS_TICK_LABEL_SKIP_MODE>
+				<DATA_MAP_COLNAMES><![CDATA[\,"DT","ELAPSED_TIME_DELTA","SQL_ID"]]></DATA_MAP_COLNAMES>
+				<DATA_MAP_SERIES><![CDATA[\,"SQL_ID"]]></DATA_MAP_SERIES>
+				<Y2AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y2AXIS_LOGARITHMIC_BASE>
+				<STYLE><![CDATA[Default]]></STYLE>
+				<TITLE_ALIGNMENT><![CDATA[LEFT]]></TITLE_ALIGNMENT>
+				<Y2AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y2AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_MINIMUM><![CDATA[10.0]]></Y2AXIS_SCALE_MINIMUM>
+				<Y2AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y2AXIS_LINE_WIDTH>
+				<DATA_MAP_VALUES><![CDATA[\,"ELAPSED_TIME_DELTA"]]></DATA_MAP_VALUES>
+				<Y1AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y1AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_INCREMENT><![CDATA[20.0]]></Y2AXIS_SCALE_INCREMENT>
+				<PLOT_VGRID_WIDTH><![CDATA[THINNER]]></PLOT_VGRID_WIDTH>
+				<Y2AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y2AXIS_TITLE_ALIGNMENT>
+				<SUBTITLE_ALIGNMENT><![CDATA[LEFT]]></SUBTITLE_ALIGNMENT>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select :SQL_ID as sql_id, to_char(d.dt, 'dd.mm.yyy hh24') as dt, t.ELAPSED_TIME_DELTA/1000/1000 as ELAPSED_TIME_DELTA
@@ -4092,6 +4633,26 @@ order by d.dt]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -4113,24 +4674,21 @@ order by d.dt]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																												</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																				</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[awr_wk]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select trunc(t.begin_interval_time, 'IW') as dt, PLAN_HASH_VALUE,  sum( EXECUTIONS_DELTA ) EXECUTIONS_DELTA, 
@@ -4146,6 +4704,14 @@ round( sum( s.CPU_TIME_DELTA)/nvl(nullif(sum(EXECUTIONS_DELTA),0),1)/1000/1000,3
   and sql_id = :SQL_ID
 group by trunc(t.begin_interval_time, 'IW'), PLAN_HASH_VALUE
 order by dt desc, PLAN_HASH_VALUE]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -4185,6 +4751,26 @@ order by dt desc, PLAN_HASH_VALUE]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -4196,24 +4782,21 @@ order by dt desc, PLAN_HASH_VALUE]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																						</data>
+							null																																																																																																																																																																																																																																																																																																																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[objects]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select object_name, prc from (
@@ -4266,6 +4849,26 @@ order by prc desc nulls last]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -4274,50 +4877,47 @@ order by prc desc nulls last]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																	</data>
+							null																																																																																																																																																																																																																																																																																																																																																									</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Chart" enable="true">
+		<display id="" type="" style="Chart" enable="true">
 			<name><![CDATA[v$bh]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<PLOT_HGRID_WIDTH>THINNER</PLOT_HGRID_WIDTH>
-				<Y1AXIS_SCALE_INCREMENT>10.0</Y1AXIS_SCALE_INCREMENT>
-				<Y2AXIS_SCALE_MAXIMUM>80.0</Y2AXIS_SCALE_MAXIMUM>
-				<Y1AXIS_LINE_WIDTH>THINNEST</Y1AXIS_LINE_WIDTH>
-				<Y1AXIS_TITLE_ALIGNMENT>CENTER</Y1AXIS_TITLE_ALIGNMENT>
-				<LEGEND_LOCATION>AUTOMATIC</LEGEND_LOCATION>
-				<LEGEND_ALIGNMENT>LEFT</LEGEND_ALIGNMENT>
-				<XAXIS_LINE_WIDTH>THINNEST</XAXIS_LINE_WIDTH>
-				<Y1AXIS_SCALE_MAXIMUM>80.0</Y1AXIS_SCALE_MAXIMUM>
-				<XAXIS_TITLE_ALIGNMENT>CENTER</XAXIS_TITLE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_ROTATE>HORIZONTAL</XAXIS_TICK_LABEL_ROTATE>
-				<Y1AXIS_LOGARITHMIC_BASE>BASE_10</Y1AXIS_LOGARITHMIC_BASE>
-				<TYPE>LINE_VERT_ABS</TYPE>
-				<GRID_WIDTH>THINNER</GRID_WIDTH>
-				<FOOTNOTE_ALIGNMENT>LEFT</FOOTNOTE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_SKIP_MODE>AUTOMATIC</XAXIS_TICK_LABEL_SKIP_MODE>
-				<Y2AXIS_LOGARITHMIC_BASE>BASE_10</Y2AXIS_LOGARITHMIC_BASE>
-				<STYLE>Default</STYLE>
-				<TITLE_ALIGNMENT>LEFT</TITLE_ALIGNMENT>
-				<Y2AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y2AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_MINIMUM>10.0</Y2AXIS_SCALE_MINIMUM>
-				<Y2AXIS_LINE_WIDTH>THINNEST</Y2AXIS_LINE_WIDTH>
-				<Y1AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y1AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_INCREMENT>20.0</Y2AXIS_SCALE_INCREMENT>
-				<PLOT_VGRID_WIDTH>THINNER</PLOT_VGRID_WIDTH>
-				<Y2AXIS_TITLE_ALIGNMENT>CENTER</Y2AXIS_TITLE_ALIGNMENT>
-				<SUBTITLE_ALIGNMENT>LEFT</SUBTITLE_ALIGNMENT>
+				<PLOT_HGRID_WIDTH><![CDATA[THINNER]]></PLOT_HGRID_WIDTH>
+				<Y1AXIS_SCALE_INCREMENT><![CDATA[10.0]]></Y1AXIS_SCALE_INCREMENT>
+				<Y2AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y2AXIS_SCALE_MAXIMUM>
+				<Y1AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y1AXIS_LINE_WIDTH>
+				<Y1AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y1AXIS_TITLE_ALIGNMENT>
+				<LEGEND_LOCATION><![CDATA[AUTOMATIC]]></LEGEND_LOCATION>
+				<LEGEND_ALIGNMENT><![CDATA[LEFT]]></LEGEND_ALIGNMENT>
+				<XAXIS_LINE_WIDTH><![CDATA[THINNEST]]></XAXIS_LINE_WIDTH>
+				<Y1AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y1AXIS_SCALE_MAXIMUM>
+				<XAXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></XAXIS_TITLE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></XAXIS_TICK_LABEL_ROTATE>
+				<Y1AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y1AXIS_LOGARITHMIC_BASE>
+				<TYPE><![CDATA[LINE_VERT_ABS]]></TYPE>
+				<GRID_WIDTH><![CDATA[THINNER]]></GRID_WIDTH>
+				<FOOTNOTE_ALIGNMENT><![CDATA[LEFT]]></FOOTNOTE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_SKIP_MODE><![CDATA[AUTOMATIC]]></XAXIS_TICK_LABEL_SKIP_MODE>
+				<Y2AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y2AXIS_LOGARITHMIC_BASE>
+				<STYLE><![CDATA[Default]]></STYLE>
+				<TITLE_ALIGNMENT><![CDATA[LEFT]]></TITLE_ALIGNMENT>
+				<Y2AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y2AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_MINIMUM><![CDATA[10.0]]></Y2AXIS_SCALE_MINIMUM>
+				<Y2AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y2AXIS_LINE_WIDTH>
+				<Y1AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y1AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_INCREMENT><![CDATA[20.0]]></Y2AXIS_SCALE_INCREMENT>
+				<PLOT_VGRID_WIDTH><![CDATA[THINNER]]></PLOT_VGRID_WIDTH>
+				<Y2AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y2AXIS_TITLE_ALIGNMENT>
+				<SUBTITLE_ALIGNMENT><![CDATA[LEFT]]></SUBTITLE_ALIGNMENT>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[SELECT "STAT$BH".SNAP_DATE, "STAT$BH".OBJ_NAME, avg("STAT$BH".PCT) as pct
@@ -4396,6 +4996,26 @@ ORDER BY "STAT$BH".SNAP_DATE asc, "STAT$BH".OBJ_NAME asc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -4404,24 +5024,21 @@ ORDER BY "STAT$BH".SNAP_DATE asc, "STAT$BH".OBJ_NAME asc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																	</data>
+							null																																																																																																																																																																																																																																																																																																																																																									</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[modules]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select * from (
@@ -4461,56 +5078,73 @@ where rownum <= 10]]></sql>
 						
 						
 						
-						null																																																																																																</data>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						null																																																																																																																																																																																																																								</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Chart" enable="true">
+		<display id="" type="" style="Chart" enable="true">
 			<name><![CDATA[graph_exe]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<PLOT_HGRID_WIDTH>THINNER</PLOT_HGRID_WIDTH>
-				<Y1AXIS_SCALE_INCREMENT>10.0</Y1AXIS_SCALE_INCREMENT>
-				<Y2AXIS_SCALE_MAXIMUM>80.0</Y2AXIS_SCALE_MAXIMUM>
-				<Y1AXIS_LINE_WIDTH>THINNEST</Y1AXIS_LINE_WIDTH>
-				<Y1AXIS_TITLE_ALIGNMENT>CENTER</Y1AXIS_TITLE_ALIGNMENT>
-				<LEGEND_LOCATION>AUTOMATIC</LEGEND_LOCATION>
-				<LEGEND_ALIGNMENT>LEFT</LEGEND_ALIGNMENT>
-				<XAXIS_LINE_WIDTH>THINNEST</XAXIS_LINE_WIDTH>
-				<DATA_MAP_COLUMNS>\,"DT"</DATA_MAP_COLUMNS>
-				<Y1AXIS_SCALE_MAXIMUM>60.0</Y1AXIS_SCALE_MAXIMUM>
-				<XAXIS_TITLE_ALIGNMENT>CENTER</XAXIS_TITLE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_ROTATE>HORIZONTAL</XAXIS_TICK_LABEL_ROTATE>
-				<Y1AXIS_LOGARITHMIC_BASE>BASE_10</Y1AXIS_LOGARITHMIC_BASE>
-				<TYPE>LINE_VERT_ABS</TYPE>
-				<GRID_WIDTH>THINNER</GRID_WIDTH>
-				<PLOT_DATALABELS_BAR_POSITION>ABOVE</PLOT_DATALABELS_BAR_POSITION>
-				<FOOTNOTE_ALIGNMENT>LEFT</FOOTNOTE_ALIGNMENT>
-				<XAXIS_TICK_LABEL_SKIP_MODE>AUTOMATIC</XAXIS_TICK_LABEL_SKIP_MODE>
-				<DATA_MAP_COLNAMES>\,"DT","EXECUTIONS","SQL_ID"</DATA_MAP_COLNAMES>
-				<DATA_MAP_SERIES>\,"SQL_ID"</DATA_MAP_SERIES>
-				<Y2AXIS_LOGARITHMIC_BASE>BASE_10</Y2AXIS_LOGARITHMIC_BASE>
-				<DATA_MAP_COUNT>1</DATA_MAP_COUNT>
-				<STYLE>Default</STYLE>
-				<TITLE_ALIGNMENT>LEFT</TITLE_ALIGNMENT>
-				<Y2AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y2AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_MINIMUM>10.0</Y2AXIS_SCALE_MINIMUM>
-				<Y2AXIS_LINE_WIDTH>THINNEST</Y2AXIS_LINE_WIDTH>
-				<DATA_MAP_VALUES>\,"EXECUTIONS"</DATA_MAP_VALUES>
-				<Y1AXIS_TICK_LABEL_ROTATE>HORIZONTAL</Y1AXIS_TICK_LABEL_ROTATE>
-				<Y2AXIS_SCALE_INCREMENT>20.0</Y2AXIS_SCALE_INCREMENT>
-				<PLOT_VGRID_WIDTH>THINNER</PLOT_VGRID_WIDTH>
-				<Y2AXIS_TITLE_ALIGNMENT>CENTER</Y2AXIS_TITLE_ALIGNMENT>
-				<SUBTITLE_ALIGNMENT>LEFT</SUBTITLE_ALIGNMENT>
+				<PLOT_HGRID_WIDTH><![CDATA[THINNER]]></PLOT_HGRID_WIDTH>
+				<Y1AXIS_SCALE_INCREMENT><![CDATA[10.0]]></Y1AXIS_SCALE_INCREMENT>
+				<Y2AXIS_SCALE_MAXIMUM><![CDATA[80.0]]></Y2AXIS_SCALE_MAXIMUM>
+				<Y1AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y1AXIS_LINE_WIDTH>
+				<Y1AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y1AXIS_TITLE_ALIGNMENT>
+				<LEGEND_LOCATION><![CDATA[AUTOMATIC]]></LEGEND_LOCATION>
+				<LEGEND_ALIGNMENT><![CDATA[LEFT]]></LEGEND_ALIGNMENT>
+				<XAXIS_LINE_WIDTH><![CDATA[THINNEST]]></XAXIS_LINE_WIDTH>
+				<DATA_MAP_COLUMNS><![CDATA[\,"DT"]]></DATA_MAP_COLUMNS>
+				<Y1AXIS_SCALE_MAXIMUM><![CDATA[60.0]]></Y1AXIS_SCALE_MAXIMUM>
+				<XAXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></XAXIS_TITLE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></XAXIS_TICK_LABEL_ROTATE>
+				<Y1AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y1AXIS_LOGARITHMIC_BASE>
+				<TYPE><![CDATA[LINE_VERT_ABS]]></TYPE>
+				<GRID_WIDTH><![CDATA[THINNER]]></GRID_WIDTH>
+				<PLOT_DATALABELS_BAR_POSITION><![CDATA[ABOVE]]></PLOT_DATALABELS_BAR_POSITION>
+				<FOOTNOTE_ALIGNMENT><![CDATA[LEFT]]></FOOTNOTE_ALIGNMENT>
+				<XAXIS_TICK_LABEL_SKIP_MODE><![CDATA[AUTOMATIC]]></XAXIS_TICK_LABEL_SKIP_MODE>
+				<DATA_MAP_COLNAMES><![CDATA[\,"DT","EXECUTIONS","SQL_ID"]]></DATA_MAP_COLNAMES>
+				<DATA_MAP_SERIES><![CDATA[\,"SQL_ID"]]></DATA_MAP_SERIES>
+				<Y2AXIS_LOGARITHMIC_BASE><![CDATA[BASE_10]]></Y2AXIS_LOGARITHMIC_BASE>
+				<DATA_MAP_COUNT><![CDATA[1]]></DATA_MAP_COUNT>
+				<STYLE><![CDATA[Default]]></STYLE>
+				<TITLE_ALIGNMENT><![CDATA[LEFT]]></TITLE_ALIGNMENT>
+				<Y2AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y2AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_MINIMUM><![CDATA[10.0]]></Y2AXIS_SCALE_MINIMUM>
+				<Y2AXIS_LINE_WIDTH><![CDATA[THINNEST]]></Y2AXIS_LINE_WIDTH>
+				<DATA_MAP_VALUES><![CDATA[\,"EXECUTIONS"]]></DATA_MAP_VALUES>
+				<Y1AXIS_TICK_LABEL_ROTATE><![CDATA[HORIZONTAL]]></Y1AXIS_TICK_LABEL_ROTATE>
+				<Y2AXIS_SCALE_INCREMENT><![CDATA[20.0]]></Y2AXIS_SCALE_INCREMENT>
+				<PLOT_VGRID_WIDTH><![CDATA[THINNER]]></PLOT_VGRID_WIDTH>
+				<Y2AXIS_TITLE_ALIGNMENT><![CDATA[CENTER]]></Y2AXIS_TITLE_ALIGNMENT>
+				<SUBTITLE_ALIGNMENT><![CDATA[LEFT]]></SUBTITLE_ALIGNMENT>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select :SQL_ID as sql_id, to_char(d.dt, 'dd.mm.yyy hh24') as dt, t.EXECUTIONS_DELTA as executions
@@ -4569,33 +5203,51 @@ order by d.dt]]></sql>
 						
 						
 						
-						null																																																																		</data>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						null																																																																																																																																																																																										</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[blocking]]></name>
 			<description><![CDATA[]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
-				<sql><![CDATA[select h.event, h.BLOCKING_SESSION, h.BLOCKING_SESSION_SERIAL# , H.CURRENT_BLOCK#, H.CURRENT_OBJ#, H.CURRENT_ROW#,o.owner || '.' || o.object_name as obj_name, COUNT(*) as cnt 
+				<sql><![CDATA[select h.event, h.client_id, h.BLOCKING_SESSION, h.BLOCKING_SESSION_SERIAL# , H.CURRENT_BLOCK#, H.CURRENT_OBJ#, 
+H.CURRENT_ROW#,o.owner || '.' || o.object_name as obj_name, COUNT(*) as cnt , COUNT(DISTINCT H.SESSION_ID) as sid_cnt
 from dba_hist_active_sess_history h 
 left join dba_objects o on o.object_id = H.CURRENT_OBJ#
 where h.sample_time between :ST_DT and :ED_DT
 and sql_id = :SQL_ID
 AND h.BLOCKING_SESSION IS NOT NULL
-GROUP BY h.event, h.BLOCKING_SESSION, h.BLOCKING_SESSION_SERIAL# , H.CURRENT_BLOCK#, H.CURRENT_OBJ#, H.CURRENT_ROW#,o.owner || '.' || o.object_name
+GROUP BY h.event, h.BLOCKING_SESSION, h.BLOCKING_SESSION_SERIAL# , H.CURRENT_BLOCK#, H.CURRENT_OBJ#, H.CURRENT_ROW#,o.owner || '.' || o.object_name, h.client_id
 order by cnt desc]]></sql>
 				<binds>
 					<bind id="ST_DT">
@@ -4638,24 +5290,41 @@ order by cnt desc]]></sql>
 						
 						
 						
-						null																																																												</data>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						null																																																																																																																																																																																				</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
-		<display id="null" type="" style="Table" enable="true">
+		<display id="" type="" style="Table" enable="true">
 			<name><![CDATA[plan_real_tbs]]></name>
 			<description><![CDATA[for undo scan detect]]></description>
 			<tooltip><![CDATA[]]></tooltip>
-			<drillclass><![CDATA[null]]></drillclass>
+			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[with t as (
@@ -4717,14 +5386,94 @@ order by p.id]]></sql>
 					<table font="null" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
 					<header enable="false" generatedate="false">
 						<data>
-						null						</data>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						null																																																																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
+					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
+				</pdf>
+		</display>
+		<display id="" type="" style="Script" enable="true">
+			<name><![CDATA[text_bnd]]></name>
+			<description><![CDATA[]]></description>
+			<tooltip><![CDATA[]]></tooltip>
+			<drillclass><![CDATA[]]></drillclass>
+			<CustomValues>
+			</CustomValues>
+			<query>
+				<sql><![CDATA[set serveroutput on;
+declare 
+v_ret clob;
+v_add varchar(4);
+begin
+    dbms_output.enable(10000);
+    select sql_text||' ' into v_ret from dba_hist_sqltext t where sql_id = :SQL_ID and rownum < 2;
+    for i in(select  NAME, VALUE_STRING,DATATYPE_STRING from dba_hist_sqlbind where sql_id = :SQL_ID and last_captured <= sysdate order by last_captured desc) loop
+        v_add := '''';
+        if i.DATATYPE_STRING IN( 'NUMBER', 'INTEGER') then
+            v_add := '';
+        end if;
+        v_ret := replace(v_ret, i.name||' ', v_add||i.VALUE_STRING||v_add||' ');
+        v_ret := replace(v_ret, i.name||',', v_add||i.VALUE_STRING||v_add||',');
+        v_ret := replace(v_ret, i.name||')', v_add||i.VALUE_STRING||v_add||')');
+        
+        IF INSTR(v_ret, ':') < 1 THEN
+            exit;
+        END IF;
+    end loop;
+    DBMS_OUTPUT.PUT_LINE(v_ret);
+end;]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
+			</query>
+				<pdf version="VERSION_1_7" compression="CONTENT">
+					<docproperty title="null" author="null" subject="null" keywords="null" />
+					<cell toppadding="2" bottompadding="2" leftpadding="2" rightpadding="2" horizontalalign="LEFT" verticalalign="TOP" wrap="true" />
+					<column>
+						<heading font="null" size="10" style="NORMAL" color="-16777216" rowshading="-1" labeling="FIRST_PAGE" />
+						<footing font="null" size="10" style="NORMAL" color="-16777216" rowshading="-1" labeling="NONE" />
+						<blob blob="NONE" zip="false" />
+					</column>
+					<table font="null" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
+					<header enable="false" generatedate="false">
+						<data>
+						
+						
+						
+						
+						
+						null																																				</data>
+					</header>
+					<footer enable="false" generatedate="false">
+						<data value="null" />
+					</footer>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>
@@ -4735,7 +5484,7 @@ order by p.id]]></sql>
 		<tooltip><![CDATA[]]></tooltip>
 		<drillclass><![CDATA[]]></drillclass>
 		<CustomValues>
-			<TYPE>horizontal</TYPE>
+			<TYPE><![CDATA[horizontal]]></TYPE>
 		</CustomValues>
 		<query>
 			<sql><![CDATA[with stat$tst as (
@@ -4820,14 +5569,31 @@ order by cnt desc, v$sec, sql_id, ed_dt desc]]></sql>
 					
 					
 					
-					null																																																																																																																																		</data>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					null																																																																																																																																																																																																																																						</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
 				</footer>
-				<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-					<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-				</security>
 				<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 			</pdf>
 	</display>
@@ -4837,7 +5603,7 @@ order by cnt desc, v$sec, sql_id, ed_dt desc]]></sql>
 		<tooltip><![CDATA[]]></tooltip>
 		<drillclass><![CDATA[]]></drillclass>
 		<CustomValues>
-			<TYPE>horizontal</TYPE>
+			<TYPE><![CDATA[horizontal]]></TYPE>
 		</CustomValues>
 		<query>
 			<sql><![CDATA[select h.sql_id, h.SQL_PLAN_HASH_VALUE, sum(H.DELTA_READ_IO_BYTES) as DELTA_READ_IO_BYTES, 
@@ -4855,13 +5621,13 @@ order by DELTA_READ_IO_BYTES desc nulls last]]></sql>
 				<bind id="f">
 					<prompt><![CDATA[f]]></prompt>
 					<tooltip><![CDATA[f]]></tooltip>
-					<value><![CDATA[18.09.2017 09]]></value>
+					<value><![CDATA[05.12.2017 11]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="t">
 					<prompt><![CDATA[t]]></prompt>
 					<tooltip><![CDATA[t]]></tooltip>
-					<value><![CDATA[18.09.2017 18]]></value>
+					<value><![CDATA[05.12.2017 21]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="TBL">
@@ -4884,14 +5650,31 @@ order by DELTA_READ_IO_BYTES desc nulls last]]></sql>
 				<header enable="false" generatedate="false">
 					<data>
 					
-					null										</data>
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					
+					null																																																																																																														</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
 				</footer>
-				<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-					<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-				</security>
 				<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 			</pdf>
 		<display id="" type="" style="Table" enable="true">
@@ -4900,7 +5683,7 @@ order by DELTA_READ_IO_BYTES desc nulls last]]></sql>
 			<tooltip><![CDATA[]]></tooltip>
 			<drillclass><![CDATA[]]></drillclass>
 			<CustomValues>
-				<TYPE>horizontal</TYPE>
+				<TYPE><![CDATA[horizontal]]></TYPE>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select * from table(DBMS_XPLAN.DISPLAY_AWR(:SQL_ID, :SQL_PLAN_HASH_VALUE, null, 'basic +outline +peeked_binds') )]]></sql>
@@ -4931,14 +5714,31 @@ order by DELTA_READ_IO_BYTES desc nulls last]]></sql>
 					<header enable="false" generatedate="false">
 						<data>
 						
-						null												</data>
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						
+						null																																																																																																																																				</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
 					</footer>
-					<security enable="false" useopenpassword="false" openpassword="null" encryption="EXCLUDE_METADATA">
-						<permission enable="false" permissionpassword="null" allowcopying="true" allowprinting="true" allowupdating="false" allowaccessdevices="false" />
-					</security>
 					<pagesetup papersize="LETTER" orientation="1" measurement="in" margintop="1.0" marginbottom="1.0" marginleft="1.0" marginright="1.0" />
 				</pdf>
 		</display>

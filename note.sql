@@ -407,8 +407,111 @@ select  * from    dba_tab_modifications where   table_owner = 'DWH'
 * написать, что на NO_DUBLICATE в RAC данные равномерно распределяются по нодам, что замедляет запросы за счет кластерных ожиданий.
 * index coalesce - перемещает пустоты в конец индекса, которые потом можно будет использовать при равномерном добавлении (размер индекса не уменьшеается, blvel тоже, индекс и таблица не блокируется)
 * select * from v$event_histogram - Гистограмма изменения времени события
-  
-  -----
-  двухфайзный commit?
-  добавить события защелок
-  адаптивные планы - описать хотябы чуть
+* https://richardfoote.wordpress.com/2013/05/01/storage-indexes-vs-database-indexes-iv-8-column-limit-eight-line-poem/
+в exadata только 8 столбцов могут находится в storage index (но какие - определяет оракл, это не порядок запросов и не порядок в таблице)
+* http://www.sql.ru/forum/1184757/parallel-sequential-scan#20754710
+параллельное чтение индекса - 1 поток читает адреса в связанном списке, а другие потоки считывают сами данные из блоков + возможно дофильтрация индекса
+* вставка в новую таблицу будет идти хуже, чем в старую, но с truncate. Т.к. asm в новой постоянно выделяет место на диске, а в старой место выделено, просто смещено HWM
+* настройка сетевых параметров в листенере бд:
+http://www.sql.ru/forum/actualutils.aspx?action=gotomsg&tid=1273034&msg=20839650
+* dbms_workload_repository.add_colored_sql
+запрос всегда будет попадать в awr , несмотря на его частоту и скорость
+* устранение конкуренции за plsql - автоматическое размножение пакетов (mark hot ?)
+* при выборе порядка столбцов в индексе руководствоваться:
+ - степенью сжатия
+ - полезностью для других
+ - фактором кластеризации!!!!!
+* bind data: table(dbms_sqltune.extract_binds(ad.bind_data))
+* Хинт: COLUMN_STATS(DD, VN, scale, length=3 distinct=5 nulls=0 min=2 max=10)
+http://www.hellodba.com/reader.php?ID=200&lang=en
+* еще один профайлер для plsql
+https://docs.oracle.com/cd/E11882_01/appdev.112/e41502/adfns_profiler.htm#ADFNS02305
+** 10053 trace file for the query 
+alter session set tracefile_identifier='10053_&your_name'; 
+alter session set timed_statistics = true; 
+alter session set statistics_level=all; 
+alter session set max_dump_file_size = unlimited; 
+alter session set events '10053 trace name context forever, level 1'; 
+EXPLAIN PLAN FOR /*ACTUAL QUERY TEXT HERE */; --> use EXPLAIN PLAN FOR to actually avoid having the query run 
+alter session set events '10053 trace name context off'; 
+* стоимость основных операции в тактах CPU:
+https://hsto.org/webt/6k/gv/4b/6kgv4bwokemkgl39uevpixx3gzi.png
+* not null + default 
+не создают физически данные в столбце, а только заполняют значением в метаданных (которое потом возвращется при любом запросе)
+http://www.sql.ru/forum/1278952/flashback-database-i-ddl-na-bolshih-tablicah
+* http://orasql.org/2017/02/12/intra-block-row-chaining/
+при вставке в таблицу с более 255 колонок, block chain кладется в 1 блок
+при update в разные - так что такие таблицы имеет смысл ребилдить периодически, для избавления от одноблочных чтений (в 12.2 пофиксили и это)
+поколоночное чтение поможет только при первом чтении, все последующие из буферного кэша читаются построчно
+* http://dbaora.com/partition-outer-join-oracle-data-densification-2/
+partition join Добавляет недостающие данные в факте по f.cust_id (не нужно самому генерить, говорят аналог union all ) особых преимуществ в скорости не вижу???
+SELECT 
+  f.cust_id, 
+  to_char(t.mth, 'DD.MON.YYYY') mth_name, 
+  sum(nvl(vol,0)) vol
+FROM 
+  time_dim t LEFT OUTER JOIN 
+  fct_tbl f  PARTITION BY  (f.cust_id) 
+ON(t.mth = f.mth)
+GROUP BY f.cust_id, t.mth
+order by t.mth, f.cust_id;
+** round = int(x+0.5)
+---
+Real Appl Test
+http://www.cyberguru.ru/database/oracle/oracle11-database-replay.html?showall=1
+http://www.sql.ru/forum/1212593/podskazhite-analogi-rat-real-application-testing-dlya-oracle?hl=real%20application%20testing
+
+---
+mssql:
+* хинты: https://msdn.microsoft.com/ru-ru/library/ms181714.aspx
+* профили: https://msdn.microsoft.com/ru-ru/library/ms179880.aspx
+
+* mssql top CPU:
+select sum(total_worker_time) total_worker_time, sum(total_elapsed_time) total_elapsed_time from sys.dm_exec_query_stats;
+SELECT  TOP 20 creation_time 
+        ,last_execution_time
+        ,total_physical_reads
+        ,total_logical_reads 
+        ,total_logical_writes
+        , execution_count
+        , total_worker_time
+		, round(total_worker_time/81662843*100,2) as cpu_prc
+        , total_elapsed_time
+		, round(total_elapsed_time/924426840*100,2) as ela_prc
+        , total_elapsed_time / execution_count / 1000 avg_elapsed_time_ms
+        ,SUBSTRING(st.text, (qs.statement_start_offset/2) + 1,
+         ((CASE statement_end_offset
+          WHEN -1 THEN DATALENGTH(st.text)
+          ELSE qs.statement_end_offset END
+            - qs.statement_start_offset)/2) + 1) AS statement_text,
+			qp.query_plan,
+			st.text
+FROM sys.dm_exec_query_stats AS qs
+CROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) st
+CROSS APPLY sys.dm_exec_query_plan(qs.plan_handle) qp
+--where st.text like '%DELETE%'
+ORDER BY total_worker_time desc;
+
+
+---
+время работы фоновых заданий:
+select TBTCO.JOBCOUNT, TBTCO.STEPCOUNT, TBTCO.STRTDATE, TBTCO.STRTTIME, TBTCO.ENDDATE, TBTCO.ENDTIME, TBTCO.RELUNAME ,
+TBTCO.ENDTIME-TBTCO.STRTTIME as sec,
+TBTCP.PROGNAME, TBTCP.AUTHCKNAM, TBTCP.VARIANT
+from TBTCO 
+join TBTCP on TBTCO.JOBCOUNT = TBTCP.JOBCOUNT and TBTCO.STEPCOUNT = TBTCP.STEPCOUNT
+where TBTCO.jobname = 'Z_HR_USER_LOCK' 
+order by TBTCO.STRTDATE desc, TBTCO.STRTTIME desc
+
+---
+java:
+* hash;  Встроенный хеш-код генерируется лишь один раз для каждого объекта при первом вызове hashCode(), после сохраняется в заголовке объекта для последующих вызовов. 
+Но для первого раза используется random или Xorshift:
+  0 – Park-Miller RNG (по умолчанию)
+  1 – f(адрес, глобальное_состояние)
+  2 – константа 1
+  3 – последовательный счетчик
+  4 – адрес объекта
+  5 – Thread-local Xorshift (псевдослучайное от threadid)
+
+* code review

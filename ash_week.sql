@@ -3,6 +3,8 @@ select * from sys.aux_stats$ order by pname;
 
 ---информация о биндах
 select * from dba_hist_sqlbind where sql_id = 'drzsrsa1yg0w2' order by snap_id desc;
+select * from v$sql_bind_capture
+ 
 
 --изменился план
 select PLAN_HASH_VALUE, min(begin_interval_time), max(begin_interval_time) enddt, sum(EXECUTIONS_DELTA), round(avg(drid),2), round(avg(buf_red),2), round(avg(phys_gb),2), round(avg(rws),2), round(avg(ELAPSED_TIME_DELTA),2), round(max(ELAPSED_TIME_DELTA),2) from (
@@ -27,10 +29,22 @@ group by o.object_name;
 --потребление undo
 select s.MAXQUERYSQLID, MIN(s.begin_time), MAX(s.begin_time), COUNT(*) , SUM(UNDOBLKS) UNDOBLKS 
 from DBA_HIST_UNDOSTAT s
-where s.begin_time between to_date('06.12.2016', 'dd.mm.yyyy') and to_date('07.12.2016', 'dd.mm.yyyy')
-and S.Instance_Number = 2
---and s.MAXQUERYSQLID = '3wb6bxh5rtdgd';
-GROUP BY s.MAXQUERYSQLID;
+where s.begin_time between to_date('18.09.2017', 'dd.mm.yyyy') and to_date('20.09.2017', 'dd.mm.yyyy')
+and s.MAXQUERYSQLID = '26zb33hqtus2f'
+GROUP BY s.MAXQUERYSQLID
+order by UNDOBLKS;
+
+select s.MAXQUERYSQLID, trunc(s.begin_time, 'hh24') as hh, COUNT(*) , SUM(UNDOBLKS) UNDOBLKS 
+from DBA_HIST_UNDOSTAT s
+where s.begin_time between to_date('18.09.2017', 'dd.mm.yyyy') and to_date('20.09.2017', 'dd.mm.yyyy')
+GROUP BY s.MAXQUERYSQLID, trunc(s.begin_time, 'hh24')
+order by hh, UNDOBLKS desc;
+
+--потребление undo
+select *
+from DBA_HIST_UNDOSTAT s
+where s.begin_time between to_date('18.09.2017', 'dd.mm.yyyy') and to_date('20.09.2017', 'dd.mm.yyyy')
+and s.MAXQUERYSQLID = '26zb33hqtus2f'
 
 
 --longops
@@ -141,6 +155,8 @@ select * from table(DBMS_XPLAN.DISPLAY_AWR('8t3q9hfh6ddtx', '1661341798', null, 
 
 
 --stat diff
+select space_used, space_allocated, chain_pcent, round(space_allocated/space_used*100,2) as pct FROM TABLE(DBMS_SPACE.OBJECT_SPACE_USAGE_TBF('SAPSR3', '/1CADMC/00000347IU', 'INDEX', NULL))
+
 select * from table(dbms_stats.diff_table_stats_in_history(
                     ownname => 'ISCS',
                     tabname => upper('PO_BALANCE_TEMP'),
@@ -220,23 +236,37 @@ order by s.begin_time desc;
 
 --fix plan
 declare
-v_sql clob;
-v_sql_id varchar2(50) := '4tnwd1jzxvxm1';
-v_name varchar2(50) := 'ZSD_PRICE_HISTOR';
+  procedure fix_plan(v_sql_id varchar2, v_name varchar2, v_profile sqlprof_attr) is
+    v_sql clob;
+  begin
+    begin
+    select sql_text into v_sql from dba_hist_sqltext where sql_id = v_sql_id and rownum < 2;
+    exception when others then
+      select SQL_FULLTEXT into v_sql from gv$sql where sql_id = v_sql_id and rownum < 2;
+    end;
+    
+    dbms_sqltune.import_sql_profile(
+      name => v_name || '_' || v_sql_id,
+      sql_text => v_sql,
+      profile => v_profile,
+      replace => TRUE,
+      force_match => TRUE
+    );
+  end; 
 begin
-select sql_text into v_sql from dba_hist_sqltext where sql_id = v_sql_id and rownum = 1;
-dbms_sqltune.import_sql_profile(
-  name => v_name || '_' || v_sql_id,
-  sql_text => v_sql,
-  profile => sqlprof_attr('NO_PARALLEL', 'FULL(PRC@SEL$1)'),
-  replace => TRUE,
-  force_match => TRUE
-);
+
+fix_plan('bb6p2ur73c6xm', 'ZMATRIX', sqlprof_attr('INDEX(MARA@SEL$1, "MARA~L")'));
+fix_plan('7m0uwxffqwm04', 'ZMATRIX', sqlprof_attr('INDEX(MARA@SEL$1, "MARA~L")'));
+fix_plan('c5cvm3624ufph', 'ZONL_SLS', sqlprof_attr('use_nl(ZRE_ONLINE_SALES@SEL$1, MARA@SEL$1)'));
+fix_plan('5s6r6nswyk40b', 'WSM3', sqlprof_attr('index(MARA@SEL$1 "MARA~O")','index(MARA@SEL$1 "MARA~0")','use_concat'));
+
 end;
+--fix plan
+
 
 
 --- flush cache
-select ADDRESS, HASH_VALUE from V$SQLAREA where SQL_ID like '7yc%';
+select ADDRESS, HASH_VALUE from V$SQLAREA where SQL_ID like '0j0vrzsvb6xjv';
 exec DBMS_SHARED_POOL.PURGE ('000000085FD77CF0, 808321886', 'C');
 ALTER SYSTEM FLUSH SHARED_POOL;
 
@@ -292,6 +322,8 @@ FROM (
   join SYS.DBA_HIST_SQL_PLAN p on h.sql_id = p.sql_id and P.PLAN_HASH_VALUE = h.SQL_PLAN_HASH_VALUE and h.SQL_PLAN_LINE_ID = p.id
   where h.sample_time >= to_date('01.12.2016', 'dd.mm.yyyy')
   and p.OBJECT_TYPE = 'INDEX'
+  minus
+  select p.object_name from v$sql_plan p 
 ) o
 join dba_indexes i on i.index_name = o.index_name and i.owner = 'SAPSR3'
 left join dba_tables t on t.owner = 'SAPSR3' AND t.table_name = i.TABLE_NAME
@@ -354,3 +386,118 @@ select SQL_PLAN_LINE_ID, avg(st_sec), max(avg(fl_sec)) OVER() from (
 )
 group by SQL_PLAN_LINE_ID
 order by SQL_PLAN_LINE_ID;
+
+--число модификаций таблицы
+insert into tmp$modif
+select * from ALL_TAB_MODIFICATIONS WHERE TABLE_NAME IN('A959', 'A018', 'A929', 'A073', 'A071');
+
+select v.table_name, min(TIMESTAMP) as st_dt, max(TIMESTAMP) as ed_dt , sum(delta_del) delta_del, sum(delta_ins) as delta_ins, sum(delta_upd) delta_upd, 
+round(avg(delta_del/delta_min)) as del_per_min, round(avg( delta_ins/delta_min)) as ins_per_min, round(avg(delta_upd/delta_min)) as upd_per_min, max(t.NUM_ROWS) as NUM_ROWS
+from (
+select f.table_name, f.TIMESTAMP, F.DELETES, F.INSERTS, F.UPDATES, 
+  round((f.TIMESTAMP - lag(f.TIMESTAMP) over(partition by f.table_name order by f.TIMESTAMP)) *24,2) as delta_min,
+  f.DELETES - lag(f.DELETES) over(partition by f.table_name order by f.TIMESTAMP) as delta_del,
+  f.INSERTS - lag(f.INSERTS) over(partition by f.table_name order by f.TIMESTAMP) as delta_ins,
+  f.UPDATES - lag(f.UPDATES) over(partition by f.table_name order by f.TIMESTAMP) as delta_upd
+from tmp$modif f
+) v
+join dba_tables t on t.table_name = v.table_name
+where delta_min is not null
+group by v.table_name
+order by table_name;
+
+--история использования целов в exadata
+select * from V$CELL_THREAD_HISTORY where length(trim(sql_id)) > 1 order by snapshot_time desc
+
+--- kill session
+begin
+  for i IN(
+    select * from v$session where sql_id = 'b8wmkkdcnrku9'
+  ) loop
+    execute immediate('ALTER SYSTEM KILL SESSION '''||i.sid||',' ||i.serial#||'''');
+  end loop;
+end;
+
+---топ sql запросов на объекте по числу чтений
+select h.sql_id, sum(H.DELTA_READ_IO_BYTES) as DELTA_READ_IO_BYTES, 
+ROUND(SUM( DELTA_READ_IO_BYTES) / SUM(SUM( DELTA_READ_IO_BYTES)) OVER() * 100,2) as read_prc, max(DBMS_LOB.SUBSTR (t.sql_text,2000)) as SQL_TEXT
+ FROM   dba_hist_active_sess_history h
+ join SYS.DBA_HIST_SQL_PLAN p on h.sql_id = p.sql_id and h.SQL_PLAN_HASH_VALUE = p.PLAN_HASH_VALUE and p.id = h.SQL_PLAN_LINE_ID
+ left join dba_hist_sqltext t on t.sql_id = h.sql_id
+      where 
+      h.sample_time between to_date('14.08.2017', 'dd.mm.yyyy hh24:mi:ss') and to_date('25.08.2017', 'dd.mm.yyyy hh24:mi:ss')
+      and p.object# = 48750
+      and h.sql_id is not null
+group by h.sql_id
+order by DELTA_READ_IO_BYTES desc nulls last;
+
+--статистика времени чтений
+select dt, 
+  avg(case when EVENT_NAME = 'cell single block physical read' then  WAIT_AVG end) as singl_ph_rd,
+  avg(case when EVENT_NAME = 'cell list of blocks physical read' then  WAIT_AVG end) as list_ph_rd,
+  avg(case when EVENT_NAME = 'cell multiblock physical read' then  WAIT_AVG end) as multy_ph_rd
+from (
+  select trunc(t.BEGIN_INTERVAL_TIME, 'hh') as dt, EVENT_NAME, 
+    round(sum(case when WAIT_TIME_MILLI = 1 then WAIT_COUNT end)/sum(WAIT_COUNT)*100,2) as WAIT_1,
+    round(sum(case when WAIT_TIME_MILLI = 2 then WAIT_COUNT end)/sum(WAIT_COUNT)*100,2) as WAIT_2,
+    round(sum(case when WAIT_TIME_MILLI = 4 then WAIT_COUNT end)/sum(WAIT_COUNT)*100,2) as WAIT_4,
+    round(sum(case when WAIT_TIME_MILLI = 8 then WAIT_COUNT end)/sum(WAIT_COUNT)*100,2) as WAIT_8,
+    round(sum(case when WAIT_TIME_MILLI = 16 then WAIT_COUNT end)/sum(WAIT_COUNT)*100,2) as WAIT_16,
+    round(sum(case when WAIT_TIME_MILLI = 32 then WAIT_COUNT end)/sum(WAIT_COUNT)*100,2) as WAIT_32,
+    round(sum(case when WAIT_TIME_MILLI = 64 then WAIT_COUNT end)/sum(WAIT_COUNT)*100,2) as WAIT_64,
+    round(sum(case when WAIT_TIME_MILLI = 128 then WAIT_COUNT end)/sum(WAIT_COUNT)*100,2) as WAIT_128,
+    round(sum(case when WAIT_TIME_MILLI = 256 then WAIT_COUNT end)/sum(WAIT_COUNT)*100,2) as WAIT_256,
+    round(sum(case when WAIT_TIME_MILLI = 512 then WAIT_COUNT end)/sum(WAIT_COUNT)*100,2) as WAIT_512,
+    ROUND(SUM(WAIT_COUNT  * WAIT_TIME_MILLI) / SUM(WAIT_COUNT),2) as WAIT_AVG
+  from DBA_HIST_EVENT_HISTOGRAM h
+  join DBA_HIST_SNAPSHOT t on t.snap_id = h.snap_id and t.INSTANCE_NUMBER = h.INSTANCE_NUMBER
+  where h.event_name IN('cell single block physical read', 'cell list of blocks physical read', 'cell multiblock physical read') 
+  and  t.BEGIN_INTERVAL_TIME between to_date('20.11.2017', 'dd.mm.yyyy hh24:mi:ss') and to_date('30.12.2017', 'dd.mm.yyyy hh24:mi:ss')
+  group by trunc(t.BEGIN_INTERVAL_TIME, 'hh'), EVENT_NAME
+  order by dt, EVENT_NAME
+)
+group by dt
+order by dt;
+
+--профили
+select * FROM   DBA_SQL_PROFILES order by created desc;
+
+--table locks
+select l.*, o.object_name, s.client_identifier, s.client_info, s.SQL_ID, substr(q.sql_text,1,250) as sql_text, s.prev_sql_id, substr(q1.sql_text,1,250) as sql_text_prev,
+ROW_WAIT_OBJ#,ROW_WAIT_FILE#,ROW_WAIT_BLOCK#,ROW_WAIT_ROW#
+from v$locked_object l
+join dba_objects o on o.object_id = l.object_id
+join v$session s on s.sid = l.session_id
+left join v$sql q on q.sql_id = s.SQL_ID
+left join v$sql q1 on q1.sql_id = s.prev_sql_id
+where xidsqn != 0;
+
+---temp and pga use
+select sql_exec_start, SQL_ID, max(sample_time) as sample_time, sum(DELTA_PGA_MB) PGA_MB, SUM(DELTA_TEMP_MB) as TEMP_MB
+from
+(
+select SESSION_ID,SESSION_SERIAL#,sample_id,SQL_ID,SAMPLE_TIME,IS_SQLID_CURRENT,SQL_CHILD_NUMBER,PGA_ALLOCATED,
+greatest(PGA_ALLOCATED - first_value(PGA_ALLOCATED) over (partition by SESSION_ID,SESSION_SERIAL# order by sample_time rows 1 preceding),0)/power(1024,2) "DELTA_PGA_MB",
+greatest(temp_space_allocated - first_value(temp_space_allocated) over (partition by SESSION_ID,SESSION_SERIAL# order by sample_time rows 1 preceding),0)/power(1024,2) "DELTA_TEMP_MB",
+sql_exec_start
+from
+dba_hist_active_sess_history
+where sql_id = '7gtrsyx9g50fj' and
+IS_SQLID_CURRENT='Y'
+order by 1,2,3,4
+)
+group by sql_id, sql_exec_start
+order by sample_time desc;
+
+---замена биндов:
+set serveroutput on;
+declare 
+v_ret clob;
+begin
+dbms_output.enable(10000);
+select sql_text into v_ret from dba_hist_sqltext t where sql_id = 'b8kt5qg0r02af';
+for i in(select  NAME, VALUE_STRING from dba_hist_sqlbind where sql_id = 'b8kt5qg0r02af' and last_captured <= sysdate order by last_captured desc) loop
+v_ret := replace(v_ret, i.name||' ', ''''||i.VALUE_STRING||''' ');
+end loop;
+DBMS_OUTPUT.PUT_LINE(v_ret);
+end;
