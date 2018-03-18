@@ -456,6 +456,72 @@ ON(t.mth = f.mth)
 GROUP BY f.cust_id, t.mth
 order by t.mth, f.cust_id;
 ** round = int(x+0.5)
+* https://habrahabr.ru/company/ruvds/blog/346442/
+оплату и логин лучше делать на отдельной странице (или через iframe)
+** https://docs.microsoft.com/ru-ru/sql/relational-databases/indexes/clustered-and-nonclustered-indexes-described
+у mssql вторичные индексы ссылаются на кластерный первичный ключ, а не на саму таблицу.
+(в pg , как в оракле : https://www.postgresql.org/docs/current/static/sql-cluster.html )
+* установка памяти под HJ или сорт, если память автоматическая
+http://dbakevlar.com/2010/01/when-pga-size-is-not-enough/
+pga_target + pga_limit - общие значения, и скрытые _smm_max_size и _pga_max_size под одну операцию
+* https://docs.oracle.com/cd/E11882_01/server.112/e25494/views.htm#i1006318
+DELETE   FROM (
+    SELECT
+        s.item item,
+        s.loc loc
+    FROM
+        stsc.sku s,
+        stsc.planarriv pa
+    WHERE
+    s.item = pa.item
+        AND   s.loc = pa.dest
+        )
+возьмется таблица с максимальным ключом, которая однозначно определяем результат джойна
+если у sku ключ из 2 полей, а planarriv из 3, то возьмется максимальный с 3 полями: planarriv
+* http://www.sql.ru/forum/1235740/chtenie-plana-zaprosa?mid=19813880#19813880
+читать план правильно сверху вниз, как будто это вызовы процедур (пример с FILER вначале, который вообще может выключить работу sql)
+сверху спускаемся до самого глубокого листа и от него стэк разворачивается в обратную сторону
+* ассоциация статистики к процедуре:
+http://www.oracle-developer.net/display.php?id=426
+* huge pages
+https://oracle-base.com/articles/linux/configuring-huge-pages-for-oracle-on-linux-64
+поумолчанию в linux размер блока = 4кб, что увеличивает накладные расходы на менеджмент, + данные могут быть вытеснены из озу
++ стрраница размером в гиг всегда будет залочена и не уйдет из кэша
++ нет затрат линукса, все делает оракл
+* кол-во не NULL колонок:
+select cardinality(    ku$_vcnt(   1,    2,    0,    null,    3)
+multiset except ku$_vcnt(null, null, null, null, null) ) from dual
+* партицирование:
+ + системное партицирование - нет указания колонки при создании, нужно указывать конкретную партицию при вставке или выборке.
+ + reference partitions:
+  create table orders (id integer, sm number, odate date, CONSTRAINT opk PRIMARY KEY (id) PARTITION BY RANGE(odate) (...);
+  create table order_itemss (oid integer, sm number, CONSTRAINT ofk FK to orders) PARTITION BY REFERENCE(ofk)
+  --т.е. в строках нет даты, она автоматом подтягивается по фк из заголовка и партицируется по ней
+ + iOT также могут быть партицированы по range/hash
+ + object table - также можно пратицировать. 
+ + nested table - партицируется аналогично родительской
+ + глобальные индексы можно партицировать только по range и hash
+ + INDEXinG OFF|On - можно задать активность индексов на конкретной партиции (ora 12)
+ индекс при этом должен быть создан как INDEXING PARTIAL
+ при запросе на партиции без индекса и с ним, будет конкатенация
+ + coalesce - это merge всех партиций для hash партицирования
+ + на основании статистики использования партиций (DBA_HEAT_MAP_SEG_HISTOGRAM) можно включить компресию
+ ALTER TABLE T MODIFY [PART] ILM ADD POLICY COMPRESS ADVANCED ROW AFTER 30 DAYS OF NO MODIFICATION;
+ + матвьюхи?
+* главная сессия при параллельном запросе:
+select distinct decode(session_id, qc_session_id, 'main', 'slave') sess_type, sql_child_number--, sql_exec_start
+  from v$active_session_history
+ where sql_id = 'dknw7mqyg5789';
+
+* result_cache 
+ - есть интересные хинты:
+  -- заставить кэшировать системные объекты
+  -- задать время жизни
+ - при активации кэша на таблице, нужно проверить что запросов на ней немного и они возвращают небольшое число строк (основное время тратится на запрос, а не на возвращение строк)
+  -- есть блэк лист (или хинтом) - отключить для разовых
+ - один latch на весь result_cache, так что вставка/чтение блокирует всех остальных
+* heat map - раз в день, статистика по использованию сегмента (запись, фул, лукап)
+select * from DBA_HEAT_MAP_SEG_HISTOGRAM WHERE OBJECT_NAME='WALE' order by TRACK_TIME desc
 ---
 Real Appl Test
 http://www.cyberguru.ru/database/oracle/oracle11-database-replay.html?showall=1
@@ -465,32 +531,6 @@ http://www.sql.ru/forum/1212593/podskazhite-analogi-rat-real-application-testing
 mssql:
 * хинты: https://msdn.microsoft.com/ru-ru/library/ms181714.aspx
 * профили: https://msdn.microsoft.com/ru-ru/library/ms179880.aspx
-
-* mssql top CPU:
-select sum(total_worker_time) total_worker_time, sum(total_elapsed_time) total_elapsed_time from sys.dm_exec_query_stats;
-SELECT  TOP 20 creation_time 
-        ,last_execution_time
-        ,total_physical_reads
-        ,total_logical_reads 
-        ,total_logical_writes
-        , execution_count
-        , total_worker_time
-		, round(total_worker_time/81662843*100,2) as cpu_prc
-        , total_elapsed_time
-		, round(total_elapsed_time/924426840*100,2) as ela_prc
-        , total_elapsed_time / execution_count / 1000 avg_elapsed_time_ms
-        ,SUBSTRING(st.text, (qs.statement_start_offset/2) + 1,
-         ((CASE statement_end_offset
-          WHEN -1 THEN DATALENGTH(st.text)
-          ELSE qs.statement_end_offset END
-            - qs.statement_start_offset)/2) + 1) AS statement_text,
-			qp.query_plan,
-			st.text
-FROM sys.dm_exec_query_stats AS qs
-CROSS APPLY sys.dm_exec_sql_text(qs.sql_handle) st
-CROSS APPLY sys.dm_exec_query_plan(qs.plan_handle) qp
---where st.text like '%DELETE%'
-ORDER BY total_worker_time desc;
 
 
 ---

@@ -461,6 +461,16 @@ order by dt;
 
 --профили
 select * FROM   DBA_SQL_PROFILES order by created desc;
+SELECT * FROM   DBA_SQL_PLAN_BASELINES order by created desc;
+
+--fix plan by tuning set
+set serveroutput on
+declare cnt number; 
+BEGIN 
+cnt:=DBMS_SPM.LOAD_PLANS_FROM_SQLSET(sqlset_name => 'MY_2BGM79C5PYBZ8_NEW',sqlset_owner => 'DBSNMP'); 
+dbms_output.put_line(cnt);
+END;
+
 
 --table locks
 select l.*, o.object_name, s.client_identifier, s.client_info, s.SQL_ID, substr(q.sql_text,1,250) as sql_text, s.prev_sql_id, substr(q1.sql_text,1,250) as sql_text_prev,

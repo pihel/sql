@@ -32,7 +32,7 @@ order by enddt desc]]></sql>
 				<bind id="SQL_ID">
 					<prompt><![CDATA[SQL_ID]]></prompt>
 					<tooltip><![CDATA[SQL_ID]]></tooltip>
-					<value><![CDATA[48ks1udxwh3kh]]></value>
+					<value><![CDATA[2bgm79c5pybz8]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 			</binds>
@@ -48,6 +48,13 @@ order by enddt desc]]></sql>
 				<table font="Times New Roman" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
 				<header enable="false" generatedate="false">
 					<data>
+					
+					
+					
+					
+					
+					
+					
 					
 					
 					
@@ -180,7 +187,7 @@ order by enddt desc]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -270,6 +277,13 @@ order by enddt desc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -313,7 +327,7 @@ order by enddt desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -357,13 +371,13 @@ order by sql_exec_start desc nulls last]]></sql>
 				<bind id="client_id">
 					<prompt><![CDATA[client_id]]></prompt>
 					<tooltip><![CDATA[client_id]]></tooltip>
-					<value><![CDATA[SKAKHIN]]></value>
+					<value><![CDATA[NULL_VALUE]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="session_id">
 					<prompt><![CDATA[session_id]]></prompt>
 					<tooltip><![CDATA[session_id]]></tooltip>
-					<value><![CDATA[NULL_VALUE]]></value>
+					<value><![CDATA[703]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="module">
@@ -391,6 +405,13 @@ order by sql_exec_start desc nulls last]]></sql>
 				<table font="Times New Roman" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
 				<header enable="false" generatedate="false">
 					<data>
+					
+					
+					
+					
+					
+					
+					
 					
 					
 					
@@ -523,7 +544,7 @@ order by sql_exec_start desc nulls last]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -619,6 +640,13 @@ order by enddt desc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -658,7 +686,7 @@ order by enddt desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -743,6 +771,13 @@ order by enddt desc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -772,7 +807,7 @@ order by enddt desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -820,7 +855,7 @@ order by EXECUTIONS_DELTA desc]]></sql>
 				<bind id="tbl">
 					<prompt><![CDATA[tbl]]></prompt>
 					<tooltip><![CDATA[tbl]]></tooltip>
-					<value><![CDATA[POS_REC_ITM]]></value>
+					<value><![CDATA[ZTGRZ_TASK_HDR]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="obj">
@@ -832,13 +867,13 @@ order by EXECUTIONS_DELTA desc]]></sql>
 				<bind id="f">
 					<prompt><![CDATA[f]]></prompt>
 					<tooltip><![CDATA[f]]></tooltip>
-					<value><![CDATA[01.12.2017]]></value>
+					<value><![CDATA[01.02.2018]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="t">
 					<prompt><![CDATA[t]]></prompt>
 					<tooltip><![CDATA[t]]></tooltip>
-					<value><![CDATA[31.12.2017]]></value>
+					<value><![CDATA[20.02.2018]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 			</binds>
@@ -854,6 +889,13 @@ order by EXECUTIONS_DELTA desc]]></sql>
 				<table font="Times New Roman" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
 				<header enable="false" generatedate="false">
 					<data>
+					
+					
+					
+					
+					
+					
+					
 					
 					
 					
@@ -986,7 +1028,7 @@ order by EXECUTIONS_DELTA desc]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -1076,6 +1118,13 @@ order by EXECUTIONS_DELTA desc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -1119,7 +1168,7 @@ order by EXECUTIONS_DELTA desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -1161,13 +1210,13 @@ order by prc  desc nulls last]]></sql>
 				<bind id="f">
 					<prompt><![CDATA[Раньше]]></prompt>
 					<tooltip><![CDATA[f]]></tooltip>
-					<value><![CDATA[23.06.2017]]></value>
+					<value><![CDATA[11.03.2018]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="t">
 					<prompt><![CDATA[Сейчас]]></prompt>
 					<tooltip><![CDATA[t]]></tooltip>
-					<value><![CDATA[24.06.2017]]></value>
+					<value><![CDATA[13.03.2018]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="CH">
@@ -1189,6 +1238,13 @@ order by prc  desc nulls last]]></sql>
 				<table font="Times New Roman" size="10" style="NORMAL" color="-16777216" userowshading="false" oddrowshading="-1" evenrowshading="-1" showborders="true" spacingbefore="12" spacingafter="12" horizontalalign="LEFT" />
 				<header enable="false" generatedate="false">
 					<data>
+					
+					
+					
+					
+					
+					
+					
 					
 					
 					
@@ -1321,7 +1377,7 @@ order by prc  desc nulls last]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -1338,6 +1394,20 @@ order by prc  desc nulls last]]></sql>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select * from table(DBMS_XPLAN.DISPLAY_AWR(:SQL_ID, :SQL_PLAN_HASH_VALUE, null, 'basic +outline +peeked_binds') )]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="SQL_PLAN_HASH_VALUE">
+						<prompt><![CDATA[SQL_PLAN_HASH_VALUE]]></prompt>
+						<tooltip><![CDATA[SQL_PLAN_HASH_VALUE]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -1397,6 +1467,13 @@ order by prc  desc nulls last]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -1440,7 +1517,7 @@ order by prc  desc nulls last]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -1458,6 +1535,20 @@ order by prc  desc nulls last]]></sql>
 			</CustomValues>
 			<query>
 				<sql><![CDATA[select * from table(DBMS_XPLAN.DISPLAY_AWR(:SQL_ID, :SQL_PLAN_HASH_VALUE_OLD, null, 'basic +outline +peeked_binds') )]]></sql>
+				<binds>
+					<bind id="SQL_ID">
+						<prompt><![CDATA[SQL_ID]]></prompt>
+						<tooltip><![CDATA[SQL_ID]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+					<bind id="SQL_PLAN_HASH_VALUE_OLD">
+						<prompt><![CDATA[SQL_PLAN_HASH_VALUE_OLD]]></prompt>
+						<tooltip><![CDATA[SQL_PLAN_HASH_VALUE_OLD]]></tooltip>
+						<value><![CDATA[NULL_VALUE]]></value>
+						<bracket><![CDATA[null]]></bracket>
+					</bind>
+				</binds>
 			</query>
 				<pdf version="VERSION_1_7" compression="CONTENT">
 					<docproperty title="null" author="null" subject="null" keywords="null" />
@@ -1517,6 +1608,13 @@ order by prc  desc nulls last]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -1560,7 +1658,7 @@ order by prc  desc nulls last]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -1704,6 +1802,13 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -1747,7 +1852,7 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -1881,6 +1986,13 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -1925,7 +2037,7 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 							
 							
 							
-				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
+				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2049,6 +2161,13 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -2093,7 +2212,7 @@ order by trunc(s.begin_time), to_char(s.begin_time, 'hh24') asc]]></sql>
 							
 							
 							
-				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
+				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2238,6 +2357,13 @@ order by dt, ww]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -2282,7 +2408,7 @@ order by dt, ww]]></sql>
 							
 							
 							
-				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
+				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2420,6 +2546,13 @@ ORDER BY trunc("STAT$BH".SNAP_DATE), to_char("STAT$BH".SNAP_DATE, 'hh24') asc, "
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -2464,7 +2597,7 @@ ORDER BY trunc("STAT$BH".SNAP_DATE), to_char("STAT$BH".SNAP_DATE, 'hh24') asc, "
 							
 							
 							
-				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
+				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																												</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2612,6 +2745,13 @@ where rownum <= :tp]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -2657,7 +2797,7 @@ where rownum <= :tp]]></sql>
 							
 							
 				
-				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						</data>
+				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2813,6 +2953,13 @@ order by d.dt]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -2834,7 +2981,7 @@ order by d.dt]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																				</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -2948,6 +3095,13 @@ order by drid desc]]></sql>
 					
 					
 					
+					
+					
+					
+					
+					
+					
+					
 						
 						
 						
@@ -3034,7 +3188,7 @@ order by drid desc]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	</data>
+						null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -3124,6 +3278,13 @@ order by drid desc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -3168,7 +3329,7 @@ order by drid desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																													</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -3215,6 +3376,24 @@ order by drid desc]]></sql>
       and ( h.SQL_PLAN_HASH_VALUE = :hsh or :hsh is null )
       and to_number(to_char(h.sample_time, 'hh24')) between NVL(:st_hr,0) and NVL(:ed_hr,24)
       and ( NVL(h.EVENT,'CPU') = :event or :event is null )
+      and (h.session_id = :sid or :sid is null)
+      group by h.sql_id, h.SQL_PLAN_HASH_VALUE, h.module, h.sql_exec_start, h.sql_exec_id, h.client_id
+      UNION ALL
+      select h.sql_exec_start, h.module, h.sql_id, h.SQL_PLAN_HASH_VALUE, count(distinct sql_exec_id) as execs,  SUM (delta_read_io_bytes)/1024/1024/1024 as gb, 
+      GREATEST( to_char(max(sample_time),'SSSSS') - to_char(sql_exec_start,'SSSSS'), 0)  as secs, trunc(count(*)/5) as smpl, max(h.sample_time) as msmpl_tm, 
+      avg( trunc(px_flags/2097152) ) as px, client_id
+      FROM gv$active_session_history h
+      where 
+      h.sample_time between to_date(:f, 'dd.mm.yyyy hh24:mi:ss') and to_date(:t, 'dd.mm.yyyy hh24:mi:ss')
+      --and h.sql_id is not null
+      and ( h.module = :m or :m is null )
+      and ( h.client_id = :c or :c is null )
+      and ( h.sql_id = :sql_id or :sql_id is null )
+      and ( h.SQL_PLAN_HASH_VALUE = :hsh or :hsh is null )
+      and to_number(to_char(h.sample_time, 'hh24')) between NVL(:st_hr,0) and NVL(:ed_hr,24)
+      and ( NVL(h.EVENT,'CPU') = :event or :event is null )
+      and (h.session_id = :sid or :sid is null)
+      AND  h.sample_time >= trunc(sysdate,'hh')
       group by h.sql_id, h.SQL_PLAN_HASH_VALUE, h.module, h.sql_exec_start, h.sql_exec_id, h.client_id
     ) vvv
     group by sql_id, SQL_PLAN_HASH_VALUE
@@ -3237,6 +3416,7 @@ awr as (
       where ( s.sql_id = :sql_id or :sql_id is null )
       and ( s.module = :m or :m is null )
       and ( NULL IS NOT NULL or :c is null ) --нет клиента, если задан, то тащим все из ash
+      and ( NULL IS NOT NULL or :sid is null ) --аналогично sid
       and ( s.PLAN_HASH_VALUE = :hsh or :hsh is null )
       and to_number(to_char(t.begin_interval_time, 'hh24')) between NVL(:st_hr,0) and NVL(:ed_hr,24)
       and ( NULL IS NOT NULL or :event is null ) --нет event, если задан, то тащим все из ash
@@ -3279,13 +3459,13 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 				<bind id="f">
 					<prompt><![CDATA[f]]></prompt>
 					<tooltip><![CDATA[f]]></tooltip>
-					<value><![CDATA[20.12.2017]]></value>
+					<value><![CDATA[05.03.2018]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="t">
 					<prompt><![CDATA[t]]></prompt>
 					<tooltip><![CDATA[t]]></tooltip>
-					<value><![CDATA[31.12.2017]]></value>
+					<value><![CDATA[20.03.2018]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="m">
@@ -3297,13 +3477,13 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 				<bind id="c">
 					<prompt><![CDATA[client]]></prompt>
 					<tooltip><![CDATA[c]]></tooltip>
-					<value><![CDATA[gujzqrk9x594y]]></value>
+					<value><![CDATA[NULL_VALUE]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="sql_id">
 					<prompt><![CDATA[sql_id]]></prompt>
 					<tooltip><![CDATA[sql_id]]></tooltip>
-					<value><![CDATA[f1m8jfbc4pd0w]]></value>
+					<value><![CDATA[8yt1zguwq0wdk]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="hsh">
@@ -3327,6 +3507,12 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 				<bind id="event">
 					<prompt><![CDATA[event]]></prompt>
 					<tooltip><![CDATA[event]]></tooltip>
+					<value><![CDATA[NULL_VALUE]]></value>
+					<bracket><![CDATA[null]]></bracket>
+				</bind>
+				<bind id="sid">
+					<prompt><![CDATA[sid]]></prompt>
+					<tooltip><![CDATA[sid]]></tooltip>
 					<value><![CDATA[NULL_VALUE]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
@@ -3396,6 +3582,13 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 					
 					
 					
+					
+					
+					
+					
+					
+					
+					
 						
 						
 						
@@ -3443,7 +3636,7 @@ order by case when nvl(:smpl,1)=1 then smpl else secs end desc nulls last]]></sq
 						
 						
 				
-				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																			</data>
+				null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																						</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -3542,6 +3735,13 @@ order by enddt desc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -3587,7 +3787,7 @@ order by enddt desc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -3679,6 +3879,13 @@ order by sql_exec_start desc nulls last]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -3724,7 +3931,7 @@ order by sql_exec_start desc nulls last]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -3815,6 +4022,13 @@ order by sql_exec_start desc nulls last]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -3860,7 +4074,7 @@ order by sql_exec_start desc nulls last]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -3947,6 +4161,13 @@ order by snap_id desc, position asc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -3992,7 +4213,7 @@ order by snap_id desc, position asc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																		</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -4082,6 +4303,13 @@ from gv$sql where sql_id = :SQL_ID]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -4115,7 +4343,7 @@ from gv$sql where sql_id = :SQL_ID]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																				</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -4216,6 +4444,13 @@ order by t.begin_interval_time desc, s.snap_id desc, s.INSTANCE_NUMBER]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -4246,7 +4481,7 @@ order by t.begin_interval_time desc, s.snap_id desc, s.INSTANCE_NUMBER]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																															</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																									</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -4331,6 +4566,13 @@ where sql_id = :SQL_ID and rownum < 2]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -4359,7 +4601,7 @@ where sql_id = :SQL_ID and rownum < 2]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																											</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -4485,6 +4727,13 @@ order by p.id]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -4513,7 +4762,7 @@ order by p.id]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																	</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																																											</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -4653,6 +4902,13 @@ order by d.dt]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -4674,7 +4930,7 @@ order by d.dt]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																																																																																																				</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -4771,6 +5027,13 @@ order by dt desc, PLAN_HASH_VALUE]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -4782,7 +5045,7 @@ order by dt desc, PLAN_HASH_VALUE]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																																														</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																																								</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -4869,6 +5132,13 @@ order by prc desc nulls last]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -4877,7 +5147,7 @@ order by prc desc nulls last]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																									</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																			</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -5016,6 +5286,13 @@ ORDER BY "STAT$BH".SNAP_DATE asc, "STAT$BH".OBJ_NAME asc]]></sql>
 						
 						
 						
+						
+						
+						
+						
+						
+						
+						
 							
 							
 							
@@ -5024,7 +5301,7 @@ ORDER BY "STAT$BH".SNAP_DATE asc, "STAT$BH".OBJ_NAME asc]]></sql>
 							
 							
 							
-							null																																																																																																																																																																																																																																																																																																																																																									</data>
+							null																																																																																																																																																																																																																																																																																																																																																																																																			</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -5098,7 +5375,14 @@ where rownum <= 10]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																																																								</data>
+						
+						
+						
+						
+						
+						
+						
+						null																																																																																																																																																																																																																																																																		</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -5223,7 +5507,14 @@ order by d.dt]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																										</data>
+						
+						
+						
+						
+						
+						
+						
+						null																																																																																																																																																																																																																																				</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -5310,7 +5601,14 @@ order by cnt desc]]></sql>
 						
 						
 						
-						null																																																																																																																																																																																				</data>
+						
+						
+						
+						
+						
+						
+						
+						null																																																																																																																																																																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -5406,7 +5704,14 @@ order by p.id]]></sql>
 						
 						
 						
-						null																																																																																																																														</data>
+						
+						
+						
+						
+						
+						
+						
+						null																																																																																																																																																																								</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -5469,7 +5774,14 @@ end;]]></sql>
 						
 						
 						
-						null																																				</data>
+						
+						
+						
+						
+						
+						
+						
+						null																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
@@ -5589,7 +5901,14 @@ order by cnt desc, v$sec, sql_id, ed_dt desc]]></sql>
 					
 					
 					
-					null																																																																																																																																																																																																																																						</data>
+					
+					
+					
+					
+					
+					
+					
+					null																																																																																																																																																																																																																																																																									</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -5621,19 +5940,19 @@ order by DELTA_READ_IO_BYTES desc nulls last]]></sql>
 				<bind id="f">
 					<prompt><![CDATA[f]]></prompt>
 					<tooltip><![CDATA[f]]></tooltip>
-					<value><![CDATA[05.12.2017 11]]></value>
+					<value><![CDATA[25.02.2018 13]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="t">
 					<prompt><![CDATA[t]]></prompt>
 					<tooltip><![CDATA[t]]></tooltip>
-					<value><![CDATA[05.12.2017 21]]></value>
+					<value><![CDATA[25.02.2018 15]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 				<bind id="TBL">
 					<prompt><![CDATA[TBL]]></prompt>
 					<tooltip><![CDATA[TBL]]></tooltip>
-					<value><![CDATA[MARA]]></value>
+					<value><![CDATA[ZTGRZ_TASK_HDR]]></value>
 					<bracket><![CDATA[null]]></bracket>
 				</bind>
 			</binds>
@@ -5670,7 +5989,14 @@ order by DELTA_READ_IO_BYTES desc nulls last]]></sql>
 					
 					
 					
-					null																																																																																																														</data>
+					
+					
+					
+					
+					
+					
+					
+					null																																																																																																																																																	</data>
 				</header>
 				<footer enable="false" generatedate="false">
 					<data value="null" />
@@ -5734,7 +6060,14 @@ order by DELTA_READ_IO_BYTES desc nulls last]]></sql>
 						
 						
 						
-						null																																																																																																																																				</data>
+						
+						
+						
+						
+						
+						
+						
+						null																																																																																																																																																																														</data>
 					</header>
 					<footer enable="false" generatedate="false">
 						<data value="null" />
