@@ -1,0 +1,1 @@
+Описание Oracle sql отчетов "sqldeveloper_reports.xml" по ссылке: http://blog.skahin.ru/2020/06/oracle-sql-developer.html
